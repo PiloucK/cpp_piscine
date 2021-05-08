@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/07 13:37:44 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/08 17:00:01 by clkuznie         ###   ########.fr       */
+/*   Created: 2021/05/08 16:00:11 by clkuznie          #+#    #+#             */
+/*   Updated: 2021/05/08 16:01:51 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Fixed.hpp"
+#include <iostream>
 
-class Fixed {
+int
+main(
+    void )
+{
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
 
-private:
-    int m_iValue;
+    c = b;
 
-    static const int iBitCount;
-
-public:
-    Fixed( void );
-    Fixed( const Fixed & model );
-    ~Fixed( void );
-
-    Fixed & operator=( const Fixed & model );
-    int getRawBits( void ) const;
-    void setRawBits( int const raw );
-
-};
-
-#endif
+    std::cout << a.getRawBits() << '\n';
+    std::cout << b.getRawBits() << '\n';
+    std::cout << c.getRawBits() << '\n';
+    
+    return 0;
+}
