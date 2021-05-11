@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/10 17:13:17 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:51:37 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ FragTrap::FragTrap(
         , m_iRangedAttackDamage(20)
         , m_iArmorDamageReduction(5)
 {
-    std::cout << "Booting sequence complete. Hello! I am your new steward bot. \
+    std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
 Designation: FR4G-TP, Hyperion Robot, Class C. Please adjust factory settings to \
 meet your needs before deployment.\n";
 }
@@ -43,7 +43,7 @@ FragTrap::FragTrap(
         , m_iRangedAttackDamage(20)
         , m_iArmorDamageReduction(5)
 {
-    std::cout << "Booting sequence complete. Hello! I am your new steward bot. \
+    std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
 Designation: FR4G-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
 meet your needs before deployment.\n";
 }
@@ -51,7 +51,7 @@ meet your needs before deployment.\n";
 FragTrap::FragTrap(
     const FragTrap & model )
 {
-    std::cout << "Set right up, same as FR4G-TP " << model.m_sName << '\n';
+    std::cout << "\nSet right up, same as FR4G-TP " << model.m_sName << '\n';
 
     *this = model;
 }
@@ -59,15 +59,15 @@ FragTrap::FragTrap(
 FragTrap::~FragTrap(
     void )
 {
-    std::cout << "I feel like an idiot now.\n";
-    // std::cout << "I'M DEAD I'M DEAD OHMYGOD I'M DEAD!\n";
+    std::cout << "\nI feel like an idiot now.\n";
+    // std::cout << "\nI'M DEAD I'M DEAD OHMYGOD I'M DEAD!\n";
 }
 
 FragTrap &
 FragTrap::operator=(
     const FragTrap & model )
 {
-    std::cout << "It's about to get magical!\n";
+    std::cout << "\nIt's about to get magical!\n";
 
     this->m_iHitPoint = model.m_iHitPoint;
     this->m_iMaxHitPoint = model.m_iMaxHitPoint;
@@ -101,7 +101,7 @@ operator<<(
     std::ostream & oStream
     , const FragTrap & fragTrap )
 {
-    oStream << "FR4G-TP " << fragTrap.getName() << '(' << fragTrap.getHitPoint()
+    oStream << "\nFR4G-TP " << fragTrap.getName() << '(' << fragTrap.getHitPoint()
         << " hit points left).\n";
 }
 
@@ -109,7 +109,7 @@ void
 FragTrap::rangedAttack(
     std::string const & target )
 {
-    std::cout << "Take " << this->m_iRangedAttackDamage
+    std::cout << "\nTake " << this->m_iRangedAttackDamage
         << " damage, then call me in the morning " << target << ".\n";
 }
 
@@ -117,7 +117,7 @@ void
 FragTrap::meleeAttack(
     std::string const & target )
 {
-    std::cout << "Get ready for some Fragtrap face time " << target << '!'
+    std::cout << "\nGet ready for some Fragtrap face time " << target << '!'
         << "\nUp close and personal, " << this->m_iMeleeAttackDamage << " sexy damages.\n";
 }
 
@@ -125,13 +125,13 @@ void
 FragTrap::takeDamage(
     unsigned int amount )
 {
-    std::cout << "Why do I even feel pain?!\n";
+    std::cout << "\nWhy do I even feel pain?!\n";
 
     if (this->m_iArmorDamageReduction <= amount) {
 
         unsigned int damageTaken = amount - this->m_iArmorDamageReduction;
 
-        std::cout << damageTaken << " damage taken\n";
+        std::cout << '\n' << damageTaken << " damage taken\n";
 
         if (this->m_iHitPoint > damageTaken) {
             this->m_iHitPoint -= damageTaken;
@@ -140,14 +140,14 @@ FragTrap::takeDamage(
         }
     }
     
-    std::cout << "Still " << this->m_iHitPoint << " left.";
+    std::cout << "\nStill " << this->m_iHitPoint << " left.";
 }
 
 void
 FragTrap::beRepaired(
     unsigned int amount )
 {
-    std::cout << "Sweet life juice!\n";
+    std::cout << "\nSweet life juice!\n";
 
     if (this->m_iHitPoint + amount <= this->m_iMaxHitPoint) {
         this->m_iHitPoint += amount;
@@ -155,7 +155,7 @@ FragTrap::beRepaired(
         this->m_iHitPoint = this->m_iMaxHitPoint;
     }
 
-    std::cout << "New life to " << this->m_iHitPoint << "/" << this->m_iMaxHitPoint << ".\n";
+    std::cout << "\nNew life to " << this->m_iHitPoint << "/" << this->m_iMaxHitPoint << ".\n";
 }
 
 void
@@ -177,4 +177,17 @@ FragTrap::vaulthunter_dot_exe(
         , rand() % 35
         , rand() % 35
     };
+
+    if (this->m_iEnergyPoint >= 25) {
+        unsigned int random = rand() % 5;
+
+        std::cout << "\nF to the R to the 4 to the G to the WHAAT!\n";
+
+        std::cout << attacks[random] << " straight in for " << damages[random] << " damages\n";
+
+        this->m_iEnergyPoint -= 25;
+    } else {
+        std::cout << "\nDangit, I'm out! 25 more energy points?! You talking to me?!\n";
+    }
+
 }
