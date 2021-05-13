@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 17:53:25 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/11 18:13:46 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/13 11:28:20 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
     unsigned int m_EnergyPoint;
     unsigned int m_MaxEnergyPoint;
     unsigned int m_Level;
-    std::string m_sName;
+    std::string m_Name;
     unsigned int m_MeleeAttackDamage;
     unsigned int m_RangedAttackDamage;
     unsigned int m_ArmorDamageReduction;
@@ -32,15 +32,15 @@ private:
 public:
     ClapTrap( void );
     ClapTrap( const std::string name );
-    ClapTrap( const unsigned int HitPoint
-        , const unsigned int MaxHitPoint
-        , const unsigned int EnergyPoint
-        , const unsigned int MaxEnergyPoint
-        , const unsigned int Level
-        , const std::string m_sName
-        , const unsigned int MeleeAttackDamage
-        , const unsigned int RangedAttackDamage
-        , const unsigned int ArmorDamageReduction);
+    ClapTrap( const unsigned int hitPoint
+        , const unsigned int maxHitPoint
+        , const unsigned int energyPoint
+        , const unsigned int maxEnergyPoint
+        , const unsigned int level
+        , const std::string name
+        , const unsigned int meleeAttackDamage
+        , const unsigned int rangedAttackDamage
+        , const unsigned int armorDamageReduction);
     ClapTrap( const ClapTrap & model );
 
     virtual ~ClapTrap( void );
