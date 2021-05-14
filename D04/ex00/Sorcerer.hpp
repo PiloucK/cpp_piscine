@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 10:35:08 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/13 11:24:29 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/14 09:37:27 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SORCERER_HPP
 
 # include <string>
+#include <iostream>
 
 class Sorcerer {
 

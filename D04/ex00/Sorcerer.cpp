@@ -6,13 +6,11 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 11:22:47 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/13 11:24:21 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/14 14:53:35 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
-#include <string>
-#include <iostream>
 
 Sorcerer::Sorcerer(
     void )
@@ -44,6 +42,8 @@ Sorcerer::operator=(
         this->m_name = model.m_name;
         this->m_title = model.m_title;
     }
+
+    return *this;
 }
 
 Sorcerer::~Sorcerer(
@@ -74,4 +74,6 @@ operator<<(
 {
     oStream << "I am " << sorcerer.getName() << ", "
         << sorcerer.getTitle() << ", and I like ponies!\n";
+
+    return oStream;
 }

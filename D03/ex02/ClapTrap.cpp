@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/13 11:29:21 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/14 08:25:22 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,32 @@ ClapTrap::ClapTrap(
     *this = model;
 }
 
+ClapTrap::ClapTrap(
+    const unsigned int hitPoint
+    , const unsigned int maxHitPoint
+    , const unsigned int energyPoint
+    , const unsigned int maxEnergyPoint
+    , const unsigned int level
+    , const std::string name
+    , const unsigned int meleeAttackDamage
+    , const unsigned int rangedAttackDamage
+    , const unsigned int armorDamageReduction)
+        : m_HitPoint(hitPoint)
+        , m_MaxHitPoint(maxHitPoint)
+        , m_EnergyPoint(energyPoint)
+        , m_MaxEnergyPoint(maxEnergyPoint)
+        , m_Level(level)
+        , m_Name(name)
+        , m_MeleeAttackDamage(meleeAttackDamage)
+        , m_RangedAttackDamage(rangedAttackDamage)
+        , m_ArmorDamageReduction(armorDamageReduction)
+{
+}
+
 ClapTrap::~ClapTrap(
     void )
 {
     std::cout << "\nI feel like an idiot now.\n";
-    // std::cout << "\nI'M DEAD I'M DEAD OHMYGOD I'M DEAD!\n";
 }
 
 ClapTrap &

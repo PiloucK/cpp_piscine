@@ -6,13 +6,14 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/11 17:51:37 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/14 08:49:05 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 FragTrap::FragTrap(
     void )
@@ -101,8 +102,10 @@ operator<<(
     std::ostream & oStream
     , const FragTrap & fragTrap )
 {
-    oStream << "\nFR4G-TP " << fragTrap.getName() << '(' << fragTrap.getHitPoint()
+    oStream << "FR4G-TP " << fragTrap.getName() << '(' << fragTrap.getHitPoint()
         << " hit points left).\n";
+
+    return oStream;
 }
 
 void
@@ -182,8 +185,8 @@ FragTrap::vaulthunter_dot_exe(
         unsigned int random = rand() % 5;
 
         std::cout << "\nF to the R to the 4 to the G to the WHAAT!\n";
-
         std::cout << attacks[random] << " straight in for " << damages[random] << " damages\n";
+        std::cout << "Eat that " << target << '\n';
 
         this->m_iEnergyPoint -= 25;
     } else {
