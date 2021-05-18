@@ -1,0 +1,5 @@
+#ifndef MYBEAUTIFULCLASS_HPP
+# define MYBEAUTIFULCLASS_HPP
+
+
+#endif

@@ -1,0 +1,637 @@
+
+
+Tue May 18 14:55:10 2021
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 5.4.0-73-generic (#82~18.04.1-Ubuntu SMP Fri Apr 16 15:10:02 UTC 2021) x86_64
+Compiler: GCC 7.2
+ext2fs lib: 1.44.1, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+/dev/sda: LBA, LBA48 support
+/dev/sda: size       52256320 sectors
+/dev/sda: user_max   52256320 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 26 GB / 24 GiB - CHS 3252 255 63, sector size=512 - VBOX HARDDISK, S/N:VBc48262a0-c35e2268, FW:1.0
+
+Partition table type (auto): Intel
+Disk /dev/sda - 26 GB / 24 GiB - VBOX HARDDISK
+Partition table type: Intel
+
+Interface Advanced
+Geometry from i386 MBR: head=255 sector=63
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+search_superblock
+
+recover_EXT2: s_block_group_nr=0/199, s_mnt_count=170/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 2 (block=0, blocksize=4096)
+
+block_group_nr 1
+
+recover_EXT2: "e2fsck -b 32768 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=1/199, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 262144 (block=32768, blocksize=4096)
+
+block_group_nr 3
+
+recover_EXT2: "e2fsck -b 98304 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=3/199, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 786432 (block=98304, blocksize=4096)
+
+block_group_nr 5
+
+recover_EXT2: "e2fsck -b 163840 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=5/199, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 1310720 (block=163840, blocksize=4096)
+
+block_group_nr 7
+
+recover_EXT2: "e2fsck -b 229376 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=7/199, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 1835008 (block=229376, blocksize=4096)
+
+block_group_nr 9
+
+recover_EXT2: "e2fsck -b 294912 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=9/199, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 2359296 (block=294912, blocksize=4096)
+
+block_group_nr 25
+
+recover_EXT2: "e2fsck -b 819200 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=25/199, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 6553600 (block=819200, blocksize=4096)
+
+block_group_nr 27
+
+recover_EXT2: "e2fsck -b 884736 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=27/199, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 7077888 (block=884736, blocksize=4096)
+
+block_group_nr 49
+
+recover_EXT2: "e2fsck -b 1605632 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=49/199, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 12845056 (block=1605632, blocksize=4096)
+
+block_group_nr 81
+
+recover_EXT2: "e2fsck -b 2654208 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=81/199, s_mnt_count=0/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8176
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 6531584
+recover_EXT2: part_size 52252672
+Ext2 superblock found at sector 21233664 (block=2654208, blocksize=4096)
+  Linux                    0  32 33  3252 179 63   52252672
+superblock 0, blocksize=4096 []
+superblock 32768, blocksize=4096 []
+superblock 98304, blocksize=4096 []
+superblock 163840, blocksize=4096 []
+superblock 229376, blocksize=4096 []
+superblock 294912, blocksize=4096 []
+superblock 819200, blocksize=4096 []
+superblock 884736, blocksize=4096 []
+superblock 1605632, blocksize=4096 []
+superblock 2654208, blocksize=4096 []
+
+To repair the filesystem using alternate superblock, run
+fsck.ext4 -p -b superblock -B blocksize device
+
+
+dir_partition inode=2
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 .
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 ..
+      11 drwx------     0      0     16384  2-Apr-2020 14:19 lost+found
+      12 -rw-------     0      0 1239900160  2-Apr-2020 14:19 swapfile
+ 1438977 drwxr-xr-x     0      0     12288 18-May-2021 14:45 etc
+  130817 drwxr-xr-x     0      0      4096  4-Apr-2020 15:52 media
+  654081 drwxr-xr-x     0      0      4096  8-May-2021 12:36 bin
+  261633 drwxr-xr-x     0      0      4096 17-May-2021 14:05 boot
+  523265 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 dev
+ 1308161 drwxr-xr-x     0      0      4096  6-Apr-2020 18:50 home
+ 1046529 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib
+  392449 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib64
+  784897 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 mnt
+  915713 drwxr-xr-x     0      0      4096  4-Apr-2020 16:18 opt
+ 1177345 drwxr-xr-x     0      0      4096 24-Apr-2018 10:34 proc
+  130818 drwx------     0      0      4096 17-May-2021 14:25 root
+  261634 drwxr-xr-x     0      0      4096  2-Apr-2020 14:22 run
+  392450 drwxr-xr-x     0      0     12288 17-May-2021 14:26 sbin
+ 1177346 drwxr-xr-x     0      0      4096  2-Apr-2020 14:29 snap
+  523266 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 srv
+ 1046530 drwxr-xr-x     0      0      4096 24-Apr-2018 10:34 sys
+  784898 drwxrwxrwt     0      0     16384 18-May-2021 14:55 tmp
+  654082 drwxr-xr-x     0      0      4096  1-Mar-2021 13:49 usr
+  915714 drwxr-xr-x     0      0      4096  4-Apr-2020 16:47 var
+      25 lrwxrwxrwx     0      0        29 11-May-2021 16:26 vmlinuz
+      38 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img.old
+      26 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img
+  528700 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib32
+  526130 drwxrwxr-x     0      0      4096  2-Apr-2020 14:22 cdrom
+      18 -rw-------     0      0         0 18-May-2021 14:36 VBox.log
+      28 lrwxrwxrwx     0      0        29 11-May-2021 16:26 vmlinuz.old
+X     26 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img.128015
+
+dir_partition inode=654082
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /usr
+  654082 drwxr-xr-x     0      0      4096  1-Mar-2021 13:49 .
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 ..
+  654280 drwxr-xr-x     0      0     69632 18-May-2021 14:54 bin
+  654281 drwxr-xr-x     0      0      4096  3-Feb-2020 19:31 games
+  654282 drwxr-xr-x     0      0     20480 28-Apr-2021 12:56 include
+  654283 drwxr-xr-x     0      0      4096 28-Apr-2021 13:00 lib
+  654284 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 local
+  654285 drwxr-xr-x     0      0     12288 13-May-2021 10:25 sbin
+  654286 drwxr-xr-x     0      0     12288 28-Apr-2021 13:00 share
+  654287 drwxr-xr-x     0      0      4096 12-May-2021 12:18 src
+ 1331949 drwxr-xr-x     0      0      4096  1-Mar-2021 13:49 libexec
+  680057 drwxr-xr-x     0      0      4096  2-Apr-2020 14:35 lib32
+Directory /
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 .
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 ..
+      11 drwx------     0      0     16384  2-Apr-2020 14:19 lost+found
+      12 -rw-------     0      0 1239900160  2-Apr-2020 14:19 swapfile
+ 1438977 drwxr-xr-x     0      0     12288 18-May-2021 14:45 etc
+  130817 drwxr-xr-x     0      0      4096  4-Apr-2020 15:52 media
+  654081 drwxr-xr-x     0      0      4096  8-May-2021 12:36 bin
+  261633 drwxr-xr-x     0      0      4096 17-May-2021 14:05 boot
+  523265 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 dev
+ 1308161 drwxr-xr-x     0      0      4096  6-Apr-2020 18:50 home
+ 1046529 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib
+  392449 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib64
+  784897 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 mnt
+  915713 drwxr-xr-x     0      0      4096  4-Apr-2020 16:18 opt
+ 1177345 drwxr-xr-x     0      0      4096 24-Apr-2018 10:34 proc
+  130818 drwx------     0      0      4096 17-May-2021 14:25 root
+  261634 drwxr-xr-x     0      0      4096  2-Apr-2020 14:22 run
+  392450 drwxr-xr-x     0      0     12288 17-May-2021 14:26 sbin
+ 1177346 drwxr-xr-x     0      0      4096  2-Apr-2020 14:29 snap
+  523266 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 srv
+ 1046530 drwxr-xr-x     0      0      4096 24-Apr-2018 10:34 sys
+  784898 drwxrwxrwt     0      0     16384 18-May-2021 14:55 tmp
+  654082 drwxr-xr-x     0      0      4096  1-Mar-2021 13:49 usr
+  915714 drwxr-xr-x     0      0      4096  4-Apr-2020 16:47 var
+      25 lrwxrwxrwx     0      0        29 11-May-2021 16:26 vmlinuz
+      38 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img.old
+      26 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img
+  528700 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib32
+  526130 drwxrwxr-x     0      0      4096  2-Apr-2020 14:22 cdrom
+      18 -rw-------     0      0         0 18-May-2021 14:36 VBox.log
+      28 lrwxrwxrwx     0      0        29 11-May-2021 16:26 vmlinuz.old
+X     26 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img.128015
+
+dir_partition inode=11
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /lost+found
+      11 drwx------     0      0     16384  2-Apr-2020 14:19 .
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 ..
+Directory /
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 .
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 ..
+      11 drwx------     0      0     16384  2-Apr-2020 14:19 lost+found
+      12 -rw-------     0      0 1239900160  2-Apr-2020 14:19 swapfile
+ 1438977 drwxr-xr-x     0      0     12288 18-May-2021 14:45 etc
+  130817 drwxr-xr-x     0      0      4096  4-Apr-2020 15:52 media
+  654081 drwxr-xr-x     0      0      4096  8-May-2021 12:36 bin
+  261633 drwxr-xr-x     0      0      4096 17-May-2021 14:05 boot
+  523265 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 dev
+ 1308161 drwxr-xr-x     0      0      4096  6-Apr-2020 18:50 home
+ 1046529 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib
+  392449 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib64
+  784897 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 mnt
+  915713 drwxr-xr-x     0      0      4096  4-Apr-2020 16:18 opt
+ 1177345 drwxr-xr-x     0      0      4096 24-Apr-2018 10:34 proc
+  130818 drwx------     0      0      4096 17-May-2021 14:25 root
+  261634 drwxr-xr-x     0      0      4096  2-Apr-2020 14:22 run
+  392450 drwxr-xr-x     0      0     12288 17-May-2021 14:26 sbin
+ 1177346 drwxr-xr-x     0      0      4096  2-Apr-2020 14:29 snap
+  523266 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 srv
+ 1046530 drwxr-xr-x     0      0      4096 24-Apr-2018 10:34 sys
+  784898 drwxrwxrwt     0      0     16384 18-May-2021 14:55 tmp
+  654082 drwxr-xr-x     0      0      4096  1-Mar-2021 13:49 usr
+  915714 drwxr-xr-x     0      0      4096  4-Apr-2020 16:47 var
+      25 lrwxrwxrwx     0      0        29 11-May-2021 16:26 vmlinuz
+      38 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img.old
+      26 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img
+  528700 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib32
+  526130 drwxrwxr-x     0      0      4096  2-Apr-2020 14:22 cdrom
+      18 -rw-------     0      0         0 18-May-2021 14:36 VBox.log
+      28 lrwxrwxrwx     0      0        29 11-May-2021 16:26 vmlinuz.old
+X     26 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img.128015
+
+dir_partition inode=1308161
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home
+ 1308161 drwxr-xr-x     0      0      4096  6-Apr-2020 18:50 .
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 ..
+X1318778 -rw-rw-r--  1001   1001   3272704 25-Feb-2021 16:01 salty
+ 1460520 drwxr-xr-x  1001   1001      4096 18-May-2021 14:54 user42
+
+dir_partition inode=1460520
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42
+ 1460520 drwxr-xr-x  1001   1001      4096 18-May-2021 14:54 .
+ 1308161 drwxr-xr-x     0      0      4096  6-Apr-2020 18:50 ..
+ 1463410 -rw-r--r--  1001   1001      1600  6-Apr-2020 18:40 .Xdefaults
+ 1463413 -rw-r--r--  1001   1001       807  6-Apr-2020 18:40 .profile
+ 1463416 -rw-r--r--  1001   1001       220  6-Apr-2020 18:40 .bash_logout
+ 1463423 -rw-r--r--  1001   1001      3771  6-Apr-2020 18:40 .bashrc
+ 1463424 -rw-r--r--  1001   1001        14  6-Apr-2020 18:40 .xscreensaver
+ 1463425 drwxr-xr-x  1001   1001      4096  8-Apr-2021 12:06 .config
+ 1463679 drwx------  1001   1001      4096  6-Apr-2020 18:41 .gnupg
+ 1460509 -rw-r--r--  1001   1001        26  6-Apr-2020 18:41 .dmrc
+ 1463426 -rw-------  1001   1001        61 18-May-2021 14:43 .Xauthority
+ 1440255 -rw-------  1001   1001      6923 18-May-2021 14:44 .xsession-errors
+ 1460281 -rw-rw-r--  1001   1001     42654 22-Feb-2021 13:32 .zcompdump
+ 1463780 drwx------  1001   1001      4096  6-Apr-2020 18:43 .pki
+ 1440248 -rw-------  1001   1001      7949 17-May-2021 15:57 .xsession-errors.old
+ 1471154 -rw-------  1001   1001     15733 23-Apr-2021 14:58 .viminfo
+ 1452714 -rw-------  1001   1001    252370 18-May-2021 14:54 .zsh_history
+  278108 drwxrwxr-x  1001   1001      4096  6-Feb-2021 16:52 .vscode
+  401197 drwxrwx---  1001   1001      4096  9-Feb-2021 13:22 .lldb
+ 1463681 drwxrwxr-x  1001   1001      4096 18-May-2021 14:43 .cache
+ 1463682 drwxr-xr-x  1001   1001      4096  6-Apr-2020 18:56 Bureau
+  173787 drwxr-xr-x  1001   1001      4096 26-Feb-2021 15:23 .vim
+  283278 drwxr-x---  1001   1001      4096  4-Mar-2021 16:44 .kube
+ 1463684 drwxr-xr-x  1001   1001      4096  6-Apr-2020 18:41 Modèles
+ 1463685 drwxr-xr-x  1001   1001      4096  6-Apr-2020 18:41 Public
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 Documents
+  174264 drwxr-x---  1001   1001      4096  3-Mar-2021 15:13 .siege
+ 1471137 -rw-------  1001   1001     16468 18-May-2021 14:43 .ICEauthority
+    3173 drwxr-xr-x  1001   1001      4096 14-Apr-2021 14:59 .minikube
+ 1463690 drwxr-xr-x  1001   1001      4096  6-Apr-2020 18:41 .local
+ 1463702 drwxrwxr-x  1001   1001      4096  6-Apr-2020 18:41 .thumbnails
+ 1463858 drwxr-xr-x  1001   1001      4096 27-Apr-2021 12:11 .oh-my-zsh
+ 1464216 -rw-------  1001   1001      2087 14-May-2021 09:57 .bash_history
+ 1458441 -rw-r--r--  1001   1001      3649  6-Apr-2020 18:58 .zshrc
+ 1463969 -rw-r--r--  1001   1001        10  6-Apr-2020 18:45 .shell.pre-oh-my-zsh
+  405659 drwxrwxr-x  1001   1001      4096  6-Apr-2020 18:55 .norminette
+  401206 drwx------  1001   1001      4096  9-Feb-2021 13:56 .mozilla
+  402525 drwx------  1001   1001      4096 25-Feb-2021 13:48 .ssh
+ 1464217 drwxrwxr-x  1001   1001      4096  6-Apr-2020 18:45 .bundle
+ 1440517 -rw-rw-r--  1001   1001     43977 10-May-2021 10:31 .zcompdump-salty-VirtualBox-5.4.2
+ 1439187 -rw-r--r--  1001   1001         0  6-Apr-2020 18:49 .sudo_as_admin_successful
+ 1457594 -rw-rw-r--  1001   1001        55  9-Feb-2021 14:02 .gitconfig
+ 1460303 -rw-rw-r--  1001   1001       131 16-Feb-2021 15:18 .xinputrc
+ 1473593 drwx------  1001   1001      4096  8-Apr-2021 12:06 .gnome
+ 1453755 drwxrwxr-x  1001   1001      4096  2-Apr-2021 07:58 Téléchargements
+X1460979 -rw-rw-r--  1001   1001      5151 18-May-2021 14:56 .zsh_history.LOCK
+  403249 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Desktop
+ 1460304 -rw-r--r--  1001   1001       357 16-Feb-2021 15:18 .pam_environment
+ 1458294 -rw-r-----  1001   1001         5 18-May-2021 14:43 .vboxclient-display.pid
+ 1328498 drwxr-xr-x  1001   1001      4096 13-Apr-2021 17:25 Downloads
+ 1328499 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Templates
+ 1328503 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Music
+ 1328504 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Pictures
+ 1328505 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Videos
+ 1461008 -rw-r-----  1001   1001         5 18-May-2021 14:43 .vboxclient-seamless.pid
+ 1461009 -rw-r-----  1001   1001         5 18-May-2021 14:43 .vboxclient-draganddrop.pid
+X1461027 -rw-rw-r--  1001   1001      3548 18-May-2021 14:43 .vboxclient-display-svga-x11.pid
+X1471137 -rw-------  1001   1001     16468 18-May-2021 14:43 .ICEauthority-n
+
+dir_partition inode=1463686
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42/Documents
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 .
+ 1460520 drwxr-xr-x  1001   1001      4096 18-May-2021 14:54 ..
+ 1480199 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 cpp_piscine
+  276478 drwxrwxr-x  1001   1001      4096  5-Apr-2021 14:31 minishell
+  173771 drwxrwxr-x  1001   1001      4096 26-Feb-2021 15:19 minirt_work
+X 173788 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:46 ft_service_work
+ 1453757 drwxrwxr-x  1001   1001      4096 30-Apr-2021 17:58 Push_Swap
+ 1480285 drwxrwxr-x  1001   1001      4096 11-May-2021 18:19 cpp_piscine_rendu
+ 1473582 drwxrwxr-x  1001   1001      4096  6-Apr-2021 17:52 .vscode
+ 1473602 drwxrwxr-x  1001   1001      4096 10-Apr-2021 14:26 Libasm
+X1473584 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:34 service00
+X1473856 drwxrwxr-x  1001   1001      4096 13-Apr-2021 16:04 servaoeuoe
+ 1473940 drwxrwxr-x  1001   1001      4096 14-Apr-2021 10:49 service01
+
+dir_partition inode=1480199
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42/Documents/cpp_piscine
+ 1480199 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 .
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 ..
+ 1480200 drwxrwxr-x  1001   1001      4096 15-May-2021 17:59 .git
+ 1480217 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 .vscode
+ 1480218 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D00
+ 1480221 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D01
+ 1480230 drwxrwxr-x  1001   1001      4096  8-May-2021 16:04 D02
+ 1480232 drwxrwxr-x  1001   1001      4096 11-May-2021 17:53 D03
+ 1480233 drwxrwxr-x  1001   1001      4096 17-May-2021 16:26 D04
+ 1480234 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D05
+ 1480235 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D06
+ 1480236 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D07
+ 1480237 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D08
+
+dir_partition inode=1480233
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42/Documents/cpp_piscine/D04
+ 1480233 drwxrwxr-x  1001   1001      4096 17-May-2021 16:26 .
+ 1480199 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 ..
+ 1460920 -rw-rw-r--  1001   1001         4  8-May-2021 12:45 .gitignore
+ 1480317 drwxrwxr-x  1001   1001      4096 18-May-2021 14:54 ex00
+
+dir_partition inode=1480317
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42/Documents/cpp_piscine/D04/ex00
+ 1480317 drwxrwxr-x  1001   1001      4096 18-May-2021 14:54 .
+ 1480233 drwxrwxr-x  1001   1001      4096 17-May-2021 16:26 ..
+ 1465761 -rw-rw-r--  1001   1001         0 17-May-2021 16:26 .cppScript.input
+ 1465762 -rw-rw-r--  1001   1001        24 18-May-2021 14:52 .cppScript.created
+ 1480318 drwxrwxr-x  1001   1001      4096 17-May-2021 16:26 .cppScript.backup
+ 1465793 -rw-rw-r--  1001   1001        90 17-May-2021 16:26 example.cpp
+ 1460979 -rw-rw-r--  1001   1001      5151 18-May-2021 14:56 testdisk.log
+Directory /home/user42/Documents/cpp_piscine/D04
+ 1480233 drwxrwxr-x  1001   1001      4096 17-May-2021 16:26 .
+ 1480199 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 ..
+ 1460920 -rw-rw-r--  1001   1001         4  8-May-2021 12:45 .gitignore
+ 1480317 drwxrwxr-x  1001   1001      4096 18-May-2021 14:54 ex00
+Directory /home/user42/Documents/cpp_piscine
+ 1480199 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 .
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 ..
+ 1480200 drwxrwxr-x  1001   1001      4096 15-May-2021 17:59 .git
+ 1480217 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 .vscode
+ 1480218 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D00
+ 1480221 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D01
+ 1480230 drwxrwxr-x  1001   1001      4096  8-May-2021 16:04 D02
+ 1480232 drwxrwxr-x  1001   1001      4096 11-May-2021 17:53 D03
+ 1480233 drwxrwxr-x  1001   1001      4096 17-May-2021 16:26 D04
+ 1480234 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D05
+ 1480235 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D06
+ 1480236 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D07
+ 1480237 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 D08
+Directory /home/user42/Documents
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 .
+ 1460520 drwxr-xr-x  1001   1001      4096 18-May-2021 14:54 ..
+ 1480199 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 cpp_piscine
+  276478 drwxrwxr-x  1001   1001      4096  5-Apr-2021 14:31 minishell
+  173771 drwxrwxr-x  1001   1001      4096 26-Feb-2021 15:19 minirt_work
+X 173788 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:46 ft_service_work
+ 1453757 drwxrwxr-x  1001   1001      4096 30-Apr-2021 17:58 Push_Swap
+ 1480285 drwxrwxr-x  1001   1001      4096 11-May-2021 18:19 cpp_piscine_rendu
+ 1473582 drwxrwxr-x  1001   1001      4096  6-Apr-2021 17:52 .vscode
+ 1473602 drwxrwxr-x  1001   1001      4096 10-Apr-2021 14:26 Libasm
+X1473584 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:34 service00
+X1473856 drwxrwxr-x  1001   1001      4096 13-Apr-2021 16:04 servaoeuoe
+ 1473940 drwxrwxr-x  1001   1001      4096 14-Apr-2021 10:49 service01
+
+dir_partition inode=173788
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42/Documents/ft_service_work
+  173788 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:46 .
+  173768 drwx------  1001   1001      4096 17-May-2021 16:33 ..
+  173790 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:46 .git
+  162810 -rw-rw-r--  1001   1001      3026 13-Apr-2021 10:46 setup.sh
+  179911 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:46 srcs
+X 173670 -rw-r--r--     0      0         0 19-Jan-2021 09:34 util_websites.txt
+X 174113 -rwxr-xr-x     0      0         0 13-Apr-2021 16:53 minikube
+X 173802 -rw-r--r--     0      0         0 13-Apr-2021 16:53 startup.sh
+X 178134 drwxr-xr-x     0      0         0 13-Apr-2021 16:53 telegraf.conf
+X 174298 -rwxr-xr-x     0      0         0 13-Apr-2021 16:53 .con.swp
+X 174613 -rw-rw-r--  1001   1001       424 24-Mar-2021 15:29 minikube_trace
+X 177642 -rwxr-xr-x     0      0         0 13-Apr-2021 16:53 nginx_trace
+X 176690 -rwxr-xr-x     0      0         0 13-Apr-2021 16:53 minikube_trace
+Directory /home/user42/Documents
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 .
+ 1460520 drwxr-xr-x  1001   1001      4096 18-May-2021 14:54 ..
+ 1480199 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 cpp_piscine
+  276478 drwxrwxr-x  1001   1001      4096  5-Apr-2021 14:31 minishell
+  173771 drwxrwxr-x  1001   1001      4096 26-Feb-2021 15:19 minirt_work
+X 173788 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:46 ft_service_work
+ 1453757 drwxrwxr-x  1001   1001      4096 30-Apr-2021 17:58 Push_Swap
+ 1480285 drwxrwxr-x  1001   1001      4096 11-May-2021 18:19 cpp_piscine_rendu
+ 1473582 drwxrwxr-x  1001   1001      4096  6-Apr-2021 17:52 .vscode
+ 1473602 drwxrwxr-x  1001   1001      4096 10-Apr-2021 14:26 Libasm
+X1473584 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:34 service00
+X1473856 drwxrwxr-x  1001   1001      4096 13-Apr-2021 16:04 servaoeuoe
+ 1473940 drwxrwxr-x  1001   1001      4096 14-Apr-2021 10:49 service01
+
+dir_partition inode=1480285
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42/Documents/cpp_piscine_rendu
+ 1480285 drwxrwxr-x  1001   1001      4096 11-May-2021 18:19 .
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 ..
+X1480286 drwxrwxr-x  1001   1001      4096 17-May-2021 16:37 D00
+
+dir_partition inode=1480286
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42/Documents/cpp_piscine_rendu/D00
+ 1480286 drwxrwxr-x  1001   1001      4096 17-May-2021 16:37 .
+  173768 drwx------  1001   1001      4096 17-May-2021 16:33 ..
+ 1460987 -rw-rw-r--  1001   1001      1474 14-May-2021 09:37 Sorcerer.hpp
+ 1460935 -rw-rw-r--  1001   1001      2060 14-May-2021 14:53 Sorcerer.cpp
+ 1461007 -rw-rw-r--  1001   1001      1322 13-May-2021 11:24 Victim.hpp
+ 1461010 -rw-rw-r--  1001   1001       235 14-May-2021 14:57 newCppClass.sh
+ 1461022 -rw-rw-r--  1001   1001      3792 17-May-2021 16:40 CppClassPrep.sh
+X1480319 drwxrwxr-x  1001   1001         0 17-May-2021 16:37 .cppScript.backup
+X1463559 -rw-------  1001   1001    977143 18-May-2021 14:44 .cppScript.input
+X1471137 -rw-------  1001   1001     16468 18-May-2021 14:43 .cppScript.tocreate
+X1471145 -rw-rw-r--  1001   1001         0 17-May-2021 16:37 example.cpp
+X1471153 -rw-rw-r--  1001   1001         0 17-May-2021 16:37 .cppScript.created
+X1465605 -rw-rw-r--  1001   1001       100 17-May-2021 16:22 main.cpp
+Directory /home/user42/Documents/cpp_piscine_rendu
+ 1480285 drwxrwxr-x  1001   1001      4096 11-May-2021 18:19 .
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 ..
+X1480286 drwxrwxr-x  1001   1001      4096 17-May-2021 16:37 D00
+Directory /home/user42/Documents
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 .
+ 1460520 drwxr-xr-x  1001   1001      4096 18-May-2021 14:54 ..
+ 1480199 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 cpp_piscine
+  276478 drwxrwxr-x  1001   1001      4096  5-Apr-2021 14:31 minishell
+  173771 drwxrwxr-x  1001   1001      4096 26-Feb-2021 15:19 minirt_work
+X 173788 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:46 ft_service_work
+ 1453757 drwxrwxr-x  1001   1001      4096 30-Apr-2021 17:58 Push_Swap
+ 1480285 drwxrwxr-x  1001   1001      4096 11-May-2021 18:19 cpp_piscine_rendu
+ 1473582 drwxrwxr-x  1001   1001      4096  6-Apr-2021 17:52 .vscode
+ 1473602 drwxrwxr-x  1001   1001      4096 10-Apr-2021 14:26 Libasm
+X1473584 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:34 service00
+X1473856 drwxrwxr-x  1001   1001      4096 13-Apr-2021 16:04 servaoeuoe
+ 1473940 drwxrwxr-x  1001   1001      4096 14-Apr-2021 10:49 service01
+
+dir_partition inode=1480285
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42/Documents/cpp_piscine_rendu
+ 1480285 drwxrwxr-x  1001   1001      4096 11-May-2021 18:19 .
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 ..
+X1480286 drwxrwxr-x  1001   1001      4096 17-May-2021 16:37 D00
+
+dir_partition inode=1480286
+ 1 * Linux                    0  32 33  3252 179 63   52252672
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 26 GB / 24 GiB
+Directory /home/user42/Documents/cpp_piscine_rendu/D00
+ 1480286 drwxrwxr-x  1001   1001      4096 17-May-2021 16:37 .
+  173768 drwx------  1001   1001      4096 17-May-2021 16:33 ..
+ 1460987 -rw-rw-r--  1001   1001      1474 14-May-2021 09:37 Sorcerer.hpp
+ 1460935 -rw-rw-r--  1001   1001      2060 14-May-2021 14:53 Sorcerer.cpp
+ 1461007 -rw-rw-r--  1001   1001      1322 13-May-2021 11:24 Victim.hpp
+ 1461010 -rw-rw-r--  1001   1001       235 14-May-2021 14:57 newCppClass.sh
+ 1461022 -rw-rw-r--  1001   1001      3792 17-May-2021 16:40 CppClassPrep.sh
+X1480319 drwxrwxr-x  1001   1001         0 17-May-2021 16:37 .cppScript.backup
+X1463559 -rw-------  1001   1001    977143 18-May-2021 14:44 .cppScript.input
+X1471137 -rw-------  1001   1001     16468 18-May-2021 14:43 .cppScript.tocreate
+X1471145 -rw-rw-r--  1001   1001         0 17-May-2021 16:37 example.cpp
+X1471153 -rw-rw-r--  1001   1001         0 17-May-2021 16:37 .cppScript.created
+X1465605 -rw-rw-r--  1001   1001       100 17-May-2021 16:22 main.cpp
+Directory /home/user42/Documents/cpp_piscine_rendu
+ 1480285 drwxrwxr-x  1001   1001      4096 11-May-2021 18:19 .
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 ..
+X1480286 drwxrwxr-x  1001   1001      4096 17-May-2021 16:37 D00
+Directory /home/user42/Documents
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 .
+ 1460520 drwxr-xr-x  1001   1001      4096 18-May-2021 14:54 ..
+ 1480199 drwxrwxr-x  1001   1001      4096  8-May-2021 12:45 cpp_piscine
+  276478 drwxrwxr-x  1001   1001      4096  5-Apr-2021 14:31 minishell
+  173771 drwxrwxr-x  1001   1001      4096 26-Feb-2021 15:19 minirt_work
+X 173788 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:46 ft_service_work
+ 1453757 drwxrwxr-x  1001   1001      4096 30-Apr-2021 17:58 Push_Swap
+ 1480285 drwxrwxr-x  1001   1001      4096 11-May-2021 18:19 cpp_piscine_rendu
+ 1473582 drwxrwxr-x  1001   1001      4096  6-Apr-2021 17:52 .vscode
+ 1473602 drwxrwxr-x  1001   1001      4096 10-Apr-2021 14:26 Libasm
+X1473584 drwxrwxr-x  1001   1001      4096 13-Apr-2021 10:34 service00
+X1473856 drwxrwxr-x  1001   1001      4096 13-Apr-2021 16:04 servaoeuoe
+ 1473940 drwxrwxr-x  1001   1001      4096 14-Apr-2021 10:49 service01
+Directory /home/user42
+ 1460520 drwxr-xr-x  1001   1001      4096 18-May-2021 14:54 .
+ 1308161 drwxr-xr-x     0      0      4096  6-Apr-2020 18:50 ..
+ 1463410 -rw-r--r--  1001   1001      1600  6-Apr-2020 18:40 .Xdefaults
+ 1463413 -rw-r--r--  1001   1001       807  6-Apr-2020 18:40 .profile
+ 1463416 -rw-r--r--  1001   1001       220  6-Apr-2020 18:40 .bash_logout
+ 1463423 -rw-r--r--  1001   1001      3771  6-Apr-2020 18:40 .bashrc
+ 1463424 -rw-r--r--  1001   1001        14  6-Apr-2020 18:40 .xscreensaver
+ 1463425 drwxr-xr-x  1001   1001      4096  8-Apr-2021 12:06 .config
+ 1463679 drwx------  1001   1001      4096  6-Apr-2020 18:41 .gnupg
+ 1460509 -rw-r--r--  1001   1001        26  6-Apr-2020 18:41 .dmrc
+ 1463426 -rw-------  1001   1001        61 18-May-2021 14:43 .Xauthority
+ 1440255 -rw-------  1001   1001      6923 18-May-2021 14:44 .xsession-errors
+ 1460281 -rw-rw-r--  1001   1001     42654 22-Feb-2021 13:32 .zcompdump
+ 1463780 drwx------  1001   1001      4096  6-Apr-2020 18:43 .pki
+ 1440248 -rw-------  1001   1001      7949 17-May-2021 15:57 .xsession-errors.old
+ 1471154 -rw-------  1001   1001     15733 23-Apr-2021 14:58 .viminfo
+ 1452714 -rw-------  1001   1001    252370 18-May-2021 14:54 .zsh_history
+  278108 drwxrwxr-x  1001   1001      4096  6-Feb-2021 16:52 .vscode
+  401197 drwxrwx---  1001   1001      4096  9-Feb-2021 13:22 .lldb
+ 1463681 drwxrwxr-x  1001   1001      4096 18-May-2021 14:43 .cache
+ 1463682 drwxr-xr-x  1001   1001      4096  6-Apr-2020 18:56 Bureau
+  173787 drwxr-xr-x  1001   1001      4096 26-Feb-2021 15:23 .vim
+  283278 drwxr-x---  1001   1001      4096  4-Mar-2021 16:44 .kube
+ 1463684 drwxr-xr-x  1001   1001      4096  6-Apr-2020 18:41 Modèles
+ 1463685 drwxr-xr-x  1001   1001      4096  6-Apr-2020 18:41 Public
+ 1463686 drwxr-xr-x  1001   1001      4096 11-May-2021 18:19 Documents
+  174264 drwxr-x---  1001   1001      4096  3-Mar-2021 15:13 .siege
+ 1471137 -rw-------  1001   1001     16468 18-May-2021 14:43 .ICEauthority
+    3173 drwxr-xr-x  1001   1001      4096 14-Apr-2021 14:59 .minikube
+ 1463690 drwxr-xr-x  1001   1001      4096  6-Apr-2020 18:41 .local
+ 1463702 drwxrwxr-x  1001   1001      4096  6-Apr-2020 18:41 .thumbnails
+ 1463858 drwxr-xr-x  1001   1001      4096 27-Apr-2021 12:11 .oh-my-zsh
+ 1464216 -rw-------  1001   1001      2087 14-May-2021 09:57 .bash_history
+ 1458441 -rw-r--r--  1001   1001      3649  6-Apr-2020 18:58 .zshrc
+ 1463969 -rw-r--r--  1001   1001        10  6-Apr-2020 18:45 .shell.pre-oh-my-zsh
+  405659 drwxrwxr-x  1001   1001      4096  6-Apr-2020 18:55 .norminette
+  401206 drwx------  1001   1001      4096  9-Feb-2021 13:56 .mozilla
+  402525 drwx------  1001   1001      4096 25-Feb-2021 13:48 .ssh
+ 1464217 drwxrwxr-x  1001   1001      4096  6-Apr-2020 18:45 .bundle
+ 1440517 -rw-rw-r--  1001   1001     43977 10-May-2021 10:31 .zcompdump-salty-VirtualBox-5.4.2
+ 1439187 -rw-r--r--  1001   1001         0  6-Apr-2020 18:49 .sudo_as_admin_successful
+ 1457594 -rw-rw-r--  1001   1001        55  9-Feb-2021 14:02 .gitconfig
+ 1460303 -rw-rw-r--  1001   1001       131 16-Feb-2021 15:18 .xinputrc
+ 1473593 drwx------  1001   1001      4096  8-Apr-2021 12:06 .gnome
+ 1453755 drwxrwxr-x  1001   1001      4096  2-Apr-2021 07:58 Téléchargements
+X1460979 -rw-rw-r--  1001   1001      5151 18-May-2021 14:56 .zsh_history.LOCK
+  403249 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Desktop
+ 1460304 -rw-r--r--  1001   1001       357 16-Feb-2021 15:18 .pam_environment
+ 1458294 -rw-r-----  1001   1001         5 18-May-2021 14:43 .vboxclient-display.pid
+ 1328498 drwxr-xr-x  1001   1001      4096 13-Apr-2021 17:25 Downloads
+ 1328499 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Templates
+ 1328503 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Music
+ 1328504 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Pictures
+ 1328505 drwxr-xr-x  1001   1001      4096 16-Feb-2021 15:27 Videos
+ 1461008 -rw-r-----  1001   1001         5 18-May-2021 14:43 .vboxclient-seamless.pid
+ 1461009 -rw-r-----  1001   1001         5 18-May-2021 14:43 .vboxclient-draganddrop.pid
+X1461027 -rw-rw-r--  1001   1001      3548 18-May-2021 14:43 .vboxclient-display-svga-x11.pid
+X1471137 -rw-------  1001   1001     16468 18-May-2021 14:43 .ICEauthority-n
+Directory /home
+ 1308161 drwxr-xr-x     0      0      4096  6-Apr-2020 18:50 .
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 ..
+X1318778 -rw-rw-r--  1001   1001   3272704 25-Feb-2021 16:01 salty
+ 1460520 drwxr-xr-x  1001   1001      4096 18-May-2021 14:54 user42
+Directory /
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 .
+       2 drwxr-xr-x     0      0      4096 11-May-2021 16:26 ..
+      11 drwx------     0      0     16384  2-Apr-2020 14:19 lost+found
+      12 -rw-------     0      0 1239900160  2-Apr-2020 14:19 swapfile
+ 1438977 drwxr-xr-x     0      0     12288 18-May-2021 14:45 etc
+  130817 drwxr-xr-x     0      0      4096  4-Apr-2020 15:52 media
+  654081 drwxr-xr-x     0      0      4096  8-May-2021 12:36 bin
+  261633 drwxr-xr-x     0      0      4096 17-May-2021 14:05 boot
+  523265 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 dev
+ 1308161 drwxr-xr-x     0      0      4096  6-Apr-2020 18:50 home
+ 1046529 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib
+  392449 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib64
+  784897 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 mnt
+  915713 drwxr-xr-x     0      0      4096  4-Apr-2020 16:18 opt
+ 1177345 drwxr-xr-x     0      0      4096 24-Apr-2018 10:34 proc
+  130818 drwx------     0      0      4096 17-May-2021 14:25 root
+  261634 drwxr-xr-x     0      0      4096  2-Apr-2020 14:22 run
+  392450 drwxr-xr-x     0      0     12288 17-May-2021 14:26 sbin
+ 1177346 drwxr-xr-x     0      0      4096  2-Apr-2020 14:29 snap
+  523266 drwxr-xr-x     0      0      4096  3-Feb-2020 19:22 srv
+ 1046530 drwxr-xr-x     0      0      4096 24-Apr-2018 10:34 sys
+  784898 drwxrwxrwt     0      0     16384 18-May-2021 14:55 tmp
+  654082 drwxr-xr-x     0      0      4096  1-Mar-2021 13:49 usr
+  915714 drwxr-xr-x     0      0      4096  4-Apr-2020 16:47 var
+      25 lrwxrwxrwx     0      0        29 11-May-2021 16:26 vmlinuz
+      38 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img.old
+      26 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img
+  528700 drwxr-xr-x     0      0      4096 28-Apr-2021 12:56 lib32
+  526130 drwxrwxr-x     0      0      4096  2-Apr-2020 14:22 cdrom
+      18 -rw-------     0      0         0 18-May-2021 14:36 VBox.log
+      28 lrwxrwxrwx     0      0        29 11-May-2021 16:26 vmlinuz.old
+X     26 lrwxrwxrwx     0      0        32 11-May-2021 16:26 initrd.img.128015
+
+TestDisk exited normally.

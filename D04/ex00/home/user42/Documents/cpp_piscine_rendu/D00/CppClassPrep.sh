@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DIALOG_H="30"
 DIALOG_W="80"
@@ -10,7 +10,7 @@ LIST_CREATED_F=".cppScript.created"
 BACKUP_D=".cppScript.backup"
 
 clean_exit() {
-    rm -rf $INPUT_F $LIST_TOCREATE_F $LIST_CREATED_F
+    rm -rf $INPUT_F $LIST_TOCREATE_F $LIST_CREATED_F $BACKUP_D
     exit
 }
 
@@ -74,13 +74,13 @@ cpp_create() {
 
         echo >> $FILE_NAME
 
-        whiptail --cancel-button "Next" --inputbox "What is the return type of the function?" $DIALOG_H $DIALOG_W "void" 2>.cppScript.input
+        whiptail --cancel-button "Next" --inputbox "What is the return type of the function?" $DIALOG_H $DIALOG_W 2>.cppScript.input
         echo "$(cat .cppScript.input)" >> $FILE_NAME
 
-        whiptail --cancel-button "Next" --inputbox "What is the name of the function?" $DIALOG_H $DIALOG_W "main" 2>.cppScript.input
+        whiptail --cancel-button "Next" --inputbox "What is the name of the function?" $DIALOG_H $DIALOG_W 2>.cppScript.input
         echo "$(cat .cppScript.input)(" >> $FILE_NAME
 
-        whiptail --cancel-button "Next" --inputbox "Type the first parameter" "void" $DIALOG_H $DIALOG_W 2>.cppScript.input
+        whiptail --cancel-button "Next" --inputbox "Type the first parameter" $DIALOG_H $DIALOG_W 2>.cppScript.input
         echo -n "\t$(cat .cppScript.input)" >> $FILE_NAME
 
         while true; do
@@ -123,7 +123,6 @@ hpp_create() {
                 \n\nAre you sure?" $DIALOG_H $DIALOG_W $MENU_LIST_H
 
             if [ $? = 0 ]; then
-                mv $FILE_NAME "$BACKUP_D/$FILE_NAME"
                 true
             else
                 return
@@ -139,15 +138,12 @@ hpp_create() {
             fi
         fi
 
+        mv $FILE_NAME "$BACKUP_D/$FILE_NAME"
         touch $FILE_NAME
 
-        sed -iE "s/\./_/g" .cppScript.tocreate
-        echo -n "#ifndef " > $FILE_NAME
-        cat .cppScript.tocreate | awk '{ print toupper ($0) }' >> $FILE_NAME
-        echo -n "# define " >> $FILE_NAME
-        cat .cppScript.tocreate | awk '{ print toupper ($0) }' >> $FILE_NAME
-        echo >> $FILE_NAME
+        echo "#ifndef $(sed -E 's/\./_/g' <<< $(echo ${$FILE_NAME^^}))"
 
+        exit
         while true; do
             whiptail --cancel-button "Next" --inputbox "Name headers you want to include one by one" $DIALOG_H $DIALOG_W "<>" 2>.cppScript.input
 
@@ -158,9 +154,6 @@ hpp_create() {
             fi
         done
 
-        printf "\n#endif\n" >> $FILE_NAME
-
-        exit
         echo >> $FILE_NAME
 
         whiptail --cancel-button "Next" --inputbox "What is the return type of the function?" $DIALOG_H $DIALOG_W 2>.cppScript.input
