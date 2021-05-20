@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 DIALOG_H="30"
 DIALOG_W="80"
@@ -10,7 +10,7 @@ LIST_CREATED_F=".cppScript.created"
 BACKUP_D=".cppScript.backup"
 
 clean_exit() {
-    rm -rf $INPUT_F $LIST_TOCREATE_F $LIST_CREATED_F $BACKUP_D
+    rm -rf $INPUT_F $LIST_TOCREATE_F $LIST_CREATED_F
     exit
 }
 
@@ -74,13 +74,13 @@ cpp_create() {
 
         echo >> $FILE_NAME
 
-        whiptail --cancel-button "Next" --inputbox "What is the return type of the function?" $DIALOG_H $DIALOG_W 2>.cppScript.input
+        whiptail --cancel-button "Next" --inputbox "What is the return type of the function?" $DIALOG_H $DIALOG_W "void" 2>.cppScript.input
         echo "$(cat .cppScript.input)" >> $FILE_NAME
 
-        whiptail --cancel-button "Next" --inputbox "What is the name of the function?" $DIALOG_H $DIALOG_W 2>.cppScript.input
+        whiptail --cancel-button "Next" --inputbox "What is the name of the function?" $DIALOG_H $DIALOG_W "main" 2>.cppScript.input
         echo "$(cat .cppScript.input)(" >> $FILE_NAME
 
-        whiptail --cancel-button "Next" --inputbox "Type the first parameter" $DIALOG_H $DIALOG_W 2>.cppScript.input
+        whiptail --cancel-button "Next" --inputbox "Type the first parameter" "void" $DIALOG_H $DIALOG_W 2>.cppScript.input
         echo -n "\t$(cat .cppScript.input)" >> $FILE_NAME
 
         while true; do
@@ -123,6 +123,7 @@ hpp_create() {
                 \n\nAre you sure?" $DIALOG_H $DIALOG_W $MENU_LIST_H
 
             if [ $? = 0 ]; then
+                mv $FILE_NAME "$BACKUP_D/$FILE_NAME"
                 true
             else
                 return
@@ -138,12 +139,15 @@ hpp_create() {
             fi
         fi
 
-        mv $FILE_NAME "$BACKUP_D/$FILE_NAME"
         touch $FILE_NAME
 
-        echo "#ifndef $(sed -E 's/\./_/g' <<< $(echo ${$FILE_NAME^^}))"
+        sed -iE "s/\./_/g" .cppScript.tocreate
+        echo -n "#ifndef " > $FILE_NAME
+        cat .cppScript.tocreate | awk '{ print toupper ($0) }' >> $FILE_NAME
+        echo -n "# define " >> $FILE_NAME
+        cat .cppScript.tocreate | awk '{ print toupper ($0) }' >> $FILE_NAME
+        echo >> $FILE_NAME
 
-        exit
         while true; do
             whiptail --cancel-button "Next" --inputbox "Name headers you want to include one by one" $DIALOG_H $DIALOG_W "<>" 2>.cppScript.input
 
@@ -154,28 +158,9 @@ hpp_create() {
             fi
         done
 
-        echo >> $FILE_NAME
+        # NOTE: Possibility of typing the name of a cpp file that i parse to get the function prototypes
 
-        whiptail --cancel-button "Next" --inputbox "What is the return type of the function?" $DIALOG_H $DIALOG_W 2>.cppScript.input
-        echo "$(cat .cppScript.input)" >> $FILE_NAME
-
-        whiptail --cancel-button "Next" --inputbox "What is the name of the function?" $DIALOG_H $DIALOG_W 2>.cppScript.input
-        echo "$(cat .cppScript.input)(" >> $FILE_NAME
-
-        whiptail --cancel-button "Next" --inputbox "Type the first parameter" $DIALOG_H $DIALOG_W 2>.cppScript.input
-        echo -n "\t$(cat .cppScript.input)" >> $FILE_NAME
-
-        while true; do
-            whiptail --cancel-button "Next" --inputbox "Type any additional parameter" $DIALOG_H $DIALOG_W 2>.cppScript.input
-
-            if [ $? = 0 ]; then
-                echo -n "\n\t, $(cat .cppScript.input)" >> $FILE_NAME
-            else
-                break
-            fi
-        done
-
-        echo " )\n{\n}" >> $FILE_NAME
+        printf "\n#endif\n" >> $FILE_NAME
 
         whiptail --yesno "Are you satisfied with the created file?" \
             $DIALOG_H $DIALOG_W $MENU_LIST_H
@@ -183,7 +168,82 @@ hpp_create() {
             echo $FILE_NAME >> .cppScript.created
         else
             rm -rf $FILE_NAME
-            cpp_create
+            hpp_create
+        fi
+    fi
+}
+
+class_create() {
+    whiptail --inputbox "Give a name to the new Class.\n \
+        \n- Any name would preferably be in CamelCase \
+        \n- ClassName will also be the name of both cpp and hpp files \
+        \n- Canonical form will be used untill script update" \
+        $DIALOG_H $DIALOG_W "MyBestExemple" 2>.cppScript.tocreate
+
+    if [ $(cat .cppScript.tocreate) ]; then
+        CLASS_NAME=$(cat .cppScript.tocreate)
+
+        if ls | grep -qx "$CLASS_NAME.cpp"; then
+            whiptail --yesno "The file named $CLASS_NAME.cpp currently exists and would get overwritten\
+                \n\nAre you sure?" $DIALOG_H $DIALOG_W $MENU_LIST_H
+
+            if [ $? = 0 ]; then
+                mv "$CLASS_NAME.cpp" "$BACKUP_D/$CLASS_NAME"
+                true
+            else
+                return
+            fi
+        elif ls | grep -qx "$CLASS_NAME.hpp"; then
+            whiptail --yesno "The file named $CLASS_NAME.hpp currently exists and would get overwritten\
+                \n\nAre you sure?" $DIALOG_H $DIALOG_W $MENU_LIST_H
+
+            if [ $? = 0 ]; then
+                mv "$CLASS_NAME.hpp" "$BACKUP_D/$CLASS_NAME"
+                true
+            else
+                return
+            fi
+        else
+            whiptail --yesno "Do you confirm the class name $CLASS_NAME?" \
+                $DIALOG_H $DIALOG_W $MENU_LIST_H
+
+            if [ $? = 0 ]; then
+                true
+            else
+                class_create
+            fi
+        fi
+
+        touch $FILE_NAME
+
+        sed -iE "s/\./_/g" .cppScript.tocreate
+        echo -n "#ifndef " > $FILE_NAME
+        cat .cppScript.tocreate | awk '{ print toupper ($0) }' >> $FILE_NAME
+        echo -n "# define " >> $FILE_NAME
+        cat .cppScript.tocreate | awk '{ print toupper ($0) }' >> $FILE_NAME
+        echo >> $FILE_NAME
+
+        while true; do
+            whiptail --cancel-button "Next" --inputbox "Name headers you want to include one by one" $DIALOG_H $DIALOG_W "<>" 2>.cppScript.input
+
+            if [ $? = 0 ]; then
+                echo "# include $(cat .cppScript.input)" >> $FILE_NAME
+            else
+                break
+            fi
+        done
+
+        # NOTE: Possibility of typing the name of a cpp file that i parse to get the function prototypes
+
+        printf "\n#endif\n" >> $FILE_NAME
+
+        whiptail --yesno "Are you satisfied with the created file?" \
+            $DIALOG_H $DIALOG_W $MENU_LIST_H
+        if [ $? = 0 ]; then
+            echo $FILE_NAME >> .cppScript.created
+        else
+            rm -rf $FILE_NAME
+            hpp_create
         fi
     fi
 }
@@ -202,6 +262,8 @@ main() {
             cpp_create || continue
         elif grep -q "Hpp" .cppScript.input; then
             hpp_create || continue
+        elif grep -q "Class" .cppScript.input; then
+            class_create || continue
         elif grep -q "Cancel" .cppScript.input; then
             backup_exit
         # elif grep -q "Back" .cppScript.input; then
