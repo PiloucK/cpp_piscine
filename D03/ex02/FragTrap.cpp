@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/11 16:47:08 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/27 14:19:41 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,7 @@
 
 FragTrap::FragTrap(
     void )
-        : m_iHitPoint(100)
-        , m_iMaxHitPoint(100)
-        , m_iEnergyPoint(100)
-        , m_iMaxEnergyPoint(100)
-        , m_iLevel(1)
-        , m_sName("FR4G-TP")
-        , m_iMeleeAttackDamage(30)
-        , m_iRangedAttackDamage(20)
-        , m_iArmorDamageReduction(5)
+        : ClapTrap(100, 100, 100, 100, 1, "FR4G-TP", 30, 20, 5)
 {
     std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
 Designation: FR4G-TP, Hyperion Robot, Class C. Please adjust factory settings to \
@@ -33,15 +25,7 @@ meet your needs before deployment.\n";
 
 FragTrap::FragTrap(
     const std::string name )
-        : m_iHitPoint(100)
-        , m_iMaxHitPoint(100)
-        , m_iEnergyPoint(100)
-        , m_iMaxEnergyPoint(100)
-        , m_iLevel(1)
-        , m_sName(name)
-        , m_iMeleeAttackDamage(30)
-        , m_iRangedAttackDamage(20)
-        , m_iArmorDamageReduction(5)
+        : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
 {
     std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
 Designation: FR4G-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \

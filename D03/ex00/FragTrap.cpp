@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/14 08:49:05 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/25 14:22:18 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ FragTrap::takeDamage(
         }
     }
     
-    std::cout << "\nStill " << this->m_iHitPoint << " left.";
+    std::cout << "\nStill " << this->m_iHitPoint << " left.\n";
 }
 
 void
@@ -190,7 +190,7 @@ FragTrap::vaulthunter_dot_exe(
 
         this->m_iEnergyPoint -= 25;
     } else {
-        std::cout << "\nDangit, I'm out! 25 more energy points?! You talking to me?!\n";
+        std::cout << "\nDangit, I'm out! 25 more energy points?!\n";
     }
 
 }
