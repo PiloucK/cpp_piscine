@@ -6,47 +6,13 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/14 08:25:22 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/02 16:14:17 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
-
-ClapTrap::ClapTrap(
-    void )
-        : m_HitPoint(100)
-        , m_MaxHitPoint(100)
-        , m_EnergyPoint(50)
-        , m_MaxEnergyPoint(50)
-        , m_Level(1)
-        , m_Name("CL4P-TP")
-        , m_MeleeAttackDamage(20)
-        , m_RangedAttackDamage(15)
-        , m_ArmorDamageReduction(3)
-{
-    std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
-Designation: CL4P-TP, Hyperion Robot, Class C. Please adjust factory settings to \
-meet your needs before deployment.\n";
-}
-
-ClapTrap::ClapTrap(
-    const std::string name )
-        : m_HitPoint(100)
-        , m_MaxHitPoint(100)
-        , m_EnergyPoint(100)
-        , m_MaxEnergyPoint(100)
-        , m_Level(1)
-        , m_Name(name)
-        , m_MeleeAttackDamage(30)
-        , m_RangedAttackDamage(20)
-        , m_ArmorDamageReduction(5)
-{
-    std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
-Designation: CL4P-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
-meet your needs before deployment.\n";
-}
 
 ClapTrap::ClapTrap(
     const ClapTrap & model )
@@ -76,12 +42,7 @@ ClapTrap::ClapTrap(
         , m_RangedAttackDamage(rangedAttackDamage)
         , m_ArmorDamageReduction(armorDamageReduction)
 {
-}
-
-ClapTrap::~ClapTrap(
-    void )
-{
-    std::cout << "\nI feel like an idiot now.\n";
+    std::cout << "\nGot all of its own in me.\n";
 }
 
 ClapTrap &
@@ -101,6 +62,12 @@ ClapTrap::operator=(
     this->m_ArmorDamageReduction = model.m_ArmorDamageReduction;
 
     return *this;
+}
+
+ClapTrap::~ClapTrap(
+    void )
+{
+    std::cout << "\nI'M DEAD I'M DEAD OHMYGOD I'M DEAD!\n";
 }
 
 std::string
@@ -124,6 +91,8 @@ operator<<(
 {
     oStream << "\nCL4P-TP " << ClapTrap.getName() << '(' << ClapTrap.getHitPoint()
         << " hit points left).\n";
+
+    return oStream;
 }
 
 void

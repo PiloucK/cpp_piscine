@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/11 16:47:08 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/02 16:07:41 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,7 +183,7 @@ FragTrap::vaulthunter_dot_exe(
 
         std::cout << "\nF to the R to the 4 to the G to the WHAAT!\n";
 
-        std::cout << attacks[randomAttack] << " straight in for " << damages[randomAttack] << " damages\n";
+        std::cout << attacks[randomAttack] << " straight in for " << damages[randomAttack] << " damages to you, " << target << "\n";
 
         this->m_iEnergyPoint -= 25;
     } else {

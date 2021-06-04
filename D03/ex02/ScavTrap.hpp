@@ -6,28 +6,20 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 11:07:07 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/11 16:51:36 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:56:07 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
+# include "ClapTrap.hpp"
 # include <iostream>
 # include <string>
 
-class ScavTrap {
+class ScavTrap : public ClapTrap {
 
 private:
-    unsigned int m_iHitPoint;
-    unsigned int m_iMaxHitPoint;
-    unsigned int m_iEnergyPoint;
-    unsigned int m_iMaxEnergyPoint;
-    unsigned int m_iLevel;
-    std::string m_sName;
-    unsigned int m_iMeleeAttackDamage;
-    unsigned int m_iRangedAttackDamage;
-    unsigned int m_iArmorDamageReduction;
 
 public:
     ScavTrap( void );
@@ -38,12 +30,6 @@ public:
 
     ScavTrap & operator=( const ScavTrap & model );
 
-    std::string getName( void ) const;
-    unsigned int getHitPoint( void ) const;
-    void rangedAttack( std::string const & target );
-    void meleeAttack( std::string const & target );
-    void takeDamage( unsigned int amount );
-    void beRepaired( unsigned int amount );
     void challengeNewcomer( void );
 
 };

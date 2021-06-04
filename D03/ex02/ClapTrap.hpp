@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 17:53:25 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/13 11:28:20 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/02 13:55:47 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 class ClapTrap {
 
 private:
+    ClapTrap( void );
+
+protected:
     unsigned int m_HitPoint;
     unsigned int m_MaxHitPoint;
     unsigned int m_EnergyPoint;
@@ -30,8 +33,6 @@ private:
     unsigned int m_ArmorDamageReduction;
 
 public:
-    ClapTrap( void );
-    ClapTrap( const std::string name );
     ClapTrap( const unsigned int hitPoint
         , const unsigned int maxHitPoint
         , const unsigned int energyPoint

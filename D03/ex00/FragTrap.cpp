@@ -6,13 +6,11 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/25 14:22:18 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/02 16:11:34 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-#include <iostream>
-#include <string>
 #include <stdlib.h>
 
 FragTrap::FragTrap(
@@ -185,8 +183,7 @@ FragTrap::vaulthunter_dot_exe(
         unsigned int random = rand() % 5;
 
         std::cout << "\nF to the R to the 4 to the G to the WHAAT!\n";
-        std::cout << attacks[random] << " straight in for " << damages[random] << " damages\n";
-        std::cout << "Eat that " << target << '\n';
+        std::cout << attacks[random] << " straight in for " << damages[random] << " damages to you, " << target << "\n";
 
         this->m_iEnergyPoint -= 25;
     } else {
