@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 16:00:11 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/21 14:51:56 by clkuznie         ###   ########.fr       */
+/*   Created: 2021/06/21 16:29:45 by clkuznie          #+#    #+#             */
+/*   Updated: 2021/06/21 17:31:11 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#ifndef PEON_HPP
+# define PEON_HPP
 
-int
-main(
-    void )
+# include "Victim.hpp"
+# include <iostream>
+# include <string>
+
+class Peon : public Victim {
+
+public:
+    virtual void getPolymorphed( void ) const;
+
+private:
+
+};
+
+void
+Peon::getPolymorphed(
+    void ) const
 {
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
-
-    c = b;
-
-    std::cout << a.getRawBits() << '\n';
-    std::cout << b.getRawBits() << '\n';
-    std::cout << c.getRawBits() << '\n';
-
-    return 0;
+    std::cout << m_Name << " has been turned into a pink pony!\n";
 }
+
+#endif

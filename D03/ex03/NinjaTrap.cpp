@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/07 10:33:59 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/21 16:25:24 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ NinjaTrap::ninjaShoebox(
 
 void
 NinjaTrap::ninjaShoebox(
-    const FragTrap & target ) const
+    const FragTrap & target ) constwwww
 {
     std::cout << "\nPfiu (FrapTrap)";
 }
