@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 16:29:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/21 17:30:27 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/22 22:29:30 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 # include <iostream>
 # include <string>
 
-class Victim
-{
+class Victim {
 
 public:
     Victim( const std::string & name );
@@ -31,11 +30,10 @@ public:
     virtual void getPolymorphed( void ) const;
 
 protected:
-    const std::string m_Name;
+    std::string m_Name;
 
 private:
     Victim( void );
-
 
 };
 
@@ -46,6 +44,22 @@ Victim::Victim(
         : m_Name(name)
 {
     std::cout << "Some random victim called " << m_Name << " just appeared!\n";
+}
+
+Victim::Victim(
+    const Victim & model )
+{
+    operator=(model);
+    std::cout << "Some random victim called " << m_Name << " just appeared!\n";
+}
+
+Victim &
+Victim::operator=(
+    const Victim & model )
+{
+    this->m_Name = model.getName();
+
+    return (*this);
 }
 
 Victim::~Victim(
@@ -73,7 +87,9 @@ operator<<(
     std::ostream & oStream
     , const Victim & victim )
 {
-    std::cout << "I am " << victim.getName() << " and I like otters!\n";
+    oStream << "I am " << victim.getName() << " and I like otters!\n";
+
+    return (oStream);
 }
 
 #endif

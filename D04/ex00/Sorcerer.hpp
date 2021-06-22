@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 16:29:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/21 17:30:55 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/22 22:28:34 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 # include <iostream>
 # include <string>
 
-class Sorcerer
-{
+class Sorcerer {
 
 public:
     Sorcerer( const std::string & name, const std::string & title );
@@ -33,8 +32,8 @@ public:
     void polymorph( const Victim & victim ) const;
 
 protected:
-    const std::string m_Name;
-    const std::string m_Title;
+    std::string m_Name;
+    std::string m_Title;
     
 private:
     Sorcerer( void );
@@ -50,6 +49,23 @@ Sorcerer::Sorcerer(
         , m_Title(title)
 {
     std::cout << m_Name << ", " << m_Title << ", is born!\n";
+}
+
+Sorcerer::Sorcerer(
+    const Sorcerer & model )
+{
+    *this = model;
+    std::cout << m_Name << ", " << m_Title << ", is born!\n";
+}
+
+Sorcerer &
+Sorcerer::operator=(
+    const Sorcerer & model )
+{
+    m_Name = model.getName();
+    m_Title = model.getTitle();
+
+    return *this;
 }
 
 Sorcerer::~Sorcerer(
@@ -84,7 +100,9 @@ operator<<(
     std::ostream & oStream
     , const Sorcerer & sorcerer )
 {
-    std::cout << "I am " << sorcerer.getName() <<  ", " << sorcerer.getTitle() << " and I like ponies!\n";
+    oStream << "I am " << sorcerer.getName() <<  ", " << sorcerer.getTitle() << " and I like ponies!\n";
+
+    return (oStream);
 }
 
 #endif
