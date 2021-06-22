@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 16:29:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/22 22:31:06 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/22 23:47:56 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Peon : public Victim {
 
 public:
     Peon( const std::string & name );
+    Peon( const Peon & model );
 
     virtual ~Peon( void );
 
@@ -34,6 +35,7 @@ private:
 
 };
 
+
 Peon::Peon(
     const std::string & name )
         : Victim(name)
@@ -41,11 +43,31 @@ Peon::Peon(
     std::cout << "Zog zog.\n";
 }
 
+
+Peon::Peon(
+    const Peon & model )
+        : Victim(model)
+{
+    *this = model;
+}
+
+
 Peon::~Peon(
     void )
 {
     std::cout << "Bleuark...\n";
 }
+
+
+Peon &
+Peon::operator=(
+    const Peon & model )
+{
+    m_Name = model.getName();
+
+    return *this;
+}
+
 
 void
 Peon::getPolymorphed(
@@ -53,5 +75,6 @@ Peon::getPolymorphed(
 {
     std::cout << m_Name << " has been turned into a pink pony!\n";
 }
+
 
 #endif
