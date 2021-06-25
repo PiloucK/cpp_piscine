@@ -25,7 +25,12 @@ private:
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const CLASS_NAME & LOWER_CLASS_NAME );
+std::ostream & operator<<( std::ostream & stream, const CLASS_NAME & a_CLASS_NAME );
+
+CLASS_NAME::~CLASS_NAME(
+    void )
+{
+}
 
 CLASS_NAME::CLASS_NAME(
     const std::string & name )
@@ -35,12 +40,7 @@ CLASS_NAME::CLASS_NAME(
 
 CLASS_NAME::CLASS_NAME(
     const CLASS_NAME & model )
-{
-    *this = model;
-}
-
-CLASS_NAME::~CLASS_NAME(
-    void )
+//      : initList()...
 {
 }
 
@@ -63,7 +63,7 @@ CLASS_NAME::getName(
 std::ostream &
 operator<<(
     std::ostream & oStream
-    , const CLASS_NAME & LOWER_CLASS_NAME )
+    , const CLASS_NAME & a_CLASS_NAME )
 {
     oStream << "\n";
 

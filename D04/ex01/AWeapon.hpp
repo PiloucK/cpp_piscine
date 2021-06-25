@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 23:15:34 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/22 23:44:53 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/25 21:02:03 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ private:
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const AWeapon & aweapon );
+std::ostream & operator<<( std::ostream & stream, const AWeapon & a_Weapon );
 
 AWeapon::AWeapon(
     const std::string & name
@@ -60,18 +60,13 @@ AWeapon::AWeapon(
     *this = model;
 }
 
-AWeapon::~AWeapon(
-    void )
-{
-}
-
 AWeapon &
 AWeapon::operator=(
     const AWeapon & model )
 {
-    m_Name = model.getName();
-    m_APCost = model.getAPCost();
-    m_Damage = model.getDamage();
+    m_Name = model.m_Name;
+    m_APCost = model.m_APCost;
+    m_Damage = model.m_Damage;
 
     return *this;
 }
@@ -86,9 +81,9 @@ AWeapon::getName(
 std::ostream &
 operator<<(
     std::ostream & oStream
-    , const AWeapon & aweapon )
+    , const AWeapon & a_Weapon )
 {
-    oStream << "\n";
+    oStream << "AWeapon " << a_Weapon.getName() << "\n";
 
     return (oStream);
 }
