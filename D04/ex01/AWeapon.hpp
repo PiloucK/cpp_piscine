@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 23:15:34 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/25 21:02:03 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/27 19:55:31 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ public:
 
 protected:
     std::string m_Name;
-    int m_Damage;
     int m_APCost;
+    int m_Damage;
 
 private:
     AWeapon( void );
@@ -60,6 +60,11 @@ AWeapon::AWeapon(
     *this = model;
 }
 
+AWeapon::~AWeapon(
+    void )
+{
+}
+
 AWeapon &
 AWeapon::operator=(
     const AWeapon & model )
@@ -76,6 +81,20 @@ AWeapon::getName(
     void ) const
 {
     return (m_Name);
+}
+
+int
+AWeapon::getDamage(
+    void ) const
+{
+    return (m_Damage);
+}
+
+int
+AWeapon::getAPCost(
+    void ) const
+{
+    return (m_APCost);
 }
 
 std::ostream &

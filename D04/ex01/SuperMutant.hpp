@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 21:03:40 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/25 21:20:46 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/27 19:20:27 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class SuperMutant : public Enemy {
 
 public:
     SuperMutant( void );
-    SuperMutant( int hp );
     SuperMutant( const SuperMutant & model );
 
     virtual ~SuperMutant( void );
@@ -39,22 +38,17 @@ private:
 std::ostream & operator<<( std::ostream & stream, const SuperMutant & a_SuperMutant );
 
 SuperMutant::SuperMutant(
-    int hp )
-        : Enemy(hp, "Super Mutant")
+    void )
+        : Enemy(170, "Super Mutant")
 {
     std::cout << "Gaaah. Me want smash heads!\n";
 }
 
 SuperMutant::SuperMutant(
-    void )
-        : SuperMutant(170)
-{
-}
-
-SuperMutant::SuperMutant(
     const SuperMutant & model )
-        : SuperMutant(model.m_HP)
+        : Enemy(model)
 {
+    std::cout << "Gaaah. Me want smash heads!\n";
 }
 
 SuperMutant::~SuperMutant(
@@ -85,7 +79,7 @@ operator<<(
     std::ostream & oStream
     , const SuperMutant & a_SuperMutant )
 {
-    oStream << "Super Mutant\n";
+    oStream << a_SuperMutant.getType() << "\n";
 
     return (oStream);
 }

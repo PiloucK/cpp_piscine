@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:19:52 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/25 20:59:02 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/27 19:50:33 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ PlasmaRifle::PlasmaRifle(
 PlasmaRifle::PlasmaRifle(
     const PlasmaRifle & model )
         : AWeapon(model)
+{
+}
+
+PlasmaRifle::~PlasmaRifle(
+    void )
 {
 }
 

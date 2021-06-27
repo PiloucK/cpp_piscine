@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 17:19:52 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/25 21:01:17 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/27 19:50:58 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ PowerFist::PowerFist(
 PowerFist::PowerFist(
     const PowerFist & model )
         : AWeapon(model)
+{
+}
+
+PowerFist::~PowerFist(
+    void )
 {
 }
 
