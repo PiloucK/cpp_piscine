@@ -27,20 +27,20 @@ private:
 
 std::ostream & operator<<( std::ostream & stream, const CLASS_NAME & a_CLASS_NAME );
 
-CLASS_NAME::~CLASS_NAME(
-    void )
-{
-}
-
 CLASS_NAME::CLASS_NAME(
     const std::string & name )
         : m_Name(name)
 {
 }
 
+CLASS_NAME::~CLASS_NAME(
+    void )
+{
+}
+
 CLASS_NAME::CLASS_NAME(
     const CLASS_NAME & model )
-//      : initList()...
+        : CLASS_NAME(model.m_Name)
 {
 }
 
@@ -48,7 +48,7 @@ CLASS_NAME &
 CLASS_NAME::operator=(
     const CLASS_NAME & model )
 {
-    m_Name = model.getName();
+    m_Name = model.m_Name();
 
     return *this;
 }

@@ -125,6 +125,10 @@ Character::attack(
             m_Weapon->attack();
             a_Enemy->takeDamage(m_Weapon->getDamage());
             m_AP -= neededAP;
+
+            if (a_Enemy->getHP() == 0) {
+                delete a_Enemy;
+            }
         }
     }
 }

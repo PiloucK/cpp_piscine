@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 21:03:40 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/27 19:19:15 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/06/28 10:59:55 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ public:
     virtual ~RadScorpion( void );
 
     RadScorpion & operator=( const RadScorpion & model );
-    
-    virtual void takeDamage( int );
 
 protected:
     
@@ -55,21 +53,6 @@ RadScorpion::~RadScorpion(
     void )
 {
     std::cout << "* SPROTCH *\n";
-}
-
-void
-RadScorpion::takeDamage(
-    int damage )
-{
-    if (damage > 0) {
-        
-        if (m_HP - damage > 0) {
-            m_HP -= damage;
-        } else {
-            m_HP = 0;
-        }
-
-    }
 }
 
 std::ostream &
