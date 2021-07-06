@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 21:03:40 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/28 10:59:55 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/07/06 18:16:01 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
     RadScorpion( void );
     RadScorpion( const RadScorpion & model );
 
-    virtual ~RadScorpion( void );
+    virtual ~RadScorpion();
 
     RadScorpion & operator=( const RadScorpion & model );
 
