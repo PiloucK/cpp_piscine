@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 18:07:26 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/07/06 18:20:30 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/07/07 14:48:41 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "ISpaceMarine.hpp"
 
 class ISquad {
-    
+
 public:
     virtual ~ISquad() {}
 
