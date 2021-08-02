@@ -18,6 +18,15 @@
 
 class ClapTrap {
 
+private:
+    ClapTrap( void );
+
+protected:
+    unsigned int m_HitPoint;
+    unsigned int m_EnergyPoint;
+    std::string m_Name;
+    unsigned int m_AttackDamage;
+
 public:
     ClapTrap( const std::string name );
     ClapTrap( const ClapTrap & model );
@@ -26,17 +35,9 @@ public:
 
     ClapTrap & operator=( const ClapTrap & model );
 
-    void attack( std::string const & target );
+    virtual void attack( std::string const & target );
     void takeDamage( unsigned int amount );
     void beRepaired( unsigned int amount );
-
-protected:
-    ClapTrap( void );
-
-    unsigned int m_HitPoint;
-    unsigned int m_EnergyPoint;
-    std::string m_Name;
-    unsigned int m_AttackDamage;
 
 };
 

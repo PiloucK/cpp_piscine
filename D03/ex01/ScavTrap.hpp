@@ -13,24 +13,15 @@
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include <iostream>
+# include "ClapTrap.hpp"
 # include <string>
 
-class ScavTrap {
+class ScavTrap : public ClapTrap {
 
 private:
-    unsigned int m_iHitPoint;
-    unsigned int m_iMaxHitPoint;
-    unsigned int m_iEnergyPoint;
-    unsigned int m_iMaxEnergyPoint;
-    unsigned int m_iLevel;
-    std::string m_sName;
-    unsigned int m_iMeleeAttackDamage;
-    unsigned int m_iRangedAttackDamage;
-    unsigned int m_iArmorDamageReduction;
+    ScavTrap( void );
 
 public:
-    ScavTrap( void );
     ScavTrap( const std::string name );
     ScavTrap( const ScavTrap & model );
 
@@ -38,16 +29,10 @@ public:
 
     ScavTrap & operator=( const ScavTrap & model );
 
-    std::string getName( void ) const;
-    unsigned int getHitPoint( void ) const;
-    void rangedAttack( std::string const & target );
-    void meleeAttack( std::string const & target );
-    void takeDamage( unsigned int amount );
-    void beRepaired( unsigned int amount );
-    void challengeNewcomer( void );
+    virtual void attack( std::string const & target );
+
+    void guardGate( void ) const;
 
 };
-
-std::ostream & operator<<( std::ostream & stream, const ScavTrap & scavTrap );
 
 #endif
