@@ -55,6 +55,34 @@ ClapTrap::operator=(
     return *this;
 }
 
+std::string
+ClapTrap::getName(
+    void ) const
+{
+    return m_Name;
+}
+
+unsigned int
+ClapTrap::getHitPoint(
+    void ) const
+{
+    return m_HitPoint;
+}
+
+unsigned int
+ClapTrap::getEnergyPoint(
+    void ) const
+{
+    return m_EnergyPoint;
+}
+
+unsigned int
+ClapTrap::getAttackDamage(
+    void ) const
+{
+    return m_AttackDamage;
+}
+
 void
 ClapTrap::attack(
     std::string const & target )
@@ -89,4 +117,16 @@ ClapTrap::beRepaired(
     m_HitPoint += amount;
 
     std::cout << "\nNew life to " << m_HitPoint << ".\n";
+}
+
+std::ostream &
+operator<<(
+    std::ostream & oStream
+    , const ClapTrap & a_ClapTrap )
+{
+    oStream << "\nCL4P-TP " << a_ClapTrap.getName() << " (" << a_ClapTrap.getHitPoint()
+        << " hit points, " << a_ClapTrap.getEnergyPoint() << " energy points, "
+        << a_ClapTrap.getAttackDamage() << " attack damage).\n";
+
+    return oStream;
 }

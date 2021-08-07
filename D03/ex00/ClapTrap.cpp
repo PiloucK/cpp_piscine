@@ -35,6 +35,20 @@ ClapTrap::ClapTrap(
     std::cout << "\nSet right up, same as CL4P-TP " << model.m_Name << '\n';
 }
 
+ClapTrap::ClapTrap( const std::string name
+    , const unsigned int hitPoint
+    , const unsigned int energyPoint
+    , const unsigned int attackDamage)
+        : m_HitPoint(hitPoint)
+        , m_EnergyPoint(energyPoint)
+        , m_Name(name)
+        , m_AttackDamage(attackDamage)
+{
+    std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
+Designation: CL4P-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
+meet your needs before deployment.\n";
+}
+
 ClapTrap::~ClapTrap(
     void )
 {
@@ -53,6 +67,34 @@ ClapTrap::operator=(
     m_AttackDamage = model.m_AttackDamage;
 
     return *this;
+}
+
+std::string
+ClapTrap::getName(
+    void ) const
+{
+    return m_Name;
+}
+
+unsigned int
+ClapTrap::getHitPoint(
+    void ) const
+{
+    return m_HitPoint;
+}
+
+unsigned int
+ClapTrap::getEnergyPoint(
+    void ) const
+{
+    return m_EnergyPoint;
+}
+
+unsigned int
+ClapTrap::getAttackDamage(
+    void ) const
+{
+    return m_AttackDamage;
 }
 
 void
@@ -89,4 +131,16 @@ ClapTrap::beRepaired(
     m_HitPoint += amount;
 
     std::cout << "\nNew life to " << m_HitPoint << ".\n";
+}
+
+std::ostream &
+operator<<(
+    std::ostream & oStream
+    , const ClapTrap & a_ClapTrap )
+{
+    oStream << "\nCL4P-TP " << a_ClapTrap.getName() << " (" << a_ClapTrap.getHitPoint()
+        << " hit points, " << a_ClapTrap.getEnergyPoint() << " energy points, "
+        << a_ClapTrap.getAttackDamage() << " attack damage).\n";
+
+    return oStream;
 }

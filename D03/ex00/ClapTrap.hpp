@@ -22,9 +22,19 @@ public:
     ClapTrap( const std::string name );
     ClapTrap( const ClapTrap & model );
 
+    ClapTrap( const std::string name
+        , const unsigned int hitPoint
+        , const unsigned int energyPoint
+        , const unsigned int attackDamage);
+
     virtual ~ClapTrap( void );
 
     ClapTrap & operator=( const ClapTrap & model );
+
+    std::string getName( void ) const;
+    unsigned int getHitPoint( void ) const;
+    unsigned int getEnergyPoint( void ) const;
+    unsigned int getAttackDamage( void ) const;
 
     void attack( std::string const & target );
     void takeDamage( unsigned int amount );
@@ -39,5 +49,7 @@ private:
     unsigned int m_AttackDamage;
 
 };
+
+std::ostream & operator<<( std::ostream & stream, const ClapTrap & a_ClapTrap );
 
 #endif
