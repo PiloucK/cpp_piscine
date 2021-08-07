@@ -31,13 +31,14 @@ public:
     unsigned int getEnergyPoint( void ) const;
     unsigned int getAttackDamage( void ) const;
 
-    void attack( std::string const & target );
+    virtual void attack( std::string const & target );
     void takeDamage( unsigned int amount );
     void beRepaired( unsigned int amount );
 
 private:
     ClapTrap( void );
 
+protected:
     unsigned int m_HitPoint;
     unsigned int m_EnergyPoint;
     std::string m_Name;

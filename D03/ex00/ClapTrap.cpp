@@ -35,20 +35,6 @@ ClapTrap::ClapTrap(
     std::cout << "\nSet right up, same as CL4P-TP " << model.m_Name << '\n';
 }
 
-ClapTrap::ClapTrap( const std::string name
-    , const unsigned int hitPoint
-    , const unsigned int energyPoint
-    , const unsigned int attackDamage)
-        : m_HitPoint(hitPoint)
-        , m_EnergyPoint(energyPoint)
-        , m_Name(name)
-        , m_AttackDamage(attackDamage)
-{
-    std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
-Designation: CL4P-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
-meet your needs before deployment.\n";
-}
-
 ClapTrap::~ClapTrap(
     void )
 {

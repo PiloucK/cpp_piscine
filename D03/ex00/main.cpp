@@ -74,7 +74,7 @@ main(
 
         std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "totoToto be repared :\n";
+        std::cout << "totoToto be repaired :\n";
         totoToto.beRepaired(40);
         std::cout << totoToto;
         totoToto.beRepaired(80);

@@ -22,11 +22,6 @@ public:
     ClapTrap( const std::string name );
     ClapTrap( const ClapTrap & model );
 
-    ClapTrap( const std::string name
-        , const unsigned int hitPoint
-        , const unsigned int energyPoint
-        , const unsigned int attackDamage);
-
     virtual ~ClapTrap( void );
 
     ClapTrap & operator=( const ClapTrap & model );
