@@ -136,6 +136,8 @@ main(
         std::cout << totoToto;
         totoToto.takeDamage(40);
         std::cout << totoToto;
+        totoToto.takeDamage(40);
+        std::cout << totoToto;
 
         std::cout << "\n--------------------------------------------------------\n";
 

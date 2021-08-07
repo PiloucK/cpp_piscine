@@ -46,6 +46,6 @@ protected:
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const ClapTrap & a_ClapTrap );
+std::ostream & operator<<( std::ostream & oStream, const ClapTrap & a_ClapTrap );
 
 #endif

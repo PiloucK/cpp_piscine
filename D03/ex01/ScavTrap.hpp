@@ -35,4 +35,6 @@ public:
 
 };
 
+std::ostream & operator<<( std::ostream & oStream, const ScavTrap & a_ScavTrap );
+
 #endif

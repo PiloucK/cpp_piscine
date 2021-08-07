@@ -67,3 +67,15 @@ ScavTrap::guardGate(
 {
     std::cout << "\nHodor\n";
 }
+
+std::ostream &
+operator<<(
+    std::ostream & oStream
+    , const ScavTrap & a_ScavTrap )
+{
+    oStream << "\nSC4V-TP " << a_ScavTrap.getName() << " (" << a_ScavTrap.getHitPoint()
+        << " hit points, " << a_ScavTrap.getEnergyPoint() << " energy points, "
+        << a_ScavTrap.getAttackDamage() << " attack damage).\n";
+
+    return oStream;
+}
