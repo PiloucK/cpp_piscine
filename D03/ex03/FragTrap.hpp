@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 11:07:07 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/05/27 14:16:54 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/08 22:32:30 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 # define FRAGTRAP_HPP
 
 # include "ClapTrap.hpp"
-# include <iostream>
 # include <string>
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 
 private:
+    FragTrap( void );
 
 public:
-    FragTrap( void );
     FragTrap( const std::string name );
     FragTrap( const FragTrap & model );
 
@@ -30,10 +29,12 @@ public:
 
     FragTrap & operator=( const FragTrap & model );
 
-    void vaulthunter_dot_exe( std::string const & target );
+    virtual void attack( std::string const & target );
+
+    void highFivesGuys( void );
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const FragTrap & fragTrap );
+std::ostream & operator<<( std::ostream & oStream, const FragTrap & a_FragTrap );
 
 #endif

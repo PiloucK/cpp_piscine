@@ -3,186 +3,330 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 08:26:34 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/28 11:03:48 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 00:13:35 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include <string>
 #include <iostream>
 #include <stdlib.h>
+#include <unistd.h>
 
 int
 main(
     void )
 {
+
+std::cout << "\033[1;31m" ;
+
     {
-        srand(time(NULL));
-        
-        std::cout << "\n\n============================FragTrap testing============================\n\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "First instance, default constructor\n";
-        FragTrap    toto;
-        std::cout << "toto getname return = " << toto.getName() << "\n";
+        std::cout << "First instance, name constructor\n";
+        ClapTrap toto("toto");
+        std::cout << toto;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "Second instance, name constructor\n";
-        FragTrap    totoToto("toto");
-        std::cout << "totoToto getname return = " << totoToto.getName() << "\n";
+        std::cout << "Second instance, other name\n";
+        ClapTrap    totoToto("totoToto");
+        std::cout << totoToto;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "Third instance, copy constructor\n";
-        FragTrap    totoCopy(totoToto);
-        std::cout << "totoCopy getname return = " << totoCopy.getName() << "\n";
+        std::cout << "Third instance, copy constructor (from totoToto)\n";
+        ClapTrap    totoCopy(totoToto);
+        std::cout << totoCopy;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
         std::cout << "Operator overload << :\n";
-        std::cout << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
         std::cout << "Operator overload = (toto = totoCopy):\n";
         toto = totoCopy;
         std::cout << "toto to std output\n";
         std::cout << toto;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "melee attack from totoToto :\n";
-        totoToto.meleeAttack("Karen");
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "ranged attack from totoToto :\n";
-        totoToto.rangedAttack("Karen");
+        std::cout << "totoToto attack :\n";
+        totoToto.attack("Karen");
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "take damage from totoToto :\n";
-        totoToto.takeDamage(30);
+        std::cout << "totoToto take damage :\n";
+        totoToto.takeDamage(3);
         std::cout << totoToto;
-        totoToto.takeDamage(30);
+        totoToto.takeDamage(5);
         std::cout << totoToto;
         totoToto.takeDamage(40);
         std::cout << totoToto;
-        totoToto.takeDamage(60);
-        std::cout << totoToto;
-        totoToto.takeDamage(60);
+        totoToto.takeDamage(40);
         std::cout << totoToto;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "be repared from totoToto :\n";
+        std::cout << "totoToto be repaired :\n";
         totoToto.beRepaired(40);
         std::cout << totoToto;
         totoToto.beRepaired(80);
         std::cout << totoToto;
 
-        std::cout << "\n-------------------------------\n";
-
-        std::cout << "vaulthunter attack from totoToto :\n";
-        totoToto.vaulthunter_dot_exe("Karen");
-        totoToto.vaulthunter_dot_exe("Karen");
-        totoToto.vaulthunter_dot_exe("Karen");
-        totoToto.vaulthunter_dot_exe("Karen");
-        totoToto.vaulthunter_dot_exe("Karen");
-        totoToto.vaulthunter_dot_exe("Karen");
-
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
     }
 
     {
-        srand(time(NULL));
-        
-        std::cout << "\n\n============================ScavTrap testing============================\n\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "First instance, default constructor\n";
-        ScavTrap    toto;
-        std::cout << "toto getname return = " << toto.getName() << "\n";
+        std::cout << "First instance, name constructor\n";
+        ScavTrap toto("toto");
+        std::cout << toto;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "Second instance, name constructor\n";
-        ScavTrap    totoToto("toto");
-        std::cout << "totoToto getname return = " << totoToto.getName() << "\n";
+        std::cout << "Second instance, other name\n";
+        ScavTrap    totoToto("totoToto");
+        std::cout << totoToto;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "Third instance, copy constructor\n";
+        std::cout << "Third instance, copy constructor (from totoToto)\n";
         ScavTrap    totoCopy(totoToto);
-        std::cout << "totoCopy getname return = " << totoCopy.getName() << "\n";
+        std::cout << totoCopy;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
         std::cout << "Operator overload << :\n";
-        std::cout << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
         std::cout << "Operator overload = (toto = totoCopy):\n";
         toto = totoCopy;
         std::cout << "toto to std output\n";
         std::cout << toto;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "melee attack from totoToto :\n";
-        totoToto.meleeAttack("Karen");
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "ranged attack from totoToto :\n";
-        totoToto.rangedAttack("Karen");
+        std::cout << "totoToto attack :\n";
+        totoToto.attack("Karen");
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "take damage from totoToto :\n";
-        totoToto.takeDamage(30);
+        std::cout << "totoToto take damage :\n";
+        totoToto.takeDamage(3);
         std::cout << totoToto;
-        totoToto.takeDamage(30);
+        totoToto.takeDamage(5);
         std::cout << totoToto;
         totoToto.takeDamage(40);
         std::cout << totoToto;
-        totoToto.takeDamage(60);
+        totoToto.takeDamage(40);
         std::cout << totoToto;
-        totoToto.takeDamage(60);
+        totoToto.takeDamage(40);
         std::cout << totoToto;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "be repared from totoToto :\n";
+        std::cout << "totoToto be repaired :\n";
         totoToto.beRepaired(40);
         std::cout << totoToto;
         totoToto.beRepaired(80);
         std::cout << totoToto;
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "challenge newcomer from totoToto :\n";
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
-        totoToto.challengeNewcomer();
+        std::cout << "toto guard gate :\n";
+        toto.guardGate();
 
-        std::cout << "\n-------------------------------\n";
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "ScavTrap as a ClapTrap, virtual verifications :\n";
+        ClapTrap *tutu;
+        tutu = &toto;
+        tutu->attack("Mama");
+
+        std::cout << "\n--------------------------------------------------------\n";
     }
 
-    std::cout << "\n-------------------------------\n";
+    {
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "First instance, name constructor\n";
+        FragTrap toto("toto");
+        std::cout << toto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Second instance, other name\n";
+        FragTrap    totoToto("totoToto");
+        std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Third instance, copy constructor (from totoToto)\n";
+        FragTrap    totoCopy(totoToto);
+        std::cout << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload = (toto = totoCopy):\n";
+        toto = totoCopy;
+        std::cout << "toto to std output\n";
+        std::cout << toto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "totoToto attack :\n";
+        totoToto.attack("Karen");
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "totoToto take damage :\n";
+        totoToto.takeDamage(3);
+        std::cout << totoToto;
+        totoToto.takeDamage(5);
+        std::cout << totoToto;
+        totoToto.takeDamage(40);
+        std::cout << totoToto;
+        totoToto.takeDamage(40);
+        std::cout << totoToto;
+        totoToto.takeDamage(40);
+        std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "totoToto be repaired :\n";
+        totoToto.beRepaired(40);
+        std::cout << totoToto;
+        totoToto.beRepaired(80);
+        std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "toto high fives guys :\n";
+        toto.highFivesGuys();
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "FragTrap as a ClapTrap, virtual verifications :\n";
+        ClapTrap *tutu;
+        tutu = &toto;
+        tutu->attack("Ken");
+
+        std::cout << "\n--------------------------------------------------------\n";
+    }
+
+std::cout << "\033[1;34m" ;
+
+    {
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "First instance, name constructor\n";
+        DiamondTrap toto("toto");
+        std::cout << toto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Second instance, other name\n";
+        DiamondTrap    totoToto("totoToto");
+        std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Third instance, copy constructor (from totoToto)\n";
+        DiamondTrap    totoCopy(totoToto);
+        std::cout << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload = (toto = totoCopy):\n";
+        toto = totoCopy;
+        std::cout << "toto to std output\n";
+        std::cout << toto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "totoToto attack :\n";
+        totoToto.attack("Karen");
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "totoToto take damage :\n";
+        totoToto.takeDamage(3);
+        std::cout << totoToto;
+        totoToto.takeDamage(5);
+        std::cout << totoToto;
+        totoToto.takeDamage(40);
+        std::cout << totoToto;
+        totoToto.takeDamage(40);
+        std::cout << totoToto;
+        totoToto.takeDamage(40);
+        std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "totoToto be repaired :\n";
+        totoToto.beRepaired(40);
+        std::cout << totoToto;
+        totoToto.beRepaired(80);
+        std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "toto high fives guys :\n";
+        toto.highFivesGuys();
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "DiamondTrap as a ClapTrap, virtual verifications :\n";
+        ClapTrap *tutu;
+        tutu = &toto;
+        tutu->attack("Ken");
+
+        std::cout << "\n--------------------------------------------------------\n";
+    }
+
+    std::cout << "\n--------------------------------------------------------\n";
 
     return 0;
 }

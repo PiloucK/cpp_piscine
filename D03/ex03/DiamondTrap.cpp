@@ -1,47 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/08 20:30:44 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/08/08 22:23:21 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/08/09 00:17:12 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 #include <iostream>
 #include <string>
 
-FragTrap::FragTrap(
+DiamondTrap::DiamondTrap(
     const std::string name )
-        : ClapTrap(name)
+        : ClapTrap(name + "_clap_name")
+        , FragTrap(name)
+        , ScavTrap(name)
 {
-    m_HitPoint = 100;
-    m_EnergyPoint = 100;
-    m_AttackDamage = 30;
+    m_HitPoint = FragTrap::m_HitPoint;
+    m_EnergyPoint = ScavTrap::m_EnergyPoint;
+    m_AttackDamage = FragTrap::m_AttackDamage;
     std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
-Designation: FR4G-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
+Designation: DI4MONDD-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
 meet your needs before deployment.\n";
 }
 
-FragTrap::FragTrap(
-    const FragTrap & model )
+DiamondTrap::DiamondTrap(
+    const DiamondTrap & model )
         : ClapTrap(model)
+        , FragTrap(model)
+        , ScavTrap(model)
 {
-    std::cout << "\nSet right up, same as FR4G-TP " << model.m_Name << '\n';
+    std::cout << "\nSet right up, same as DI4MOND-TP " << model.m_Name << '\n';
 }
 
-FragTrap::~FragTrap(
+DiamondTrap::~DiamondTrap(
     void )
 {
-    std::cout << "\nSheeeshh u did good.\n";
+    std::cout << "\nI have no imagination no more.\n";
 }
 
-FragTrap &
-FragTrap::operator=(
-    const FragTrap & model )
+DiamondTrap &
+DiamondTrap::operator=(
+    const DiamondTrap & model )
 {
     std::cout << "\nIt's about to get magical!\n";
 
@@ -54,27 +58,20 @@ FragTrap::operator=(
 }
 
 void
-FragTrap::attack(
+DiamondTrap::attack(
     std::string const & target )
 {
     std::cout<< "\n" << m_AttackDamage << " times PAN " << target << ".\n";
 }
 
-void
-FragTrap::highFivesGuys(
-    void )
-{
-    std::cout << "\nGimme da klap ... (pleaaase?)\n";
-}
-
 std::ostream &
 operator<<(
     std::ostream & oStream
-    , const FragTrap & a_FragTrap )
+    , const DiamondTrap & a_DiamondTrap )
 {
-    oStream << "\nFR4G-TP " << a_FragTrap.getName() << " (" << a_FragTrap.getHitPoint()
-        << " hit points, " << a_FragTrap.getEnergyPoint() << " energy points, "
-        << a_FragTrap.getAttackDamage() << " attack damage).\n";
+    oStream << "\nDI4MOND-TP " << a_DiamondTrap.getName() << " (" << a_DiamondTrap.getHitPoint()
+        << " hit points, " << a_DiamondTrap.getEnergyPoint() << " energy points, "
+        << a_DiamondTrap.getAttackDamage() << " attack damage).\n";
 
     return oStream;
 }

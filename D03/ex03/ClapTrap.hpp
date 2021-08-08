@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 17:53:25 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/02 13:55:47 by clkuznie         ###   ########.fr       */
+/*   Created: 2021/05/10 11:07:07 by clkuznie          #+#    #+#             */
+/*   Updated: 2021/08/08 20:13:46 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,8 @@
 
 class ClapTrap {
 
-private:
-    ClapTrap( void );
-
-protected:
-    unsigned int m_HitPoint;
-    unsigned int m_MaxHitPoint;
-    unsigned int m_EnergyPoint;
-    unsigned int m_MaxEnergyPoint;
-    unsigned int m_Level;
-    std::string m_Name;
-    unsigned int m_MeleeAttackDamage;
-    unsigned int m_RangedAttackDamage;
-    unsigned int m_ArmorDamageReduction;
-
 public:
-    ClapTrap( const unsigned int hitPoint
-        , const unsigned int maxHitPoint
-        , const unsigned int energyPoint
-        , const unsigned int maxEnergyPoint
-        , const unsigned int level
-        , const std::string name
-        , const unsigned int meleeAttackDamage
-        , const unsigned int rangedAttackDamage
-        , const unsigned int armorDamageReduction);
+    ClapTrap( const std::string name );
     ClapTrap( const ClapTrap & model );
 
     virtual ~ClapTrap( void );
@@ -50,14 +28,24 @@ public:
 
     std::string getName( void ) const;
     unsigned int getHitPoint( void ) const;
+    unsigned int getEnergyPoint( void ) const;
+    unsigned int getAttackDamage( void ) const;
 
-    void rangedAttack( std::string const & target );
-    void meleeAttack( std::string const & target );
+    virtual void attack( std::string const & target );
     void takeDamage( unsigned int amount );
     void beRepaired( unsigned int amount );
 
+private:
+    ClapTrap( void );
+
+protected:
+    unsigned int m_HitPoint;
+    unsigned int m_EnergyPoint;
+    std::string m_Name;
+    unsigned int m_AttackDamage;
+
 };
 
-std::ostream & operator<<( std::ostream & stream, const ClapTrap & clapTrap );
+std::ostream & operator<<( std::ostream & oStream, const ClapTrap & a_ClapTrap );
 
 #endif
