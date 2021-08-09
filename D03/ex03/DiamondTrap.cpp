@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 22:23:21 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/09 17:14:51 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 21:15:54 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ DiamondTrap::operator=(
     m_EnergyPoint = model.m_EnergyPoint;
     m_Name = model.m_Name;
     m_AttackDamage = model.m_AttackDamage;
+
+    ClapTrap::m_HitPoint = model.ClapTrap::m_HitPoint;
+    ClapTrap::m_EnergyPoint = model.ClapTrap::m_EnergyPoint;
+    ClapTrap::m_Name = model.ClapTrap::m_Name;
+    ClapTrap::m_AttackDamage = model.ClapTrap::m_AttackDamage;
 
     return *this;
 }
