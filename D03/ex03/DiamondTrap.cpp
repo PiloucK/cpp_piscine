@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 22:23:21 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/09 21:15:54 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 21:47:28 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ DiamondTrap::DiamondTrap(
         , ScavTrap(model)
 {
     m_Name = model.m_Name;
+
     std::cout << "\nSet right up, same as DI4MOND-TP " << model.m_Name << '\n';
 }
 

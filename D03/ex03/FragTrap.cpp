@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/09 16:55:37 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 21:46:30 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ FragTrap::FragTrap(
     const FragTrap & model )
         : ClapTrap(model)
 {
+    ClapTrap::m_HitPoint = model.ClapTrap::m_HitPoint;
+    ClapTrap::m_EnergyPoint = model.ClapTrap::m_EnergyPoint;
+    ClapTrap::m_Name = model.ClapTrap::m_Name;
+    ClapTrap::m_AttackDamage = model.ClapTrap::m_AttackDamage;
+
     std::cout << "\nSet right up, same as FR4G-TP " << model.m_Name << '\n';
 }
 
@@ -52,6 +57,11 @@ FragTrap::operator=(
     m_EnergyPoint = model.m_EnergyPoint;
     m_Name = model.m_Name;
     m_AttackDamage = model.m_AttackDamage;
+
+    ClapTrap::m_HitPoint = model.ClapTrap::m_HitPoint;
+    ClapTrap::m_EnergyPoint = model.ClapTrap::m_EnergyPoint;
+    ClapTrap::m_Name = model.ClapTrap::m_Name;
+    ClapTrap::m_AttackDamage = model.ClapTrap::m_AttackDamage;
 
     return *this;
 }

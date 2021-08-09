@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 08:26:34 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/09 21:17:31 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 21:58:14 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,29 +41,6 @@ std::cout << "\033[1;31m" ;
 
         std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "Third instance, copy constructor (from totoToto)\n";
-        ClapTrap    totoCopy(totoToto);
-        std::cout << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload << :\n";
-        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload = (toto = totoCopy):\n";
-        toto = totoCopy;
-        std::cout << "toto to std output\n";
-        std::cout << toto;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload << :\n";
-        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
         std::cout << "totoToto attack :\n";
         totoToto.attack("Karen");
 
@@ -81,11 +58,34 @@ std::cout << "\033[1;31m" ;
 
         std::cout << "\n--------------------------------------------------------\n";
 
+        std::cout << "Operator overload = (toto = totoToto):\n";
+        toto = totoToto;
+        std::cout << "toto to std output\n";
+        std::cout << toto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
         std::cout << "totoToto be repaired :\n";
         totoToto.beRepaired(40);
         std::cout << totoToto;
         totoToto.beRepaired(80);
         std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Third instance, copy constructor (from totoToto)\n";
+        ClapTrap    totoCopy(totoToto);
+        std::cout << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
 
         std::cout << "\n--------------------------------------------------------\n";
     }
@@ -105,29 +105,6 @@ std::cout << "\033[1;31m" ;
 
         std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "Third instance, copy constructor (from totoToto)\n";
-        ScavTrap    totoCopy(totoToto);
-        std::cout << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload << :\n";
-        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload = (toto = totoCopy):\n";
-        toto = totoCopy;
-        std::cout << "toto to std output\n";
-        std::cout << toto;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload << :\n";
-        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
         std::cout << "totoToto attack :\n";
         totoToto.attack("Karen");
 
@@ -147,11 +124,34 @@ std::cout << "\033[1;31m" ;
 
         std::cout << "\n--------------------------------------------------------\n";
 
+        std::cout << "Operator overload = (toto = totoToto):\n";
+        toto = totoToto;
+        std::cout << "toto to std output\n";
+        std::cout << toto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
         std::cout << "totoToto be repaired :\n";
         totoToto.beRepaired(40);
         std::cout << totoToto;
         totoToto.beRepaired(80);
         std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Third instance, copy constructor (from totoToto)\n";
+        ScavTrap    totoCopy(totoToto);
+        std::cout << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
 
         std::cout << "\n--------------------------------------------------------\n";
 
@@ -183,29 +183,6 @@ std::cout << "\033[1;31m" ;
 
         std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "Third instance, copy constructor (from totoToto)\n";
-        FragTrap    totoCopy(totoToto);
-        std::cout << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload << :\n";
-        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload = (toto = totoCopy):\n";
-        toto = totoCopy;
-        std::cout << "toto to std output\n";
-        std::cout << toto;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload << :\n";
-        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
         std::cout << "totoToto attack :\n";
         totoToto.attack("Karen");
 
@@ -225,11 +202,34 @@ std::cout << "\033[1;31m" ;
 
         std::cout << "\n--------------------------------------------------------\n";
 
+        std::cout << "Operator overload = (toto = totoToto):\n";
+        toto = totoToto;
+        std::cout << "toto to std output\n";
+        std::cout << toto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
         std::cout << "totoToto be repaired :\n";
         totoToto.beRepaired(40);
         std::cout << totoToto;
         totoToto.beRepaired(80);
         std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Third instance, copy constructor (from totoToto)\n";
+        FragTrap    totoCopy(totoToto);
+        std::cout << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
 
         std::cout << "\n--------------------------------------------------------\n";
 
@@ -263,29 +263,6 @@ std::cout << "\033[5;34m" ;
 
         std::cout << "\n--------------------------------------------------------\n";
 
-        std::cout << "Third instance, copy constructor (from totoToto)\n";
-        DiamondTrap    totoCopy(totoToto);
-        std::cout << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload << :\n";
-        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload = (toto = totoCopy):\n";
-        toto = totoCopy;
-        std::cout << "toto to std output\n";
-        std::cout << toto;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
-        std::cout << "Operator overload << :\n";
-        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
-
-        std::cout << "\n--------------------------------------------------------\n";
-
         std::cout << "totoToto attack :\n";
         totoToto.attack("Karen");
 
@@ -305,11 +282,34 @@ std::cout << "\033[5;34m" ;
 
         std::cout << "\n--------------------------------------------------------\n";
 
+        std::cout << "Operator overload = (toto = totoToto):\n";
+        toto = totoToto;
+        std::cout << "toto to std output\n";
+        std::cout << toto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
         std::cout << "totoToto be repaired :\n";
         totoToto.beRepaired(40);
         std::cout << totoToto;
         totoToto.beRepaired(80);
         std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Third instance, copy constructor (from totoToto)\n";
+        DiamondTrap    totoCopy(totoToto);
+        std::cout << totoCopy;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "Operator overload << :\n";
+        std::cout << "toto :" << toto << "totoToto :" << totoToto << "totoCopy :" << totoCopy;
 
         std::cout << "\n--------------------------------------------------------\n";
 
