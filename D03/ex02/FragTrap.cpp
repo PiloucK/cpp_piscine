@@ -3,30 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/02 16:07:25 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/08 20:30:44 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-#include <stdlib.h>
-
-FragTrap::FragTrap(
-    void )
-        : ClapTrap(100, 100, 100, 100, 1, "FR4G-TP", 30, 20, 5)
-{
-    std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
-Designation: FR4G-TP, Hyperion Robot, Class C.\n";
-}
+#include <iostream>
+#include <string>
 
 FragTrap::FragTrap(
     const std::string name )
-        : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
+        : ClapTrap(name)
 {
+    m_HitPoint = 100;
+    m_EnergyPoint = 100;
+    m_AttackDamage = 30;
     std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
-Designation: FR4G-TP " << name << ", Hyperion Robot, Class C.\n";
+Designation: FR4G-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
+meet your needs before deployment.\n";
 }
 
 FragTrap::FragTrap(
@@ -34,15 +31,12 @@ FragTrap::FragTrap(
         : ClapTrap(model)
 {
     std::cout << "\nSet right up, same as FR4G-TP " << model.m_Name << '\n';
-
-    *this = model;
 }
 
 FragTrap::~FragTrap(
     void )
 {
-    std::cout << "\nI feel like an idiot now.\n";
-    // std::cout << "\nI'M DEAD I'M DEAD OHMYGOD I'M DEAD!\n";
+    std::cout << "\nSheeeshh u did good.\n";
 }
 
 FragTrap &
@@ -51,60 +45,36 @@ FragTrap::operator=(
 {
     std::cout << "\nIt's about to get magical!\n";
 
-    this->m_HitPoint = model.m_HitPoint;
-    this->m_MaxHitPoint = model.m_MaxHitPoint;
-    this->m_EnergyPoint = model.m_EnergyPoint;
-    this->m_MaxEnergyPoint = model.m_MaxEnergyPoint;
-    this->m_Level = model.m_Level;
-    this->m_Name = model.m_Name;
-    this->m_MeleeAttackDamage = model.m_MeleeAttackDamage;
-    this->m_RangedAttackDamage = model.m_RangedAttackDamage;
-    this->m_ArmorDamageReduction = model.m_ArmorDamageReduction;
+    m_HitPoint = model.m_HitPoint;
+    m_EnergyPoint = model.m_EnergyPoint;
+    m_Name = model.m_Name;
+    m_AttackDamage = model.m_AttackDamage;
 
     return *this;
+}
+
+void
+FragTrap::attack(
+    std::string const & target )
+{
+    std::cout<< "\n" << m_AttackDamage << " times PAN " << target << ".\n";
+}
+
+void
+FragTrap::highFivesGuys(
+    void )
+{
+    std::cout << "\nGimme da klap ... (pleaaase?)\n";
 }
 
 std::ostream &
 operator<<(
     std::ostream & oStream
-    , const FragTrap & fragTrap )
+    , const FragTrap & a_FragTrap )
 {
-    oStream << "\nFR4G-TP " << fragTrap.getName() << '(' << fragTrap.getHitPoint()
-        << " hit points left).\n";
+    oStream << "\nFR4G-TP " << a_FragTrap.getName() << " (" << a_FragTrap.getHitPoint()
+        << " hit points, " << a_FragTrap.getEnergyPoint() << " energy points, "
+        << a_FragTrap.getAttackDamage() << " attack damage).\n";
 
     return oStream;
-}
-
-void
-FragTrap::vaulthunter_dot_exe(
-    std::string const & target )
-{
-    static const std::string attacks [] = {
-        "Gun Wizard"
-        , "One Shot Wonder"
-        , "Laser Inferno"
-        , "Senseless Sacrifice"
-        , "Funzerker"
-    };
-
-    static const unsigned int damages [] = {
-        rand() % 35
-        , rand() % 35
-        , rand() % 35
-        , rand() % 35
-        , rand() % 35
-    };
-
-    if (this->m_EnergyPoint >= 25) {
-        unsigned int randomAttack = rand() % 5;
-
-        std::cout << "\nF to the R to the 4 to the G to the WHAAT!\n";
-
-        std::cout << attacks[randomAttack] << " straight in for " << damages[randomAttack] << " damages to you, " << target << "\n";
-
-        this->m_EnergyPoint -= 25;
-    } else {
-        std::cout << "\nDangit, I'm out! Need 25 more energy points?!\n";
-    }
-
 }

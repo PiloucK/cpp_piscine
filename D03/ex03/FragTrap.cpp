@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/08 20:30:44 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 16:55:37 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@
 FragTrap::FragTrap(
     const std::string name )
         : ClapTrap(name)
+        , m_HitPoint(100)
+        , m_EnergyPoint(100)
+        , m_AttackDamage(30)
 {
-    m_HitPoint = 100;
-    m_EnergyPoint = 100;
-    m_AttackDamage = 30;
+    ClapTrap::m_HitPoint = 100;
+    ClapTrap::m_EnergyPoint = 100;
+    ClapTrap::m_AttackDamage = 30;
     std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
 Designation: FR4G-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
 meet your needs before deployment.\n";

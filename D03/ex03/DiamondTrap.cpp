@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 22:23:21 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/09 00:17:12 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 17:14:51 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 DiamondTrap::DiamondTrap(
     const std::string name )
         : ClapTrap(name + "_clap_name")
-        , FragTrap(name)
-        , ScavTrap(name)
+        , FragTrap(name + "_clap_name")
+        , ScavTrap(name + "_clap_name")
 {
-    m_HitPoint = FragTrap::m_HitPoint;
-    m_EnergyPoint = ScavTrap::m_EnergyPoint;
-    m_AttackDamage = FragTrap::m_AttackDamage;
+    ClapTrap::m_HitPoint = m_HitPoint;
+    m_EnergyPoint = ClapTrap::m_EnergyPoint;
+    ClapTrap::m_AttackDamage = m_AttackDamage;
+    m_Name = name;
     std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
 Designation: DI4MONDD-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
 meet your needs before deployment.\n";
@@ -34,6 +35,7 @@ DiamondTrap::DiamondTrap(
         , FragTrap(model)
         , ScavTrap(model)
 {
+    m_Name = model.m_Name;
     std::cout << "\nSet right up, same as DI4MOND-TP " << model.m_Name << '\n';
 }
 
@@ -61,7 +63,14 @@ void
 DiamondTrap::attack(
     std::string const & target )
 {
-    std::cout<< "\n" << m_AttackDamage << " times PAN " << target << ".\n";
+    ScavTrap::attack(target);
+}
+
+void
+DiamondTrap::whoAmI(
+    void ) const
+{
+    std::cout << ClapTrap::m_Name << "|" << m_Name;
 }
 
 std::ostream &
@@ -69,7 +78,9 @@ operator<<(
     std::ostream & oStream
     , const DiamondTrap & a_DiamondTrap )
 {
-    oStream << "\nDI4MOND-TP " << a_DiamondTrap.getName() << " (" << a_DiamondTrap.getHitPoint()
+    oStream << "\nDI4MOND-TP ";
+    a_DiamondTrap.whoAmI();
+    oStream << " (" << a_DiamondTrap.getHitPoint()
         << " hit points, " << a_DiamondTrap.getEnergyPoint() << " energy points, "
         << a_DiamondTrap.getAttackDamage() << " attack damage).\n";
 

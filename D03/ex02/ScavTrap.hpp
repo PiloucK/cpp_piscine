@@ -6,7 +6,7 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 11:07:07 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/02 13:56:07 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/11 16:51:36 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 # define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
-# include <iostream>
 # include <string>
 
 class ScavTrap : public ClapTrap {
 
 private:
+    ScavTrap( void );
 
 public:
-    ScavTrap( void );
     ScavTrap( const std::string name );
     ScavTrap( const ScavTrap & model );
 
@@ -30,10 +29,12 @@ public:
 
     ScavTrap & operator=( const ScavTrap & model );
 
-    void challengeNewcomer( void );
+    virtual void attack( std::string const & target );
+
+    void guardGate( void ) const;
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const ScavTrap & scavTrap );
+std::ostream & operator<<( std::ostream & oStream, const ScavTrap & a_ScavTrap );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 08:26:34 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/09 00:13:35 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 16:58:01 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,6 +310,11 @@ std::cout << "\033[1;34m" ;
         std::cout << totoToto;
         totoToto.beRepaired(80);
         std::cout << totoToto;
+
+        std::cout << "\n--------------------------------------------------------\n";
+
+        std::cout << "toto guard gate :\n";
+        toto.guardGate();
 
         std::cout << "\n--------------------------------------------------------\n";
 

@@ -6,44 +6,37 @@
 /*   By: clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 13:31:45 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/06/02 16:16:20 by clkuznie         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:57:30 by clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include <stdlib.h>
-
-ScavTrap::ScavTrap(
-    void )
-        : ClapTrap(100, 100, 50, 50, 1, "SC4V-TP", 20, 15, 3)
-{
-    std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
-Designation: SCA4V-TP, Hyperion Robot, Class C.\n";
-}
-
+#include <iostream>
+#include <string>
 
 ScavTrap::ScavTrap(
     const std::string name )
-        : ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3)
+        : ClapTrap(name)
 {
+    m_HitPoint = 100;
+    m_EnergyPoint = 50;
+    m_AttackDamage = 20;
     std::cout << "\nBooting sequence complete. Hello! I am your new steward bot. \
-Designation: SCA4V-TP " << name << ", Hyperion Robot, Class C.\n";
+Designation: SCA4V-TP " << name << ", Hyperion Robot, Class C. Please adjust factory settings to \
+meet your needs before deployment.\n";
 }
 
 ScavTrap::ScavTrap(
     const ScavTrap & model )
         : ClapTrap(model)
 {
-    std::cout << "\nSet right up, same as SCA4V-TP " << model.m_Name << '\n';
-
-    *this = model;
+    std::cout << "\nSet right up, same as SC4V-TP " << model.m_Name << '\n';
 }
 
 ScavTrap::~ScavTrap(
     void )
 {
     std::cout << "\nI feel like an idiot now.\n";
-    // std::cout << "\nI'M DEAD I'M DEAD OHMYGOD I'M DEAD!\n";
 }
 
 ScavTrap &
@@ -52,50 +45,37 @@ ScavTrap::operator=(
 {
     std::cout << "\nIt's about to get magical!\n";
 
-    this->m_HitPoint = model.m_HitPoint;
-    this->m_MaxHitPoint = model.m_MaxHitPoint;
-    this->m_EnergyPoint = model.m_EnergyPoint;
-    this->m_MaxEnergyPoint = model.m_MaxEnergyPoint;
-    this->m_Level = model.m_Level;
-    this->m_Name = model.m_Name;
-    this->m_MeleeAttackDamage = model.m_MeleeAttackDamage;
-    this->m_RangedAttackDamage = model.m_RangedAttackDamage;
-    this->m_ArmorDamageReduction = model.m_ArmorDamageReduction;
+    m_HitPoint = model.m_HitPoint;
+    m_EnergyPoint = model.m_EnergyPoint;
+    m_Name = model.m_Name;
+    m_AttackDamage = model.m_AttackDamage;
 
     return *this;
+}
+
+void
+ScavTrap::attack(
+    std::string const & target )
+{
+    std::cout << "\nGet ready for some ScavTrap face time " << target 
+    << "! Up close and personal. " << this->m_AttackDamage << " sexy damages.\n";
+}
+
+void
+ScavTrap::guardGate(
+    void ) const
+{
+    std::cout << "\nHodor\n";
 }
 
 std::ostream &
 operator<<(
     std::ostream & oStream
-    , const ScavTrap & scavTrap )
+    , const ScavTrap & a_ScavTrap )
 {
-    oStream << "\nSCA4V-TP " << scavTrap.getName() << '(' << scavTrap.getHitPoint()
-        << " hit points left).\n";
+    oStream << "\nSC4V-TP " << a_ScavTrap.getName() << " (" << a_ScavTrap.getHitPoint()
+        << " hit points, " << a_ScavTrap.getEnergyPoint() << " energy points, "
+        << a_ScavTrap.getAttackDamage() << " attack damage).\n";
 
     return oStream;
-}
-
-void
-ScavTrap::challengeNewcomer(
-    void )
-{
-    static const std::string challenges [] = {
-        "Talk to Claptrap"
-        , "Collect 139,377 brown rocks"
-        , "Defeat Ug-Thak, Lord of Skags"
-        , "Pilfer lost staff of Mount Schuler"
-        , "Defeat Destroyer of Worlds"
-        , "Dance, dance, baby"
-        , "Find stash"
-        , "Grab invitations"
-        , "Turn on boombox"
-        , "Eat pizza"
-        , "Enjoy party"
-    };
-
-    unsigned int random = rand() % 11;
-
-    std::cout << "Hey! Before you can even enter, you have to " << challenges[random] << '\n';
-
 }

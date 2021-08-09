@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 11:07:07 by clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/08 22:32:30 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 17:10:37 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ class FragTrap : virtual public ClapTrap {
 
 private:
     FragTrap( void );
+
+protected:
+    unsigned int m_HitPoint;
+    unsigned int m_EnergyPoint;
+    unsigned int m_AttackDamage;
 
 public:
     FragTrap( const std::string name );

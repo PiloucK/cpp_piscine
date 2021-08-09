@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 22:23:34 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/09 00:15:03 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/09 17:03:55 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ public:
     DiamondTrap & operator=( const DiamondTrap & model );
 
     void attack( std::string const & target );
+
+    void whoAmI() const;
 
 };
 
