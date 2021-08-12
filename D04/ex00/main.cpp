@@ -1,17 +1,14 @@
-#include "Sorcerer.hpp"
-#include "Peon.hpp"
-#include "Victim.hpp"
-#include <iostream>
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-int
-main(
-    void )
+int main()
 {
-    Sorcerer robert("Robert", "the Magnificent");
-    Victim jim("Jimmy");
-    Peon joe("Joe");
-    std::cout << robert << jim << joe;
-    robert.polymorph(jim);
-    robert.polymorph(joe);
-    return 0;
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    j->makeSound();
+    meta->makeSound();
 }
