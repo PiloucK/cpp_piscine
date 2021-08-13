@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 09:03:14 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/12 16:55:17 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/08/12 16:55:57 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/08/12 16:58:50 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal(
+WrongAnimal::WrongAnimal(
     void )
         : m_Type(" ")
 {
-    std::cout << "Animal default constructor\n";
+    std::cout << "WrongAnimal default constructor\n";
 }
 
-Animal::Animal(
+WrongAnimal::WrongAnimal(
     const std::string type )
         : m_Type(type)
 {
-    std::cout << "Animal constructor type (" << m_Type << ") provided\n";
+    std::cout << "WrongAnimal constructor type (" << m_Type << ") provided\n";
 }
 
-Animal::Animal(
-    const Animal & model )
+WrongAnimal::WrongAnimal(
+    const WrongAnimal & model )
         : m_Type(model.m_Type)
 {
-    std::cout << "Animal copy constructor from model of type: " << m_Type << "\n";
+    std::cout << "WrongAnimal copy constructor from model of type: " << m_Type << "\n";
 }
 
-Animal::~Animal(
+WrongAnimal::~WrongAnimal(
     void )
 {
-    std::cout << "Animal destructor, " << m_Type << " destroyed\n";
+    std::cout << "WrongAnimal destructor, " << m_Type << " destroyed\n";
 }
 
-Animal &
-Animal::operator=(
-    const Animal & model )
+WrongAnimal &
+WrongAnimal::operator=(
+    const WrongAnimal & model )
 {
     std::cout << "Operator =, type changed from " << m_Type << " to " << model.m_Type << "\n";
     m_Type = model.m_Type;
@@ -50,14 +50,14 @@ Animal::operator=(
 }
 
 const std::string &
-Animal::getType(
+WrongAnimal::getType(
     void ) const
 {
     return (m_Type);
 }
 
 void
-Animal::makeSound(
+WrongAnimal::makeSound(
     void ) const
 {
     std::cout << "...\n";
@@ -66,9 +66,9 @@ Animal::makeSound(
 std::ostream &
 operator<<(
     std::ostream & oStream
-    , const Animal & a_Animal )
+    , const WrongAnimal & a_WrongAnimal )
 {
-    oStream << a_Animal.getType() << " on the stream\n";
+    oStream << a_WrongAnimal.getType() << " on the stream\n";
 
     return (oStream);
 }
