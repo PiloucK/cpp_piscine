@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 17:23:24 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/09/17 14:26:06 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/08/12 17:39:31 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,12 @@ Brain::operator=(
     return *this;
 }
 
-const std::string
-Brain::bestIdea(
-    void ) const
-{
-    return ideas[0];
-}
-
 std::ostream &
 operator<<(
     std::ostream & oStream
     , const Brain & a_Brain )
 {
-    oStream << "A Brain on the stream thinking '" << a_Brain.bestIdea() << "'\n";
+    oStream << "A Brain on the stream\n";
 
     return (oStream);
 }

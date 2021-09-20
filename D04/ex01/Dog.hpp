@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 14:00:40 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/12 17:41:47 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/09/17 14:18:10 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 # include <iostream>
 # include <string>
 

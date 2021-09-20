@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 13:57:54 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/09/17 14:25:36 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/08/12 16:56:44 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/08/12 17:00:15 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WRONG_ANIMAL_HPP
+# define WRONG_ANIMAL_HPP
 
 # include <iostream>
 # include <string>
 
-class Brain {
+class WrongAnimal {
 
 public:
-    Brain( void );
-    Brain( const std::string model_ideas[100] );
-    Brain( const Brain & model );
+    WrongAnimal( void );
+    WrongAnimal( const std::string type );
+    WrongAnimal( const WrongAnimal & model );
 
-    virtual ~Brain( void );
+    virtual ~WrongAnimal( void );
 
-    Brain & operator=( const Brain & model );
-    
-    const std::string bestIdea( void ) const;
+    WrongAnimal & operator=( const WrongAnimal & model );
+
+    const std::string & getType( void ) const;
+
+    void makeSound( void ) const;
 
 protected:
-    std::string ideas[100];
+    std::string m_Type;
     
 private:
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const Brain & a_Brain );
+std::ostream & operator<<( std::ostream & stream, const WrongAnimal & a_WrongAnimal );
 
 #endif

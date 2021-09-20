@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 13:57:54 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/09/17 14:25:36 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/08/10 14:00:24 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/08/12 17:41:25 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
+# include "Animal.hpp"
+# include "Brain.hpp"
 # include <iostream>
 # include <string>
 
-class Brain {
+class Cat : public Animal {
 
 public:
-    Brain( void );
-    Brain( const std::string model_ideas[100] );
-    Brain( const Brain & model );
+    Cat( void );
+    Cat( const Cat & model );
 
-    virtual ~Brain( void );
+    virtual ~Cat( void );
 
-    Brain & operator=( const Brain & model );
-    
-    const std::string bestIdea( void ) const;
+    Cat & operator=( const Cat & model );
+
+    void makeSound( void ) const;
 
 protected:
-    std::string ideas[100];
-    
+
 private:
+    Brain * m_Brain;
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const Brain & a_Brain );
+std::ostream & operator<<( std::ostream & stream, const Cat & a_Cat );
 
 #endif

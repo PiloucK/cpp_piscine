@@ -1,4 +1,3 @@
-#include "Brain.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
@@ -22,3 +21,4 @@ int main()
     delete i;
     delete k;
 }
+

@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 16:36:18 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/09/17 14:20:54 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/08/12 09:04:02 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/08/12 17:02:47 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog(
+WrongCat::WrongCat(
     void )
-        : Animal("Dog")
-        , m_Brain(new Brain)
+        : WrongAnimal("WrongCat")
 {
-    std::cout << "Dog default constructor\n";
+    std::cout << "WrongCat default constructor\n";
 }
 
-Dog::Dog(
-    const Dog & model )
-        : Animal(model.m_Type)
-        , m_Brain(new Brain(*model.m_Brain))
+WrongCat::WrongCat(
+    const WrongCat & model )
+        : WrongAnimal(model.m_Type)
 {
-    std::cout << "Cat copy constructor from model of type: " << m_Type << "\n";
+    std::cout << "WrongCat copy constructor from model of type: " << m_Type << "\n";
 }
 
-Dog::~Dog(
+WrongCat::~WrongCat(
     void )
 {
-    delete m_Brain;
-
-    std::cout << "Dog destructor, " << m_Type << " destroyed\n";
+    std::cout << "WrongCat destructor, " << m_Type << " destroyed\n";
 }
 
-Dog &
-Dog::operator=(
-    const Dog & model )
+WrongCat &
+WrongCat::operator=(
+    const WrongCat & model )
 {
     std::cout << "Operator =, type changed from " << m_Type << " to " << model.m_Type << "\n";
     m_Type = model.m_Type;
@@ -47,18 +43,18 @@ Dog::operator=(
 }
 
 void
-Dog::makeSound(
+WrongCat::makeSound(
     void ) const
 {
-    std::cout << "Woof\n";
+    std::cout << "Meow\n";
 }
 
 std::ostream &
 operator<<(
     std::ostream & oStream
-    , const Dog & a_Dog )
+    , const WrongCat & a_WrongCat )
 {
-    oStream << a_Dog.getType() << " on the stream\n";
+    oStream << a_WrongCat.getType() << " on the stream\n";
 
     return (oStream);
 }

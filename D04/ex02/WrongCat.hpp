@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 13:57:54 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/09/17 14:25:36 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/08/10 14:00:24 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/08/12 17:01:39 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WRONG_CAT_HPP
+# define WRONG_CAT_HPP
 
+# include "WrongAnimal.hpp"
 # include <iostream>
 # include <string>
 
-class Brain {
+class WrongCat : public WrongAnimal {
 
 public:
-    Brain( void );
-    Brain( const std::string model_ideas[100] );
-    Brain( const Brain & model );
+    WrongCat( void );
+    WrongCat( const WrongCat & model );
 
-    virtual ~Brain( void );
+    virtual ~WrongCat( void );
 
-    Brain & operator=( const Brain & model );
-    
-    const std::string bestIdea( void ) const;
+    WrongCat & operator=( const WrongCat & model );
+
+    void makeSound( void ) const;
 
 protected:
-    std::string ideas[100];
     
 private:
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const Brain & a_Brain );
+std::ostream & operator<<( std::ostream & stream, const WrongCat & a_WrongCat );
 
 #endif

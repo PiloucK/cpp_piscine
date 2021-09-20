@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/12 16:36:18 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/09/17 14:20:54 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/08/12 09:04:02 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/08/12 17:43:34 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(
+Cat::Cat(
     void )
-        : Animal("Dog")
+        : Animal("Cat")
         , m_Brain(new Brain)
 {
-    std::cout << "Dog default constructor\n";
+    std::cout << "Cat default constructor\n";
 }
 
-Dog::Dog(
-    const Dog & model )
+Cat::Cat(
+    const Cat & model )
         : Animal(model.m_Type)
-        , m_Brain(new Brain(*model.m_Brain))
+        , m_Brain(new Brain(model.m_Brain))
 {
     std::cout << "Cat copy constructor from model of type: " << m_Type << "\n";
 }
 
-Dog::~Dog(
+Cat::~Cat(
     void )
 {
-    delete m_Brain;
-
-    std::cout << "Dog destructor, " << m_Type << " destroyed\n";
+    std::cout << "Cat destructor, " << m_Type << " destroyed\n";
 }
 
-Dog &
-Dog::operator=(
-    const Dog & model )
+Cat &
+Cat::operator=(
+    const Cat & model )
 {
     std::cout << "Operator =, type changed from " << m_Type << " to " << model.m_Type << "\n";
     m_Type = model.m_Type;
@@ -47,18 +45,18 @@ Dog::operator=(
 }
 
 void
-Dog::makeSound(
+Cat::makeSound(
     void ) const
 {
-    std::cout << "Woof\n";
+    std::cout << "Meow\n";
 }
 
 std::ostream &
 operator<<(
     std::ostream & oStream
-    , const Dog & a_Dog )
+    , const Cat & a_Cat )
 {
-    oStream << a_Dog.getType() << " on the stream\n";
+    oStream << a_Cat.getType() << " on the stream\n";
 
     return (oStream);
 }
