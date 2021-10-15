@@ -35,4 +35,7 @@ int main()
     delete j;
     delete i;
     delete k;
+
+	std::cout << '\n';
+	
 }
