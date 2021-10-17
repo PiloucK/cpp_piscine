@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 16:36:18 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/12 16:36:37 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/09/17 14:20:54 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog(
     void )
         : Animal("Dog")
+        , m_Brain(new Brain)
 {
     std::cout << "Dog default constructor\n";
 }
@@ -22,6 +23,7 @@ Dog::Dog(
 Dog::Dog(
     const Dog & model )
         : Animal(model.m_Type)
+        , m_Brain(new Brain(*model.m_Brain))
 {
     std::cout << "Cat copy constructor from model of type: " << m_Type << "\n";
 }
@@ -29,6 +31,8 @@ Dog::Dog(
 Dog::~Dog(
     void )
 {
+    delete m_Brain;
+
     std::cout << "Dog destructor, " << m_Type << " destroyed\n";
 }
 

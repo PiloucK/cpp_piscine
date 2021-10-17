@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 13:57:54 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/12 17:39:12 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/09/17 14:25:36 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ public:
     virtual ~Brain( void );
 
     Brain & operator=( const Brain & model );
+    
+    const std::string bestIdea( void ) const;
 
 protected:
     std::string ideas[100];
