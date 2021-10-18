@@ -7,8 +7,8 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
-	std::cout << '\n';
+    //const Animal* meta = new Animal();
+	//std::cout << '\n';
     const Animal* j = new Dog();
 	std::cout << '\n';
     const Animal* i = new Cat();
@@ -23,8 +23,8 @@ int main()
     i->makeSound(); //will output the cat sound!
 	std::cout << '\n';
     j->makeSound();
-	std::cout << '\n';
-    meta->makeSound();
+	//std::cout << '\n';
+    //meta->makeSound();
 
 	std::cin.get();
 	std::cout << "\033[2J";
@@ -52,8 +52,8 @@ int main()
 
 	std::cin.get();
 	std::cout << "\033[2J";
-    delete meta;
-	std::cout << '\n';
+    //delete meta;
+	//std::cout << '\n';
     delete j;
 	std::cout << '\n';
     delete i;
