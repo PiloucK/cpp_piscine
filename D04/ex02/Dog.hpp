@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 14:00:40 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/09/17 14:18:10 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/20 14:59:05 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
     Dog & operator=( const Dog & model );
 
     void makeSound( void ) const;
+	const std::string think( void ) const;
 
 protected:
     
