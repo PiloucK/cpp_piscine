@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 13:57:54 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/20 14:59:08 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/10/18 17:49:28 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/10/20 16:53:50 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
 # include <iostream>
 # include <string>
+# include "AMateria.hpp"
 
-class Brain {
-
+class ICharacter {
+	
 public:
-    Brain( void );
-    Brain( const std::string model_ideas[100] );
-    Brain( const Brain & model );
+	virtual ~ICharacter( void );
 
-    virtual ~Brain( void );
+	virtual const std::string & getName() const = 0;
 
-    Brain & operator=( const Brain & model );
-    
-    const std::string bestIdea( void ) const;
+	virtual void equip(AMateria * m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter & target) = 0;
 
 protected:
-    std::string ideas[100];
-    
+
 private:
 
 };
-
-std::ostream & operator<<( std::ostream & stream, const Brain & a_Brain );
 
 #endif

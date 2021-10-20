@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 14:00:24 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/12 17:41:25 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:00:03 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
     Cat & operator=( const Cat & model );
 
     void makeSound( void ) const;
+	const std::string think( void ) const;
 
 protected:
 

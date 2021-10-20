@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/10 13:57:54 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/20 14:59:08 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/10/18 17:49:28 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/10/20 16:48:09 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <iostream>
 # include <string>
 
-class Brain {
+class ICharacter;
 
+class AMateria {
+	
 public:
-    Brain( void );
-    Brain( const std::string model_ideas[100] );
-    Brain( const Brain & model );
+	
+	virtual ~AMateria( void );
 
-    virtual ~Brain( void );
+	const std::string & getType() const;
 
-    Brain & operator=( const Brain & model );
-    
-    const std::string bestIdea( void ) const;
+	virtual AMateria * clone() const = 0;
+	virtual void use( ICharacter & target );
 
 protected:
-    std::string ideas[100];
-    
+	AMateria( const std::string & type );
+	AMateria( const AMateria & model );
+
 private:
+	std::string m_Type;
+
+	AMateria( void );
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const Brain & a_Brain );
+std::ostream & operator<<( std::ostream & stream, const AMateria & a_AMateria );
 
 #endif

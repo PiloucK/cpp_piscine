@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:04:02 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/09/17 14:18:55 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:10:16 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ Cat::operator=(
 {
     std::cout << "Operator =, type changed from " << m_Type << " to " << model.m_Type << "\n";
     m_Type = model.m_Type;
+	*m_Brain = *model.m_Brain;
 
     return *this;
 }
@@ -51,6 +52,13 @@ Cat::makeSound(
     void ) const
 {
     std::cout << "Meow\n";
+}
+
+const std::string
+Cat::think(
+	void ) const
+{
+	return (m_Brain->bestIdea());
 }
 
 std::ostream &

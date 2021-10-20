@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 09:03:14 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/08/12 16:55:17 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/20 14:48:15 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Animal &
 Animal::operator=(
     const Animal & model )
 {
-    std::cout << "Operator =, type changed from " << m_Type << " to " << model.m_Type << "\n";
+    std::cout << "Operator =, type changed from " << m_Type << " to " << model.m_Type << " (probably doesn't make sense)\n";
     m_Type = model.m_Type;
 
     return *this;
