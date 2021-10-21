@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/20 18:01:55 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:11:38 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,34 @@
 Character::Character(
     const std::string & name )
 		: m_Name(name)
-		, m_Inventory({NULL, NULL, NULL, NULL})
 {
+
+	for (size_t i = 0; i < 4; i++) {
+		m_Inventory[i] = NULL;
+	}
 }
 
 Character::Character(
     const Character & model )
 		: m_Name(model.m_Name)
-		, m_Inventory({
-			model.m_Inventory[0]->clone()
-			, model.m_Inventory[1]->clone()
-			, model.m_Inventory[2]->clone()
-			, model.m_Inventory[3]->clone()
-		})
 {
+
+	for (size_t i = 0; i < 4; i++) {
+		
+		if (model.m_Inventory[i]) {
+			m_Inventory[i] = model.m_Inventory[i];
+		}
+	}
 }
 
 Character::~Character(
     void )
 {
+
+	for (size_t i = 0; i < 4 ; i++) {
+		delete m_Inventory[i];
+		m_Inventory[i] = NULL;
+	}
 }
 
 Character &
@@ -45,6 +54,8 @@ Character::operator=(
 	for (size_t i = 0; i < 4 && model.m_Inventory[i] ; i++) {
 		m_Inventory[i] = model.m_Inventory[i]->clone();
 	}
+
+	return (*this);
 }
 
 const std::string &
@@ -58,6 +69,7 @@ void
 Character::equip(
 	AMateria * m )
 {
+
 	if (m) {
 		size_t	i = 0;
 
@@ -65,9 +77,36 @@ Character::equip(
 			++i;
 		}
 
-		if (i < 4 && !m_Inventory[i]) {
+		if (i < 4) {
 			m_Inventory[i] = m->clone();
+		} else {
+			std::cout << "My inventory is full\n" ;
 		}
+	}
+}
+
+void
+Character::unequip(
+	int idx )
+{
+
+	if (idx >= 0 && idx < 4 && m_Inventory[idx]) {
+		m_Inventory[idx] = NULL;
+	} else {
+		std::cout << "Slot index is either invalid or already empty\n";
+	}
+}
+
+void
+Character::use(
+	int idx
+	, ICharacter & target )
+{
+
+	if (idx >= 0 && idx < 4 && m_Inventory[idx]) {
+		m_Inventory[idx]->use(target);
+	} else {
+		std::cout << "Slot index is either invalid or already empty\n";
 	}
 }
 

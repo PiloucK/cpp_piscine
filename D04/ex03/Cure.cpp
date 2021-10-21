@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:44:37 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/20 16:43:29 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:14:25 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ Cure &
 Cure::operator=(
     const Cure & model )
 {
+	(void)model;
+
+	return (*this);
 }
 
 AMateria *
@@ -47,14 +50,4 @@ Cure::use(
 	ICharacter & target )
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *\n";
-}
-
-std::ostream &
-operator<<(
-    std::ostream & oStream
-    , const Cure & a_Cure )
-{
-    oStream << "Object Class Cure of type " << a_Cure.getType() << "\n";
-
-    return (oStream);
 }

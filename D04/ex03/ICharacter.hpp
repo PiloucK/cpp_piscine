@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:49:28 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/20 16:53:50 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:21:57 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class ICharacter {
 	
 public:
-	virtual ~ICharacter( void );
+	virtual ~ICharacter( void ) {};
 
 	virtual const std::string & getName() const = 0;
 

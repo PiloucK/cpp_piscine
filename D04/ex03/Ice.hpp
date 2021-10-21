@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 18:01:20 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/20 16:51:11 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:17:14 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,5 @@ protected:
 private:
 
 };
-
-std::ostream & operator<<( std::ostream & stream, const Ice & a_Ice );
 
 #endif

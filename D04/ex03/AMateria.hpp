@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:49:28 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/20 16:48:09 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:35:44 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	const std::string & getType() const;
 
 	virtual AMateria * clone() const = 0;
-	virtual void use( ICharacter & target );
+	virtual void use( ICharacter & target ) = 0;
 
 protected:
 	AMateria( const std::string & type );

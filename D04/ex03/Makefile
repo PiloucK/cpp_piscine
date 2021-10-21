@@ -6,7 +6,7 @@
 #    By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/05 14:09:03 by clkuznie          #+#    #+#              #
-#    Updated: 2021/10/20 16:48:57 by Clkuznie         ###   ########.fr        #
+#    Updated: 2021/10/21 19:06:54 by Clkuznie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC_NAME			:= \
 	Character \
 	Cure \
 	Ice \
-	ICharacter \
+	MateriaSource \
 	main
 
 # H_NAME				:=
