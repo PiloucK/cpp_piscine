@@ -6,116 +6,122 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/25 16:57:15 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/10/29 13:53:31 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "Bureaucrat.hpp"
 
-Character::Character(
+Bureaucrat::Bureaucrat(
     const std::string & name )
 		: m_Name(name)
+		, m_Grade(150)
 {
+}
 
-	for (size_t i = 0; i < 4; i++) {
-		m_Inventory[i] = NULL;
+Bureaucrat::Bureaucrat(
+	const std::string & name
+	, const int grade )
+		: m_Name(name)
+		, m_Grade(grade)
+{
+	if (m_Grade < 1) {
+		throw GradeTooHighException("Already at highest grade", __FILE__, __func__);
+	} else if (m_Grade > 150) {
+		throw GradeTooLowException("Already at lowest grade", __FILE__, __func__);
 	}
 }
 
-Character::Character(
-    const Character & model )
+Bureaucrat::Bureaucrat(
+    const Bureaucrat & model )
 		: m_Name(model.m_Name)
+		, m_Grade(model.m_Grade)
 {
-
-	for (size_t i = 0; i < 4; i++) {
-		
-		if (model.m_Inventory[i]) {
-			m_Inventory[i] = model.m_Inventory[i];
-		}
-	}
 }
 
-Character::~Character(
+Bureaucrat::~Bureaucrat(
     void )
 {
-
-	for (size_t i = 0; i < 4 ; i++) {
-		delete m_Inventory[i];
-		m_Inventory[i] = NULL;
-	}
 }
 
-Character &
-Character::operator=(
-    const Character & model )
+Bureaucrat &
+Bureaucrat::operator=(
+    const Bureaucrat & model )
 {
-	m_Name = model.m_Name;
-
-	for (size_t i = 0; i < 4 && model.m_Inventory[i] ; i++) {
-		m_Inventory[i] = model.m_Inventory[i]->clone();
-	}
+	m_Grade = model.m_Grade;
 
 	return (*this);
 }
 
 const std::string &
-Character::getName(
+Bureaucrat::getName(
 	void ) const
 {
 	return (m_Name);
 }
 
-void
-Character::equip(
-	AMateria * m )
+int
+Bureaucrat::getGrade(
+	void ) const
 {
+	return (m_Grade);
+}
 
-	if (m) {
-		size_t	i = 0;
-
-		while (i < 4 && m_Inventory[i]) {
-			++i;
-		}
-
-		if (i < 4) {
-			m_Inventory[i] = m->clone();
-		} else {
-			std::cout << "My inventory is full\n" ;
-		}
+void
+Bureaucrat::gradeUp(
+	void )
+{
+	if (m_Grade > 1) {
+		m_Grade--;
+	} else {
+		throw GradeTooHighException("Already at highest grade", __FILE__, __func__);
 	}
 }
 
 void
-Character::unequip(
-	int idx )
+Bureaucrat::gradeDown(
+	void )
 {
-
-	if (idx >= 0 && idx < 4 && m_Inventory[idx]) {
-		m_Inventory[idx] = NULL;
+	if (m_Grade < 150) {
+		m_Grade++;
 	} else {
-		std::cout << "Slot index is either invalid or already empty\n";
+		throw GradeTooLowException("Already at lowest grade", __FILE__, __func__);
 	}
 }
 
-void
-Character::use(
-	int idx
-	, ICharacter & target )
+Bureaucrat::GradeTooHighException::GradeTooHighException(
+	const char * msg
+	, const char * file
+	, const char * function )
+		: m_ErrorMessage(*msg)
+		, m_FileName(*file)
+		, m_FunctionName(*function)
 {
+}
 
-	if (idx >= 0 && idx < 4 && m_Inventory[idx]) {
-		m_Inventory[idx]->use(target);
-	} else {
-		std::cout << "Slot index is either invalid or already empty\n";
-	}
+Bureaucrat::GradeTooLowException::GradeTooLowException(
+	const char * msg
+	, const char * file
+	, const char * function )
+		: m_ErrorMessage(*msg)
+		, m_FileName(*file)
+		, m_FunctionName(*function)
+{
 }
 
 std::ostream &
 operator<<(
     std::ostream & oStream
-    , const Character & a_Character )
+    , const Bureaucrat & a_Bureaucrat )
 {
-    oStream << "Object Class Character named " << a_Character.getName() << "\n";
+    oStream << a_Bureaucrat.getName() << ", bureaucrat grade " << a_Bureaucrat.getGrade() << ".\n";
 
     return (oStream);
 }
+
+
+	//} catch (GradeTooHighException & e) {
+	//	std::cout << e.m_ErrorMessage << '\n';
+	//	std::cout << "Error in file: " << e.m_FileName << ", function: ";
+	//	std::cout << e.m_ErrorMessage << '\n';
+	//}
