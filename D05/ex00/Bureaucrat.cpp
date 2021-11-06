@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/31 14:08:21 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/06 16:24:29 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Bureaucrat::Bureaucrat(
     const std::string & name )
 		: m_Name(name)
-		, m_Grade(150)
+		, m_Grade(WORST_GRADE)
 {
 }
 
@@ -25,9 +25,9 @@ Bureaucrat::Bureaucrat(
 		: m_Name(name)
 		, m_Grade(grade)
 {
-	if (m_Grade < 1) {
+	if (IS_TOO_HIGH(grade)) {
 		throw GradeTooHighException();
-	} else if (m_Grade > 150) {
+	} else if (IS_TOO_LOW(grade)) {
 		throw GradeTooLowException();
 	}
 }
@@ -71,7 +71,7 @@ void
 Bureaucrat::gradeUp(
 	void )
 {
-	if (m_Grade > 1) {
+	if (m_Grade > BEST_GRADE) {
 		m_Grade--;
 	} else {
 		throw GradeTooHighException();
@@ -82,7 +82,7 @@ void
 Bureaucrat::gradeDown(
 	void )
 {
-	if (m_Grade < 150) {
+	if (m_Grade < WORST_GRADE) {
 		m_Grade++;
 	} else {
 		throw GradeTooLowException();
@@ -101,7 +101,7 @@ Bureaucrat::GradeTooHighException::~GradeTooHighException() _NOEXCEPT
 const char *
 Bureaucrat::GradeTooHighException::what() const throw ()
 {
-	return ("Grade exceeding the highest (1)");
+	return (GRADE_TOO_HIGH_ERROR_STR);
 }
 
 Bureaucrat::GradeTooLowException::GradeTooLowException(
@@ -116,7 +116,7 @@ Bureaucrat::GradeTooLowException::~GradeTooLowException() _NOEXCEPT
 const char *
 Bureaucrat::GradeTooLowException::what() const throw ()
 {
-	return ("Grade subceeding the lowest (150)");
+	return (GRADE_TOO_LOW_ERROR_STR);
 }
 
 std::ostream &
@@ -128,10 +128,3 @@ operator<<(
 
     return (oStream);
 }
-
-
-	//} catch (GradeTooHighException & e) {
-	//	std::cout << e.m_ErrorMessage << '\n';
-	//	std::cout << "Error in file: " << e.m_FileName << ", function: ";
-	//	std::cout << e.m_ErrorMessage << '\n';
-	//}

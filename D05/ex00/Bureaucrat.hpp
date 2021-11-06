@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:50:26 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/31 14:06:39 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/06 16:45:59 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include <iostream>
 # include <string>
+
+# define GRADE_TOO_HIGH_ERROR_STR "Grade too high\n"
+# define GRADE_TOO_LOW_ERROR_STR "Grade too low\n"
+# define WORST_GRADE 150
+# define BEST_GRADE 1
+# define IS_TOO_LOW(x) (x > 150)
+# define IS_TOO_HIGH(x) (x < 1)
 
 class Bureaucrat {
 
