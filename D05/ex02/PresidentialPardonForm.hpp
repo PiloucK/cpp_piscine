@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 18:37:53 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/04 14:17:41 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/10/31 17:25:45 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/11/01 15:05:52 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
 # include <string>
-# include "IMateriaSource.hpp"
+# include "Form.hpp"
 
-# include <array>
-
-class MateriaSource : public IMateriaSource {
+class PresidentialPardonForm : public Form {
 
 public:
-    MateriaSource( void );
-    MateriaSource( const MateriaSource & model );
+	PresidentialPardonForm( const std::string target );
+    PresidentialPardonForm( const PresidentialPardonForm & model );
 
-    virtual ~MateriaSource( void );
+    virtual ~PresidentialPardonForm();
 
-    MateriaSource & operator=( const MateriaSource & model );
-
-	void learnMateria( AMateria * );
-	AMateria * createMateria( std::string const & type );
+    PresidentialPardonForm & operator=( const PresidentialPardonForm & model );
 
 
 protected:
+	void doAction( void ) const;
 
 private:
-	 AMateria *		m_learnedMaterias[4];
+	PresidentialPardonForm( void );
+
+	std::string m_Target;
 
 };
 

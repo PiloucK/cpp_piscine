@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/25 16:56:19 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/04 16:27:48 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Character::Character(
 	for (size_t i = 0; i < 4; i++) {
 		
 		if (model.m_Inventory[i]) {
-			m_Inventory[i] = model.m_Inventory[i];
+			m_Inventory[i] = model.m_Inventory[i]->clone();
 		}
 	}
 }
@@ -46,7 +46,7 @@ Character::~Character(
 }
 
 Character &
-Character::operator=(
+Character::operator = (
     const Character & model )
 {
 	m_Name = model.m_Name;
@@ -93,7 +93,7 @@ Character::unequip(
 	if (idx >= 0 && idx < 4 && m_Inventory[idx]) {
 		m_Inventory[idx] = NULL;
 	} else {
-		std::cout << "Slot index is either invalid or already empty\n";
+		std::cout << "Slot index is either invalid or empty\n";
 	}
 }
 
@@ -106,12 +106,12 @@ Character::use(
 	if (idx >= 0 && idx < 4 && m_Inventory[idx]) {
 		m_Inventory[idx]->use(target);
 	} else {
-		std::cout << "Slot index is either invalid or already empty\n";
+		std::cout << "Slot index is either invalid or empty\n";
 	}
 }
 
 std::ostream &
-operator<<(
+operator << (
     std::ostream & oStream
     , const Character & a_Character )
 {

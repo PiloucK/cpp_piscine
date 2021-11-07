@@ -6,14 +6,14 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/21 19:13:18 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/04 14:18:10 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource(
-    void )
+	void )
 {
 
 	for (size_t i = 0; i < 4; i++) {
@@ -38,8 +38,7 @@ MateriaSource::~MateriaSource(
 {
 
 	for (size_t i = 0; i < 4 ; i++) {
-		delete m_learnedMaterias[i];
-		m_learnedMaterias[i] = NULL;
+		delete m_learnedMaterias[i]; m_learnedMaterias[i] = NULL;
 	}
 }
 
@@ -58,24 +57,21 @@ MateriaSource::operator=(
 	return (*this);
 }
 
-void
-MateriaSource::learnMateria(
-	AMateria * m )
+void MateriaSource::learnMateria(AMateria * m)
 {
 
-	if (m) {
-		size_t	i = 0;
-
-		while (i < 4 && m_learnedMaterias[i]) {
-			++i;
-		}
-
-		if (i < 4) {
-			m_learnedMaterias[i] = m->clone();
-		} else {
-			std::cout << "Can't lear more, too smart\n" ;
-		}
+	if (!m) {
+		return ;
 	}
+
+	size_t	i = 0;
+	while (i < 4 && m_learnedMaterias[i]) {
+		++i;
+	}
+
+	if (i >= 4) { std::cout << "Can't learn more, too smart\n";	return;	}
+
+	m_learnedMaterias[i] = m->clone();
 }
 
 AMateria *

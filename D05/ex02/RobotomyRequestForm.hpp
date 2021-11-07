@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 18:37:53 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/04 14:17:41 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/10/31 17:25:45 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/11/01 15:06:02 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
 # include <string>
-# include "IMateriaSource.hpp"
+# include "Form.hpp"
 
-# include <array>
-
-class MateriaSource : public IMateriaSource {
+class RobotomyRequestForm : public Form {
 
 public:
-    MateriaSource( void );
-    MateriaSource( const MateriaSource & model );
+	RobotomyRequestForm( const std::string target );
+    RobotomyRequestForm( const RobotomyRequestForm & model );
 
-    virtual ~MateriaSource( void );
+    virtual ~RobotomyRequestForm();
 
-    MateriaSource & operator=( const MateriaSource & model );
-
-	void learnMateria( AMateria * );
-	AMateria * createMateria( std::string const & type );
+    RobotomyRequestForm & operator=( const RobotomyRequestForm & model );
 
 
 protected:
+	void doAction( void ) const;
 
 private:
-	 AMateria *		m_learnedMaterias[4];
+	RobotomyRequestForm( void );
+
+	std::string m_Target;
 
 };
 

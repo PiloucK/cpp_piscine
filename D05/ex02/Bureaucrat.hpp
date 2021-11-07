@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:50:26 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/07 15:37:38 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/01 14:50:43 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include <iostream>
 # include <string>
-# include "gradesMacro.hpp"
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -32,6 +34,9 @@ public:
 	int getGrade( void ) const;
 	void gradeUp( void );
 	void gradeDown( void );
+
+	void signForm( Form & a_Form ) const;
+	void executeForm( const Form & form ) const;
 
 	class GradeTooHighException : public std::exception {
 
@@ -67,7 +72,7 @@ private:
     Bureaucrat( void );
 
 	const std::string m_Name;
-	unsigned int m_Grade;
+	unsigned int m_Grade; // Max 1 (best note) min 150 (worst note)
 
 };
 

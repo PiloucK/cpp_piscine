@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:50:26 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/31 14:06:39 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/07 15:36:02 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <iostream>
 # include <string>
+# include "Form.hpp"
+# include "gradesMacro.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -26,6 +30,8 @@ public:
     virtual ~Bureaucrat();
 
     Bureaucrat & operator=( const Bureaucrat & model );
+
+	void signForm( Form & a_Form ) const;
 
 	const std::string & getName( void ) const;
 	int getGrade( void ) const;
@@ -66,7 +72,7 @@ private:
     Bureaucrat( void );
 
 	const std::string m_Name;
-	unsigned int m_Grade; // Max 1 (best note) min 150 (worst note)
+	unsigned int m_Grade;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 17:52:08 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/06 16:46:20 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/07 15:50:23 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,10 @@ main(void)
 	{
 		std::cout << "gradeDown call until failure\n";
 		
-		try {
-			Bureaucrat toto("Caren", 42);
+		Bureaucrat toto("Caren", 42);
 
-			std::cout << toto << '\n';
+		std::cout << toto << '\n';
+		try {
 			ASSERT(toto.getName() == "Caren");
 			ASSERT(toto.getGrade() == 42);
 
@@ -106,12 +106,12 @@ main(void)
 				WAIT_INPUT
 				ASSERT(toto.getGrade() == 42 + i);
 				toto.gradeDown();
-				ASSERT(toto.getGrade() == 42 + i + 1);
 				std::cout << toto;
 			}
 			
 		} catch (std::exception & e) {
 			std::cout << e.what();
+			ASSERT(toto.getGrade() == 150);
 		}
 	}
 
@@ -119,10 +119,10 @@ main(void)
 	{
 		std::cout << "gradeUp call until failure\n";
 		
-		try {
-			Bureaucrat toto("Caren", 42);
+		Bureaucrat toto("Caren", 42);
 
-			std::cout << toto << '\n';
+		std::cout << toto << '\n';
+		try {
 			ASSERT(toto.getName() == "Caren");
 			ASSERT(toto.getGrade() == 42);
 
@@ -130,12 +130,12 @@ main(void)
 				WAIT_INPUT
 				ASSERT(toto.getGrade() == 42 - i);
 				toto.gradeUp();
-				ASSERT(toto.getGrade() == 42 - i - 1);
 				std::cout << toto;
 			}
 			
 		} catch (std::exception & e) {
 			std::cout << e.what();
+			ASSERT(toto.getGrade() == 1);
 		}
 	}
 

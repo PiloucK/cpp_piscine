@@ -6,21 +6,20 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:01:37 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/07 15:46:40 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/04 16:16:35 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAIN_HPP
 # define MAIN_HPP
 
-#include <iostream>
-#include <sstream>
-#include <cstdlib>
-
-#include "Bureaucrat.hpp"
+# include "Character.hpp"
+# include "Cure.hpp"
+# include "Ice.hpp"
+# include "MateriaSource.hpp"
 
 # ifdef DEBUG
-# 	define ASSERT(T) if (!(T)) { std::cerr << "\033[1;31mASSERT FAILED\033[0m " #T << std::endl; exit(1); } else { std::cerr << "\033[1;32mSUCCESS\033[0m " #T << '\n'; }
+# 	define ASSERT(T) if (!(T)) { std::cerr << "ASSERT FAILED " #T << std::endl; exit(1); }
 # else
 # 	define ASSERT(T)
 # endif
@@ -30,5 +29,4 @@
 # define WAIT_INPUT std::cin.get();
 # define START_INFO std::cout << "To start the tests or go to the next one, press ENTER\n";
 # define NEXT_TEST std::cin.get(); std::cout << "\033[2J"; std::cout << "To start the tests or go to the next one, press ENTER\n\n\n";
-
 #endif

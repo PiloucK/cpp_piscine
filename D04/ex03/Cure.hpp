@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 18:01:20 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/21 19:14:20 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/04 14:40:48 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
     virtual ~Cure( void );
 
-    Cure & operator=( const Cure & model );
+    Cure & operator = ( const Cure & model );
 
 	AMateria * clone( void ) const;
 	void use(ICharacter & target);

@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:44:37 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/21 19:14:25 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/04 14:18:54 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Cure::~Cure(
 }
 
 Cure &
-Cure::operator=(
+Cure::operator = (
     const Cure & model )
 {
 	(void)model;
@@ -42,7 +42,7 @@ AMateria *
 Cure::clone(
 	void ) const
 {
-	return (new Cure());
+	return (new Cure(*this));
 }
 
 void

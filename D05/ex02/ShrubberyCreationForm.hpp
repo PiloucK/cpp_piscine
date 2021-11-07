@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 18:37:53 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/04 14:17:41 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/10/31 17:25:45 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/10/31 18:15:10 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
 # include <iostream>
 # include <string>
-# include "IMateriaSource.hpp"
+# include "Form.hpp"
+# include <fstream>
 
-# include <array>
-
-class MateriaSource : public IMateriaSource {
+class ShrubberyCreationForm : public Form {
 
 public:
-    MateriaSource( void );
-    MateriaSource( const MateriaSource & model );
+	ShrubberyCreationForm( const std::string target );
+    ShrubberyCreationForm( const ShrubberyCreationForm & model );
 
-    virtual ~MateriaSource( void );
+    virtual ~ShrubberyCreationForm();
 
-    MateriaSource & operator=( const MateriaSource & model );
-
-	void learnMateria( AMateria * );
-	AMateria * createMateria( std::string const & type );
+    ShrubberyCreationForm & operator=( const ShrubberyCreationForm & model );
 
 
 protected:
+	void doAction( void ) const;
 
 private:
-	 AMateria *		m_learnedMaterias[4];
+	ShrubberyCreationForm( void );
+
+	std::string m_Target;
 
 };
 

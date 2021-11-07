@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 18:37:53 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/04 14:17:41 by Clkuznie         ###   ########.fr       */
+/*   Created: 2021/11/02 14:52:05 by Clkuznie          #+#    #+#             */
+/*   Updated: 2021/11/05 14:31:46 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 # include <iostream>
 # include <string>
-# include "IMateriaSource.hpp"
+# include "Form.hpp"
+# include "PresidentialPardonForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "ShrubberyCreationForm.hpp"
 
-# include <array>
-
-class MateriaSource : public IMateriaSource {
+class Intern {
 
 public:
-    MateriaSource( void );
-    MateriaSource( const MateriaSource & model );
+	Intern( void );
+    Intern( const Intern & model );
 
-    virtual ~MateriaSource( void );
+    virtual ~Intern();
 
-    MateriaSource & operator=( const MateriaSource & model );
+    Intern & operator=( const Intern & model );
 
-	void learnMateria( AMateria * );
-	AMateria * createMateria( std::string const & type );
-
+	Form * makeForm( const std::string formName, const std::string target ) const;
 
 protected:
 
 private:
-	 AMateria *		m_learnedMaterias[4];
+	static const std::string knownForms[3];
+	static Form * (* formFactories[3])(const std::string);
 
 };
 

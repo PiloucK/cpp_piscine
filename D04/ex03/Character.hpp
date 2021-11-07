@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:18:25 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/10/20 17:46:44 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/04 14:06:26 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
     virtual ~Character( void );
 
-    Character & operator=( const Character & model );
+    Character & operator = ( const Character & model );
 
 	virtual const std::string & getName() const;
 
@@ -44,6 +44,6 @@ private:
 
 };
 
-std::ostream & operator<<( std::ostream & stream, const Character & a_Character );
+std::ostream & operator << ( std::ostream & stream, const Character & a_Character );
 
 #endif

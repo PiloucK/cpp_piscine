@@ -6,7 +6,7 @@
 #    By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/05 14:09:03 by clkuznie          #+#    #+#              #
-#    Updated: 2021/11/06 16:26:29 by Clkuznie         ###   ########.fr        #
+#    Updated: 2021/11/07 15:36:50 by Clkuznie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC_NAME			:= \
 	Bureaucrat \
 	main
 
-H_NAME				:=
+H_NAME				:= \
+	gradesMacro
 
 S_DIR		 		:= \
 	./
