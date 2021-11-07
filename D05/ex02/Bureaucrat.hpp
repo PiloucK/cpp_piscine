@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:50:26 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/01 14:50:43 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/07 19:58:27 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 # include "Form.hpp"
+# include "gradesMacro.hpp"
+
 
 class Form;
 
