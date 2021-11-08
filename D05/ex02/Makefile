@@ -6,7 +6,7 @@
 #    By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/05 14:09:03 by clkuznie          #+#    #+#              #
-#    Updated: 2021/11/01 15:04:59 by Clkuznie         ###   ########.fr        #
+#    Updated: 2021/11/08 17:42:38 by Clkuznie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME				:=	cpp_test
 SRC_EXTENSION		:= \
 	.cpp
 
-# H_EXTENSION			:= \
-# 	.hpp
+H_EXTENSION			:= \
+ 	.hpp
 
 SRC_NAME			:= \
 	Bureaucrat \
@@ -26,7 +26,8 @@ SRC_NAME			:= \
 	ShrubberyCreationForm \
 	main
 
-# H_NAME				:=
+H_NAME				:= \
+	gradesMacro
 
 S_DIR		 		:= \
 	./
@@ -45,10 +46,13 @@ CFLAGS				:= -Wall -Wextra -Werror -std=c++98
 
 R					:= rm -f
 
-$(O_DIR)%.o:		$(S_DIR)%$(SRC_EXTENSION)
+$(O_DIR)%.o:		$(S_DIR)%$(SRC_EXTENSION) %$(H_EXTENSION) $(addsuffix $(H_EXTENSION), $(H_NAME)) Makefile
 	$C $(CFLAGS) $I -c $< -o $@
 
-all:				$(NAME)
+all:				debug
+
+debug: CFLAGS += -DDEBUG -g
+debug: $(NAME)
 
 $(NAME):			$O
 	$C $^ -o $@

@@ -6,25 +6,25 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:01:37 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/07 15:45:58 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/08 17:41:20 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAIN_HPP
 # define MAIN_HPP
 
-#include <iostream>
-#include <sstream>
-#include <cstdlib>
+# include <iostream>
+# include <sstream>
+# include <cstdlib>
 
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 # ifdef DEBUG
 # 	define ASSERT(T) if (!(T)) { std::cerr << "\033[1;31mASSERT FAILED\033[0m " #T << std::endl; exit(1); } else { std::cerr << "\033[1;32mSUCCESS\033[0m " #T << '\n'; }
 # else
 # 	define ASSERT(T)
 # endif
-
 
 # define CLEAR_STDOUT std::cout << "\033[2J";
 # define WAIT_INPUT std::cin.get();
