@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:50:26 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/08 17:40:44 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/08 15:02:43 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include "Bureaucrat.hpp"
+# include "gradesMacro.hpp"
 
 class Bureaucrat;
 

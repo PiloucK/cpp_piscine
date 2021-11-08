@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/08 17:43:26 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/08 18:33:23 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,4 +187,24 @@ const char *
 Form::FormNotSigned::what() const throw ()
 {
 	return (FORM_NOT_SIGNED_ERROR_STR);
+}
+
+std::ostream &
+operator<<(
+    std::ostream & oStream
+    , const Form & a_Form )
+{
+    oStream << a_Form.getName();
+	
+	if (a_Form.getIsSigned() != true) {
+		oStream << ", not signed";
+	} else {
+		oStream << ", signed";
+	}
+	
+	oStream << " form (needs grade " << a_Form.getSignGrade()
+		<< " to get signed and grade " << a_Form.getExecGrade()
+		<< " to get executed).\n";
+
+    return (oStream);
 }

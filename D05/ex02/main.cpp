@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:53:20 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/08 17:46:12 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/08 18:49:14 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,13 +141,13 @@ main(void)
 
 	NEXT_TEST
 	{
-		std::cout << "Form creation in and out of bounds\n";
+		std::cout << "Form creation and from's data verification through ASSERT\n";
 
 		Form *	shrub = new ShrubberyCreationForm("toto");
 		Form *	presi = new PresidentialPardonForm("toto");
 		Form *	robot = new RobotomyRequestForm("toto");
 
-		std::cout << shrub << presi << robot;
+		std::cout << *shrub << *presi << *robot;
 
 		ASSERT(shrub->getName() == "shrubbery creation");
 		ASSERT(shrub->getSignGrade() == 145);
@@ -161,75 +161,83 @@ main(void)
 		ASSERT(robot->getSignGrade() == 72);
 		ASSERT(robot->getExecGrade() == 45);
 
+		NEXT_TEST
+		{
+			std::cout << "Try to sign form with different Bureaucrats\n";
+
+			Bureaucrat toto("Toto", 42);
+			Bureaucrat caren("Caren", 150);
+			Bureaucrat booba("Booba", 2);
+
+			ASSERT(shrub->getIsSigned() == false);
+			caren.signForm(*shrub);
+			ASSERT(shrub->getIsSigned() == false);
+			toto.signForm(*shrub);
+			ASSERT(shrub->getIsSigned() == true);
+			booba.signForm(*shrub);
+			ASSERT(shrub->getIsSigned() == true);
+
+			booba.signForm(*presi);
+			toto.signForm(*robot);
+
+			NEXT_TEST
+			{
+				std::cout << "Caren can't do shit\n";
+
+				caren.executeForm(*shrub);
+				caren.executeForm(*robot);
+				caren.executeForm(*presi);
+			}
+
+			NEXT_TEST
+			{
+				std::cout << "Booba is the boss\n";
+
+				booba.executeForm(*shrub);
+				booba.executeForm(*robot);
+				booba.executeForm(*presi);
+
+			}
+
+			NEXT_TEST
+			{
+				std::cout << "Toto finds out if robotomy is random\n";
+
+				toto.executeForm(*robot);
+				toto.executeForm(*robot);
+				toto.executeForm(*robot);
+				toto.executeForm(*robot);
+				toto.executeForm(*robot);
+				toto.executeForm(*robot);
+				toto.executeForm(*robot);
+				toto.executeForm(*robot);
+				toto.executeForm(*robot);
+
+			}
+		}
+
+		NEXT_TEST
+		{
+			std::cout << "Print all the forms after testing and verify that vaues are still correct\n";
+			std::cout << *shrub << *robot << *presi;
+			\
+			ASSERT(shrub->getName() == "shrubbery creation");
+			ASSERT(shrub->getSignGrade() == 145);
+			ASSERT(shrub->getExecGrade() == 137);
+
+			ASSERT(presi->getName() == "presidential pardon");
+			ASSERT(presi->getSignGrade() == 25);
+			ASSERT(presi->getExecGrade() == 5);
+
+			ASSERT(robot->getName() == "robotomy request");
+			ASSERT(robot->getSignGrade() == 72);
+			ASSERT(robot->getExecGrade() == 45);
+
+		}
 		delete shrub;
 		delete presi;
 		delete robot;
 	}
-	// 	NEXT_TEST
-	// 	{
-	// 		std::cout << "Try to sign form with different Bureaucrats\n";
-
-	// 		Bureaucrat toto("Toto", 42);
-	// 		Bureaucrat caren("Caren", 150);
-	// 		Bureaucrat booba("Booba", 2);
-
-	// 		ASSERT(breathe.getIsSigned() == false);
-			
-	// 		try {
-	// 			breathe.beSigned(toto);
-	// 			breathe.beSigned(caren);
-	// 			breathe.beSigned(booba);
-	// 		} catch (const std::exception & e) {
-	// 			std::cerr << e.what();
-	// 		}
-
-	// 		ASSERT(breathe.getIsSigned() == true);
-
-	// 		NEXT_TEST
-	// 		{
-	// 			std::cout << "All try to signForm (caren should not be able to)\n";
-	
-	// 			ASSERT(sleep.getIsSigned() == false);
-
-	// 			try {
-	// 				caren.signForm(sleep);
-	// 			}
-	// 			catch(const std::exception& e) {
-	// 				std::cerr << e.what();
-	// 				ASSERT(e.what() == GRADE_TOO_LOW_ERROR_STR);
-	// 			}
-
-	// 			ASSERT(sleep.getIsSigned() == false);
-
-	// 			toto.signForm(sleep);
-	// 			booba.signForm(sleep);
-
-	// 			ASSERT(sleep.getIsSigned() == true);
-	// 		}
-
-	// 		NEXT_TEST
-	// 		{
-	// 			std::cout << "cry form try beSigned by all (caren should not be able to)\n";
-
-	// 			cry.beSigned(toto);
-	// 			cry.beSigned(booba);
-
-	// 			try {
-	// 				cry.beSigned(caren);
-	// 			}
-	// 			catch(const std::exception& e) {
-	// 				std::cerr << e.what();
-	// 				ASSERT(e.what() == GRADE_TOO_LOW_ERROR_STR);
-	// 			}
-	// 		}
-	// 	}
-
-	// 	NEXT_TEST
-	// 	{
-	// 		std::cout << "Print all the forms after testing\n";
-	// 		std::cout << breathe << eat << sleep << cry << beSad;
-	// 	}
-	// }
 
 	return (EXIT_SUCCESS);
 }

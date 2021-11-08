@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/01 14:54:41 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/08 18:31:12 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Bureaucrat::Bureaucrat(
     const std::string & name )
 		: m_Name(name)
-		, m_Grade(150)
+		, m_Grade(WORST_GRADE)
 {
 }
 
@@ -25,9 +25,9 @@ Bureaucrat::Bureaucrat(
 		: m_Name(name)
 		, m_Grade(grade)
 {
-	if (m_Grade < 1) {
+	if (IS_HIGHER_GRADE(BEST_GRADE, grade)) {
 		throw GradeTooHighException();
-	} else if (m_Grade > 150) {
+	} else if (IS_LOWER_GRADE(WORST_GRADE, grade)) {
 		throw GradeTooLowException();
 	}
 }
@@ -45,7 +45,7 @@ Bureaucrat::~Bureaucrat(
 }
 
 Bureaucrat &
-Bureaucrat::operator=(
+Bureaucrat::operator = (
     const Bureaucrat & model )
 {
 	m_Grade = model.m_Grade;
@@ -71,8 +71,8 @@ void
 Bureaucrat::gradeUp(
 	void )
 {
-	if (m_Grade > 1) {
-		m_Grade--;
+	if (!IS_HIGHER_GRADE(BEST_GRADE, ONE_HIGHER(m_Grade))) {
+		m_Grade = ONE_HIGHER(m_Grade);
 	} else {
 		throw GradeTooHighException();
 	}
@@ -82,8 +82,8 @@ void
 Bureaucrat::gradeDown(
 	void )
 {
-	if (m_Grade < 150) {
-		m_Grade++;
+	if (!IS_LOWER_GRADE(WORST_GRADE, ONE_LOWER(m_Grade))) {
+		m_Grade = ONE_LOWER(m_Grade);
 	} else {
 		throw GradeTooLowException();
 	}
@@ -104,16 +104,18 @@ Bureaucrat::signForm(
 
 void
 Bureaucrat::executeForm(
-	const Form & Form ) const
+	const Form & a_Form ) const
 {
 
 	try {
-		Form.execute(*this);
+		a_Form.execute(*this);
 	} catch(const std::exception& e) {
+		std::cout << "----------------\n";
 		std::cout << *this;
-		std::cout << Form;
+		std::cout << a_Form;
 		std::cout << "Execution failed because:\n";
 		std::cout << e.what();
+		std::cout << "----------------\n";
 	}
 }
 
@@ -129,7 +131,7 @@ Bureaucrat::GradeTooHighException::~GradeTooHighException() _NOEXCEPT
 const char *
 Bureaucrat::GradeTooHighException::what() const throw ()
 {
-	return ("Grade exceeding the highest (1)\n");
+	return (GRADE_TOO_HIGH_ERROR_STR);
 }
 
 Bureaucrat::GradeTooLowException::GradeTooLowException(
@@ -144,11 +146,11 @@ Bureaucrat::GradeTooLowException::~GradeTooLowException() _NOEXCEPT
 const char *
 Bureaucrat::GradeTooLowException::what() const throw ()
 {
-	return ("Grade subceeding the lowest (150)\n");
+	return (GRADE_TOO_LOW_ERROR_STR);
 }
 
 std::ostream &
-operator<<(
+operator << (
     std::ostream & oStream
     , const Bureaucrat & a_Bureaucrat )
 {

@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/02 14:50:40 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/08 18:33:23 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 Form::Form(
     const std::string & name )
 		: m_Name(name)
-		, m_MinSignGrade(150)
-		, m_MinExecGrade(150)
+		, m_MinSignGrade(WORST_GRADE)
+		, m_MinExecGrade(WORST_GRADE)
 		, m_IsSigned(false)
 {
 }
@@ -25,8 +25,8 @@ Form::Form(
     const std::string & name
 	, const bool isSigned )
 		: m_Name(name)
-		, m_MinSignGrade(150)
-		, m_MinExecGrade(150)
+		, m_MinSignGrade(WORST_GRADE)
+		, m_MinExecGrade(WORST_GRADE)
 		, m_IsSigned(isSigned)
 {
 }
@@ -41,9 +41,9 @@ Form::Form(
 		, m_IsSigned(false)
 {
 
-	if (m_MinSignGrade < 1 || m_MinExecGrade < 1) {
+	if (IS_HIGHER_GRADE(BEST_GRADE, m_MinSignGrade) || IS_HIGHER_GRADE(BEST_GRADE, m_MinExecGrade)) {
 		throw GradeTooHighException();
-	} else if (m_MinSignGrade > 150 || m_MinExecGrade > 150) {
+	} else if (IS_LOWER_GRADE(WORST_GRADE, m_MinSignGrade) || IS_LOWER_GRADE(WORST_GRADE, m_MinExecGrade)) {
 		throw GradeTooLowException();
 	}
 }
@@ -59,9 +59,9 @@ Form::Form(
 		, m_IsSigned(isSigned)
 {
 
-	if (m_MinSignGrade < 1 || m_MinExecGrade < 1) {
+	if (IS_HIGHER_GRADE(BEST_GRADE, m_MinSignGrade) || IS_HIGHER_GRADE(BEST_GRADE, m_MinExecGrade)) {
 		throw GradeTooHighException();
-	} else if (m_MinSignGrade > 150 || m_MinExecGrade > 150) {
+	} else if (IS_LOWER_GRADE(WORST_GRADE, m_MinSignGrade) || IS_LOWER_GRADE(WORST_GRADE, m_MinExecGrade)) {
 		throw GradeTooLowException();
 	}
 }
@@ -87,6 +87,33 @@ Form::operator=(
 	m_IsSigned = model.m_IsSigned;
 
 	return (*this);
+}
+
+Form &
+Form::beSigned(
+	const Bureaucrat & a_Bureaucrat )
+{
+
+	if (!IS_LOWER_GRADE(m_MinSignGrade, a_Bureaucrat.getGrade())) {
+		m_IsSigned = true;
+	} else {
+		throw GradeTooLowException();
+	}
+
+	return *this;
+}
+
+void
+Form::execute(
+	Bureaucrat const & executor ) const
+{
+	if (m_IsSigned == false) {
+		throw FormNotSigned();
+	} else if (IS_LOWER_GRADE(m_MinExecGrade, executor.getGrade())) {
+		throw GradeTooLowException();
+	}
+
+	doAction();
 }
 
 const std::string &
@@ -117,34 +144,6 @@ Form::getIsSigned(
 	return (m_IsSigned);
 }
 
-Form &
-Form::beSigned(
-	const Bureaucrat & a_Bureaucrat )
-{
-
-	if (a_Bureaucrat.getGrade() <= m_MinSignGrade) {
-		m_IsSigned = true;
-	} else {
-		throw GradeTooLowException();
-	}
-
-	return *this;
-}
-
-void
-Form::execute(
-	Bureaucrat const & executor ) const
-{
-
-	if (executor.getGrade() > m_MinExecGrade) {
-		throw GradeTooLowException();
-	} else if (m_IsSigned == false) {
-		throw FormNotSigned();
-	}
-
-	doAction();
-}
-
 Form::GradeTooHighException::GradeTooHighException(
 	void )
 {
@@ -157,7 +156,7 @@ Form::GradeTooHighException::~GradeTooHighException() _NOEXCEPT
 const char *
 Form::GradeTooHighException::what() const throw ()
 {
-	return ("Grade exceeding the maximal value for the action\n");
+	return (GRADE_TOO_HIGH_ERROR_STR);
 }
 
 Form::GradeTooLowException::GradeTooLowException(
@@ -172,7 +171,7 @@ Form::GradeTooLowException::~GradeTooLowException() _NOEXCEPT
 const char *
 Form::GradeTooLowException::what() const throw ()
 {
-	return ("Grade subceeding the minimal value for the action\n");
+	return (GRADE_TOO_LOW_ERROR_STR);
 }
 
 Form::FormNotSigned::FormNotSigned(
@@ -187,7 +186,7 @@ Form::FormNotSigned::~FormNotSigned() _NOEXCEPT
 const char *
 Form::FormNotSigned::what() const throw ()
 {
-	return ("Form has to get signed before execution\n");
+	return (FORM_NOT_SIGNED_ERROR_STR);
 }
 
 std::ostream &

@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:08:21 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/05 14:39:07 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/08 19:04:46 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,21 @@ Intern::Intern(
 Intern::Intern(
 	const Intern & model )
 {
+	(void)model;
+}
+
+Intern::~Intern(
+	void )
+{
 }
 
 Intern &
 Intern::operator = (
 	const Intern & model )
 {
+	(void)model;
+
+	return (*this);
 }
 
 Form *
@@ -55,4 +64,6 @@ Intern::makeForm(
 			return (newForm);
 		}
 	}
+
+	return (NULL);
 }
