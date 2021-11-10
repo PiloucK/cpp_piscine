@@ -14,9 +14,7 @@
 # define MAIN_HPP
 
 # include <iostream>
-# include <cstdlib>
-# include <limits>
-# include <ctype.h>
+# include <cstdint>
 
 # ifdef DEBUG
 # 	define ASSERT(T) if (!(T)) { std::cerr << "\033[1;31mASSERT FAILED\033[0m " #T << std::endl; exit(1); } else { std::cerr << "\033[1;32mSUCCESS\033[0m " #T << '\n'; }
