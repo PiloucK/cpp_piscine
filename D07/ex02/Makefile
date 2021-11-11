@@ -6,7 +6,7 @@
 #    By: Clkuznie <cluznie@student.42.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/05 14:09:03 by clkuznie          #+#    #+#              #
-#    Updated: 2021/11/11 21:36:05 by Clkuznie         ###   ########.fr        #
+#    Updated: 2021/11/11 22:07:52 by Clkuznie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC_NAME			:= \
 	main
 
 H_NAME				:= \
-	iter
+	Array
 
 S_DIR		 		:= \
 	./
