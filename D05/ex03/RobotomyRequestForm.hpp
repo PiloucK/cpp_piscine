@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 17:25:45 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/05 14:27:20 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/11 14:48:32 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <stdlib.h>
 # include "Form.hpp"
 
 class RobotomyRequestForm : public Form {

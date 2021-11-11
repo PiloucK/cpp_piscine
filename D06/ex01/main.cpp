@@ -6,85 +6,56 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:53:20 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/09 16:22:39 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/11 14:29:21 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
+struct	Data {
+	int toto;
+	std::string karen;
+	char c;
+	void * nul;
+};
+
+uintptr_t
+serialize(
+	Data * ptr )
+{
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data *
+deserialize(
+	uintptr_t raw)
+{
+	return (reinterpret_cast<Data *>(raw));
+}
+
 int
 main(
-	int ac
-	, char **av )
+	void )
 {
-	if (ac == 2) {
-		std::string input;
-		double		numberAsDouble;
-		char *		endPointer;
+	Data myData;
+	myData.toto = 42;
+	myData.karen = "Karen";
+	myData.c = 'c';
+	myData.nul = NULL;
+	uintptr_t whereMyData;
 
-		input = av[1];
-		if (input == "+ inf" || input == "+ inff") {
-			numberAsDouble = strtold(av[1] + 2, &endPointer);
-		} else {
-			numberAsDouble = strtold(av[1], &endPointer);
-		}
-
-		if (*endPointer == 'f' && endPointer != av[1]) {
-			*endPointer = '\0';
-		} else if (endPointer == av[1] && *endPointer && !*(endPointer + 1)) {
-			numberAsDouble = static_cast<double>(av[1][0]);
-			*endPointer = '\0';
-		}
-
-		if (*endPointer != '\0') {
-			std::cerr << "Invalid input please try again and don't fail\n";
-			return 1;
-		}
-
-		std::cout << "char: ";
-		if (numberAsDouble > static_cast<double>(std::numeric_limits<char>::max())
-			|| numberAsDouble < static_cast<double>(std::numeric_limits<char>::min())) {
-			std::cout << "impossible\n";
-		} else if (!isprint(static_cast<char>(numberAsDouble))) {
-			std::cout << "Non displayable\n";
-		} else {
-			std::cout << "'" << static_cast<char>(numberAsDouble) << "'\n";
-		}
-
-		std::cout << "int: ";
-		if (std::numeric_limits<double>::infinity() == numberAsDouble) {
-			std::cout << "impossible\n";
-		} else if (numberAsDouble > static_cast<double>(std::numeric_limits<int>::max())
-			|| numberAsDouble < static_cast<double>(std::numeric_limits<int>::min())) {
-			std::cout << "impossible\n";
-		} else {
-			std::cout << static_cast<int>(numberAsDouble) << "\n";
-		}
-
-		std::cout << "float: ";
-		if (numberAsDouble == std::numeric_limits<double>::infinity()) {
-			std::cout << static_cast<float>(numberAsDouble) << "f\n";
-		} else if (numberAsDouble == -std::numeric_limits<double>::infinity()) {
-			std::cout << static_cast<float>(numberAsDouble) << "f\n";
-		} else if (numberAsDouble > static_cast<double>(std::numeric_limits<float>::max())
-			|| numberAsDouble < -static_cast<double>(std::numeric_limits<float>::max())) {
-			std::cout << "impossible\n";
-		} else {
-			std::cout << static_cast<float>(numberAsDouble) << "f\n";
-		}
-
-		std::cout << "double: ";
-		if (numberAsDouble == std::numeric_limits<double>::infinity()) {
-			std::cout << static_cast<double>(numberAsDouble) << "\n";
-		} else if (numberAsDouble == -std::numeric_limits<double>::infinity()) {
-			std::cout << static_cast<double>(numberAsDouble) << "\n";
-		} else if (numberAsDouble > static_cast<double>(std::numeric_limits<double>::max())
-			|| numberAsDouble < -static_cast<double>(std::numeric_limits<double>::max())) {
-			std::cout << "impossible\n";
-		} else {
-			std::cout << static_cast<double>(numberAsDouble) << "\n";
-		}
-	}
-
+	std::cout << "Data address: " << &myData << "\n";
+	std::cout << myData.toto << " | "
+		<< myData.karen << " | "
+		<< myData.c << " | "
+		<< myData.nul << '\n';
+	whereMyData = serialize(&myData);
+	std::cout << "Data address: " << whereMyData << '\n';
+	Data * dataComeBack = deserialize(whereMyData);
+	std::cout << "DataComeBack address: " << dataComeBack << "\n";
+	std::cout << dataComeBack->toto << " | "
+		<< dataComeBack->karen << " | "
+		<< dataComeBack->c << " | "
+		<< dataComeBack->nul << '\n';
 	return 0;
 }
