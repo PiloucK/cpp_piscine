@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:53:20 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/11 15:46:42 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/11 17:51:07 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,33 @@ main(
 		std::cout << i << " | " << j << '\n';
 		std::cout << min<float>(i, j) << "\n";
 		std::cout << max<float>(i, j) << "\n";
+	}
+	NEXT_TEST
+	{
+		std::string i = "toto", j = "riri";
+
+		std::cout << i << " | " << j << '\n';
+		::swap<std::string>(i, j);
+		std::cout << i << " | " << j << '\n';
+		swap(i, j);
+		std::cout << i << " | " << j << '\n';
+		std::cout << min<std::string>(i, j) << "\n";
+		std::cout << max<std::string>(i, j) << "\n";
+	}
+	NEXT_TEST
+	{
+		time_t i, j;
+
+		time(&i);
+		time(&j);
+
+		std::cout << i << " | " << j << '\n';
+		swap<time_t>(i, j);
+		std::cout << i << " | " << j << '\n';
+		swap(i, j);
+		std::cout << i << " | " << j << '\n';
+		std::cout << min<time_t>(i, j) << "\n";
+		std::cout << max<time_t>(i, j) << "\n";
 	}
 	return 0;
 }

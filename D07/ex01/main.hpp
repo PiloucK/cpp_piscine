@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:01:37 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/11 17:48:04 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/11 19:06:55 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define MAIN_HPP
 
 # include <iostream>
-# include <ctime>
-# include "whatever.hpp"
+# include <cstdlib>
+# include "iter.hpp"
 
 # ifdef DEBUG
 # 	define ASSERT(T) if (!(T)) { std::cerr << "\033[1;31mASSERT FAILED\033[0m " #T << std::endl; exit(1); } else { std::cerr << "\033[1;32mSUCCESS\033[0m " #T << '\n'; }
