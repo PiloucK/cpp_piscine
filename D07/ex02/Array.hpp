@@ -6,7 +6,7 @@
 /*   By: Clkuznie <cluznie@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 21:12:14 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/11 22:15:56 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/11 22:37:26 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,7 @@ class Array {
     public:
         Array( void ) : m_content(new T[0]), m_size(0) {};
 
-        Array( unsigned int size ) : m_content(new T[size]), m_size(size)
-        {
-            for (unsigned int i = 0; i < m_size; i++){
-                m_content[i] = 0;
-            }
-        };
+        Array( unsigned int size ) : m_content(new T[size]), m_size(size) {};
 
         Array( const Array & model ) : m_content(new T[model.m_size]), m_size(model.m_size)
         {
@@ -47,6 +42,8 @@ class Array {
             for (unsigned int i = 0; i < m_size; i++){
                 m_content[i] = model.m_content[i];
             }
+
+            return *this;
         };
 
         T & operator [] ( const int i )

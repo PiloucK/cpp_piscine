@@ -6,7 +6,7 @@
 /*   By: Clkuznie <cluznie@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 21:09:32 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/11 22:12:02 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/11 22:38:26 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
+
+	Array<Bureaucrat> theBoys(5);
+
+	for (int i = 0; i < 5; i++) {
+		std::cout << theBoys[i];
+	}
     return 0;
 }

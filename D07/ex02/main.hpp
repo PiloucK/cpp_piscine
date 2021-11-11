@@ -6,7 +6,7 @@
 /*   By: Clkuznie <cluznie@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:01:37 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/11 21:47:16 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/11 22:34:05 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <cstdlib>
+# include "Bureaucrat.hpp"
 # include "Array.hpp"
 
 # ifdef DEBUG
