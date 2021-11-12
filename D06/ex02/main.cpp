@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:53:20 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/11 15:00:46 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:12:25 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,10 @@ int
 main(
 	void )
 {
+	CLEAR_STDOUT
+	START_INFO
+	WAIT_INPUT
+
 	std::srand(std::time(NULL));
 	Base * testArray[10];
 

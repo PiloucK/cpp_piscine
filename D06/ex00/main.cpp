@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:53:20 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/12 12:22:41 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:11:58 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,14 @@ main(
 
 		std::cout << "double: ";
 		if (numberAsDouble == std::numeric_limits<double>::infinity()) {
-			std::cout << static_cast<double>(numberAsDouble) << "\n";
+			std::cout << numberAsDouble << "\n";
 		} else if (numberAsDouble == -std::numeric_limits<double>::infinity()) {
-			std::cout << static_cast<double>(numberAsDouble) << "\n";
+			std::cout << numberAsDouble << "\n";
 		} else if (numberAsDouble > static_cast<double>(std::numeric_limits<double>::max())
 			|| numberAsDouble < -static_cast<double>(std::numeric_limits<double>::max())) {
 			std::cout << "impossible\n";
 		} else {
-			std::cout << static_cast<double>(numberAsDouble) << "\n";
+			std::cout << numberAsDouble << "\n";
 		}
 	}
 
