@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:53:20 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/09 16:22:39 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/12 12:22:41 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,15 @@ main(
 		std::string input;
 		double		numberAsDouble;
 		char *		endPointer;
+		bool		nan = false;
 
 		input = av[1];
 		if (input == "+ inf" || input == "+ inff") {
 			numberAsDouble = strtold(av[1] + 2, &endPointer);
 		} else {
+			if (input == "nan" || "nanf") {
+				nan = true;
+			}
 			numberAsDouble = strtold(av[1], &endPointer);
 		}
 
@@ -42,7 +46,8 @@ main(
 		}
 
 		std::cout << "char: ";
-		if (numberAsDouble > static_cast<double>(std::numeric_limits<char>::max())
+		if (nan
+			|| numberAsDouble > static_cast<double>(std::numeric_limits<char>::max())
 			|| numberAsDouble < static_cast<double>(std::numeric_limits<char>::min())) {
 			std::cout << "impossible\n";
 		} else if (!isprint(static_cast<char>(numberAsDouble))) {
@@ -52,7 +57,8 @@ main(
 		}
 
 		std::cout << "int: ";
-		if (std::numeric_limits<double>::infinity() == numberAsDouble) {
+		if (std::numeric_limits<double>::infinity() == numberAsDouble
+			|| nan) {
 			std::cout << "impossible\n";
 		} else if (numberAsDouble > static_cast<double>(std::numeric_limits<int>::max())
 			|| numberAsDouble < static_cast<double>(std::numeric_limits<int>::min())) {

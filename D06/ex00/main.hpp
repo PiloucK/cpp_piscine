@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:01:37 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/09 16:18:03 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/12 12:16:34 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <cstdlib>
 # include <limits>
 # include <ctype.h>
+# include <cmath>
+# include <iomanip>
 
 # ifdef DEBUG
 # 	define ASSERT(T) if (!(T)) { std::cerr << "\033[1;31mASSERT FAILED\033[0m " #T << std::endl; exit(1); } else { std::cerr << "\033[1;32mSUCCESS\033[0m " #T << '\n'; }
