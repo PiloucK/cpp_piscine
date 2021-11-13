@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Clkuznie <cluznie@student.42.fr>           +#+  +:+       +#+        */
+/*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 01:13:53 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/12 01:37:28 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/13 17:56:20 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class MutantStack : public std::stack<T> {
 
         MutantStack & operator = ( const MutantStack & model ) { std::stack<T>operator = (model); };
 
-        std::stack<T>::container_type::iterator begin() {};
-        std::stack<T>::container_type::iterator end() {};
+        std::stack<T>::container_type::iterator begin() { c.begin() };
+        std::stack<T>::container_type::iterator end() { c.end() };
 
     protected:
 

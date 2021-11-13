@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Clkuznie <cluznie@student.42.fr>           +#+  +:+       +#+        */
+/*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:01:37 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/11 23:05:37 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/13 13:51:12 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <iostream>
 # include <cstdlib>
 # include "easyfind.hpp"
+# include <algorithm>
+# include <ctime>
+# include <vector>
 
 # ifdef DEBUG
 # 	define ASSERT(T) if (!(T)) { std::cerr << "\033[1;31mASSERT FAILED\033[0m " #T << std::endl; exit(1); } else { std::cerr << "\033[1;32mSUCCESS\033[0m " #T << '\n'; }
