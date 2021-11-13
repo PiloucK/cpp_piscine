@@ -133,12 +133,13 @@ _exec(token_t *token, int *start, int i, char **env)
 
 int
 main(
-    int ac, char **av, char **env )
+    int ac
+    , char **av
+    , char **env )
 {
     token_t *token;
-
-    int i = 1, start = 1;
     token_t *last_token;
+    int i = 1, start = 1;
 
     while (i < ac) {
 

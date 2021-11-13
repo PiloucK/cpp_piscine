@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:53:20 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/12 18:11:58 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/13 11:39:15 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ main(
 		if (input == "+ inf" || input == "+ inff") {
 			numberAsDouble = strtold(av[1] + 2, &endPointer);
 		} else {
-			if (input == "nan" || "nanf") {
+			if (input == "nan" || input == "nanf") {
 				nan = true;
 			}
 			numberAsDouble = strtold(av[1], &endPointer);
@@ -76,7 +76,11 @@ main(
 			|| numberAsDouble < -static_cast<double>(std::numeric_limits<float>::max())) {
 			std::cout << "impossible\n";
 		} else {
-			std::cout << static_cast<float>(numberAsDouble) << "f\n";
+			if (std::floor(numberAsDouble) == numberAsDouble) {
+				std::cout << static_cast<float>(numberAsDouble) << ".0f\n";
+			} else {
+				std::cout << static_cast<float>(numberAsDouble) << "f\n";
+			}
 		}
 
 		std::cout << "double: ";
@@ -88,7 +92,11 @@ main(
 			|| numberAsDouble < -static_cast<double>(std::numeric_limits<double>::max())) {
 			std::cout << "impossible\n";
 		} else {
-			std::cout << numberAsDouble << "\n";
+			if (std::floor(numberAsDouble) == numberAsDouble) {
+				std::cout << numberAsDouble << ".0\n";
+			} else {
+				std::cout << numberAsDouble << "\n";
+			}
 		}
 	}
 
