@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:50:26 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/07 15:36:13 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:06:40 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ public:
 		public:
 			GradeTooHighException( void );
 
-			virtual ~GradeTooHighException() _NOEXCEPT;
+			virtual ~GradeTooHighException() throw ();
 
 			const char * what() const throw ();
 
@@ -59,7 +59,7 @@ public:
 		public:
 			GradeTooLowException( void );
 
-			virtual ~GradeTooLowException() _NOEXCEPT;
+			virtual ~GradeTooLowException() throw ();
 
 			const char * what() const throw ();
 

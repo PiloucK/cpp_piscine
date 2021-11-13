@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/09 17:00:23 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:06:40 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(
 {
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException() _NOEXCEPT
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw ()
 {
 }
 
@@ -139,7 +139,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(
 {
 }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() _NOEXCEPT
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw ()
 {
 }
 

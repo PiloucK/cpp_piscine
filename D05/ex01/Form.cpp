@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 18:23:38 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/07 16:01:37 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:06:40 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ Form::GradeTooHighException::GradeTooHighException(
 {
 }
 
-Form::GradeTooHighException::~GradeTooHighException() _NOEXCEPT
+Form::GradeTooHighException::~GradeTooHighException() throw ()
 {
 }
 
@@ -151,7 +151,7 @@ Form::GradeTooLowException::GradeTooLowException(
 {
 }
 
-Form::GradeTooLowException::~GradeTooLowException() _NOEXCEPT
+Form::GradeTooLowException::~GradeTooLowException() throw ()
 {
 }
 
