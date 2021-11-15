@@ -6,7 +6,7 @@
 /*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 21:09:32 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/15 15:18:48 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/15 15:21:56 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,19 @@ main(
 
         std::cout << sp.shortestSpan() << '\n';
         std::cout << sp.longestSpan() << '\n';
+
+        std::cout <<"Test 4: copy constructor and assignation\n";
+        Span spp = Span(sp);
+
+        std::cout << spp.shortestSpan() << '\n';
+        std::cout << spp.longestSpan() << '\n';
+
+        Span sppp = Span(0);
+        sppp = spp;
+
+        std::cout << sppp.shortestSpan() << '\n';
+        std::cout << sppp.longestSpan() << '\n';
+        
     }
 
     return 0;
