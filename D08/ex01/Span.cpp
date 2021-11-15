@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Clkuznie <cluznie@student.42.fr>           +#+  +:+       +#+        */
+/*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 23:33:57 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/12 01:04:53 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/15 15:15:30 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ Span::addNumber(
     std::vector<int>::iterator start
     , const std::vector<int>::iterator end )
 {
-    if (m_vector.size() + (end - start) < m_maxSize) {
+    if (m_vector.size() + (end - start) <= m_maxSize) {
         
         while (start != end) {
             m_vector.push_back(*start);
             start++;
         }
     } else {
-        throw std::length_error("Not enough space left capacity");
+        throw std::length_error("Not enough space left");
     }
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Clkuznie <cluznie@student.42.fr>           +#+  +:+       +#+        */
+/*   By: Clkuznie <clkuznie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 14:01:37 by Clkuznie          #+#    #+#             */
-/*   Updated: 2021/11/12 00:51:34 by Clkuznie         ###   ########.fr       */
+/*   Updated: 2021/11/15 15:18:00 by Clkuznie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <cstdlib>
 # include "Span.hpp"
+# include <algorithm>
+# include <ctime>
 
 # ifdef DEBUG
 # 	define ASSERT(T) if (!(T)) { std::cerr << "\033[1;31mASSERT FAILED\033[0m " #T << std::endl; exit(1); } else { std::cerr << "\033[1;32mSUCCESS\033[0m " #T << '\n'; }
